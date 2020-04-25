@@ -21,6 +21,8 @@ public:
     void set_GUI();
     void set_Increasing_Server_Capacity();
     void set_Lab();
+    //Constructor Just for set values
+    Market();
 };
 
 void Market::set_Security()
@@ -46,5 +48,15 @@ void Market::set_Increasing_Server_Capacity()
 void Market::set_Lab()
 {
     Lab = false;
+}
+
+Market::Market()
+{
+    set_Security();
+    set_Herbs_Level2();
+    set_Herbs_Level3();
+    set_GUI();
+    set_Increasing_Server_Capacity();
+    set_Lab();
 }
 #endif
