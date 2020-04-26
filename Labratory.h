@@ -142,7 +142,7 @@ void Labratory::Initialize_Labratory(bool Lab)
     if (Lab == true)
     {
         cout << "You Entered Labratory!" << endl;
-        cout << "(1)Alcohol | (2)Comphor | (3)Naphtaline | (0)Cancel" << endl;
+        cout << "(1)Alcohol | (2)Comphor | (3)Naphtaline | (0)Back To Menu" << endl;
         int choice;
         cin >> choice;
 
@@ -165,7 +165,7 @@ void Labratory::Initialize_Labratory(bool Lab)
     }
     else
     {
-        
+        cout << "Labratory is not purchased yet!" << endl;
     }
 }
 #endif
