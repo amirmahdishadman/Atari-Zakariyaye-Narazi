@@ -27,7 +27,8 @@ ostream &Notebook::operator<<(ostream &output)
     int page;
     cin >> page;
     cout << "Page(" << page << ")" << endl;
-    cout << notebook[page - 1] << endl;
+    output << notebook[page - 1] << endl;
+    return output;
 }
 
 void Notebook::Add_Note()
@@ -69,10 +70,7 @@ void Notebook::Initialize_NoteBook()
     case 0:
         break;
     default:
-        cout << "Wrong input!" << endl;
+        cout << "Wrong Number!\nTry Again:" << endl;
     }
 }
-
-
-
 #endif
