@@ -56,7 +56,7 @@ void Notebook::Edit_Note()
 
 void Notebook::Initialize_NoteBook()
 {
-    cout << "Read(1) | Addition(2) | Edition(3) | Cancel(0)" << endl;
+    cout << "Read(1) | Addition(2) | Edition(3) | Back To Menu(0)" << endl;
     int choice;
     cin >> choice;
     switch (choice)
