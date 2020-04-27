@@ -5,6 +5,10 @@
 
 using namespace std;
 
+//OP_overloading for printing Notebook informarions
+template <typename T>
+inline ostream &operator<<(ostream &Output, vector <T> &);
+
 class Notebook
 {
 private:
@@ -18,17 +22,16 @@ public:
 
     //System of Notebook
     void Initialize_NoteBook();
-
-    //OP_overloading for printing Notebook informarions
-    ostream &operator<<(ostream &);
 };
-ostream &Notebook::operator<<(ostream &output)
+template <typename T>
+ostream &operator<<(ostream &Output, vector <T> &n1)
 {
     int page;
+    cout << "Please Enter Your Page Number: " << endl;
     cin >> page;
-    cout << "Page(" << page << ")" << endl;
-    output << notebook[page - 1] << endl;
-    return output;
+    Output << "Page(" << page << ")" << endl;
+    Output << n1[page - 1] << endl;
+    return Output;
 }
 
 void Notebook::Add_Note()
@@ -62,9 +65,13 @@ void Notebook::Initialize_NoteBook()
     switch (choice)
     {
     case 1:
-        Add_Note();
+        cout << "You choosed to read your notes..." << endl;
+        cout << notebook << endl;
         break;
     case 2:
+        Add_Note();
+        break;
+    case 3:
         Edit_Note();
         break;
     case 0:
