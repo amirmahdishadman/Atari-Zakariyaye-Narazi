@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//OP_overloading for printing Notebook informarions
+//OP_overloading for printing Notebook informarions(Reading Notebook)
 template <typename T>
 inline ostream &operator<<(ostream &Output, vector <T> &);
 
@@ -62,22 +62,27 @@ void Notebook::Initialize_NoteBook()
     cout << "Read(1) | Addition(2) | Edition(3) | Back To Menu(0)" << endl;
     int choice;
     cin >> choice;
-    switch (choice)
+    bool loop = true;
+    while (loop == true)
     {
-    case 1:
-        cout << "You choosed to read your notes..." << endl;
-        cout << notebook << endl;
-        break;
-    case 2:
-        Add_Note();
-        break;
-    case 3:
-        Edit_Note();
-        break;
-    case 0:
-        break;
-    default:
-        cout << "Wrong Number!\nTry Again:" << endl;
+        switch (choice)
+        {
+        case 1:
+            cout << "You choosed to read your notes..." << endl;
+            cout << notebook << endl;
+            break;
+        case 2:
+            Add_Note();
+            break;
+        case 3:
+            Edit_Note();
+            break;
+        case 0:
+            loop = false;
+            break;
+        default:
+            cout << "Wrong Number!\nTry Again:" << endl;
+        }
     }
 }
 #endif
