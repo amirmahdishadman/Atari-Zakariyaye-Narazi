@@ -1,14 +1,21 @@
-#include<vector>
-#include"Patients.h"
-#include"Atar.h"
-#include<string>
-#include<iostream>
-#include<iomanip>
-// #include<random> #Check , tabe rand khodesh hast
+#include <ctime>
+#include "Patients.h"
+#include "Atar.h"
 
-ostream operator<<(ostream &output,Patients patient)
-{
+using namespace std;
 
+inline ostream &Patients::operator<<(Patients &patients) //#Check. sample o barat sakhtam, edamaro boro
+{// alan ino uncoment kon va tedade bimaraye sathe yek o bezari kar mikone
+    // for (int i = 0; i < /*tedade bimara dar sathe 1*/ i++)
+    // {
+    //     for (int j = 0; j < 3; j++)
+    //     {//         instance-vector-sathebimari-kole bimariya dar in sath-giyaha az 1 ta3
+    //         cout << patients.patients_vect[0][i].Herb[j] << " ";
+    //     }
+        
+    // }
+
+    // to hamin tabe man bare herb o zadam hala to baraye meghdar o gheymat hame sathaye dg to hamin bzn
 }
 
 void Patients::Patients_refer(int,bool)
@@ -26,10 +33,9 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     *                                                             *
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
     */
-    
     p.Ill="Alerji";
     p.Herb[0]="Shahtare";
-    p.Herb[1]="KhareMaryam";
+    p.Herb[1]="khar maryam";
     p.Herb[2]="Narenj";
    
     p.cost[0]=12500;
@@ -57,7 +63,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
 
     p.Ill="Zaf System Defaie Badan";
     p.Herb[0]="Avishan";
-    p.Herb[1]="JoDoSar";
+    p.Herb[1]="Jo dosar";
     p.Herb[2]="Sir";
 
     p.cost[0]=10000;
@@ -72,7 +78,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Ill="Khoshk Mazaji (Ubosat)";
     p.Herb[0]="KhakShir";
     p.Herb[1]="Karchak";
-    p.Herb[2]="Goon";
+    p.Herb[2]="Gon";
    
     p.cost[0]=5000;
     p.cost[1]=15000;
@@ -91,8 +97,8 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     */
     p.Ill="Moshkelate Poosti";
     p.Herb[0]="Asal";
-    p.Herb[1]="ShirinBayan";
-    p.Herb[2]="AloEvera";
+    p.Herb[1]="Shirin Bayan";
+    p.Herb[2]="Barg Aloevera";
    
     p.cost[0]=35500;
     p.cost[1]=7000;
@@ -117,10 +123,10 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Amount[2]=1;
     this->patients_vect[1].push_back(p);
 
-    p.Ill="Afsordegi va NaArami";
+    p.Ill="Afsordegi va Na Arami";
     p.Herb[0]="Zaferan";
-    p.Herb[1]="GolGavZaban";
-    p.Herb[2]="Ostokhodoos";
+    p.Herb[1]="Gol Gavzabon";
+    p.Herb[2]="Ostokhoddos";
    
     p.cost[0]=95000;
     p.cost[1]=8000;
@@ -137,7 +143,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     *                                                             *
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
     */
-    p.Ill="Alcool";
+    p.Ill="Alcohol";
    
     p.cost[0]=30000;
 
@@ -145,7 +151,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
 
     this->patients_vect[2].push_back(p);
 
-    p.Ill="Naftalin";
+    p.Ill="Naphtaline";
   
     p.cost[0]=5000;
     
@@ -243,17 +249,17 @@ string Patients::Cost_system_check(double const_cost,double in_cost)//saghf gera
     /*
     Return Values:
 
-    tolow
+    toolow
     discount
     =
     geran
-    tomuch
+    toomuch
     false
     */
 
     if(in_cost<const_cost-5000)
     {
-        return "tolow";
+        return "toolow";
     }
     else if(in_cost<const_cost)
     {
@@ -269,7 +275,7 @@ string Patients::Cost_system_check(double const_cost,double in_cost)//saghf gera
     }
     else if(in_cost>const_cost+5000)
     {
-        return "tomuch";
+        return "toomuch";
     }
     else
     {
@@ -323,19 +329,19 @@ string Patients::Amount_system_check(double const_amount,double in_amount)//had 
      /*
     Return Values:
 
-    tolow
+    toolow
     kamforoshi
     =
     hedye
-    tomuch
+    toomuch
     false
     */
 
     if(in_amount<1)
     {
-        return "tolow";
+        return "toolow";
     }
-    else if(in_amount>=1&&in_amount<const_amount)
+    else if(in_amount >= 1 && in_amount < const_amount)
     {
         return "kamforoshi";
     }
