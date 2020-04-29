@@ -4,9 +4,7 @@
 #include<string>
 #include<iostream>
 #include<iomanip>
-#include<random>
-
-
+// #include<random> #Check , tabe rand khodesh hast
 
 ostream operator<<(ostream &output,Patients patient)
 {
@@ -227,11 +225,11 @@ void Patients::set_number_of_patients(int level,bool server_is_byed)//end aval i
     int num=0;
     if(server_is_byed)
     {
-        num=random()%2+1;
+        num=rand()%2+1; //num=random()%2+1 , random() na. rand yes. #Check
     }
     else
     {
-        num=random()%4+1;
+        num=rand()%4+1;
     }
     this->Number_of_patients=num;
 }

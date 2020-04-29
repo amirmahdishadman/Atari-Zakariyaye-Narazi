@@ -12,7 +12,7 @@ switch(level)
     case 1:
     {
         cout<<"File 1 Password:"<<endl;
-        break;
+        break; //Mehdi dadash breakaro bardar o default ham ezaf kon #check
     }
     case 2:
     {
@@ -27,7 +27,6 @@ switch(level)
         cout<<"File 3 Password:"<<endl;
         break;
     }
-
 }
 
 }
