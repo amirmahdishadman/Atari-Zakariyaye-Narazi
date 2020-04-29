@@ -5,7 +5,7 @@
 class App
 {
 
-static void ShowMenu();
+static void ShowMenu(Atar &);
 
 };
 #endif
