@@ -1,15 +1,11 @@
-
-
-#ifndef ap
-#define ap
-
-using namespace std;
+#ifndef a
+#define a
 
 
 class App
 {
 
-void startgame();
+static void ShowMenu();
 
 };
 #endif

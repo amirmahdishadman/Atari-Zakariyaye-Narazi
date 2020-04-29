@@ -1,41 +1,29 @@
-#ifndef Atar_H
-#define Atar_H
 
+#include"Market.h"
+
+#ifndef at
+#define at
 class Atar
 {
-    friend class Market;
-private:
-    //Amo Atar total money
-    double Money;        
-    //Amo Atar total Reputation
-    int Reputation_Level;
 public:
-    void setMoney(double);
-    void setReputation_Level(int);
-    double getMoney();
-    int getReputation_Level();
-};
 
-void Atar::setMoney(double money)
-{
-    this->Money=money;
-}
+void setMoney(double);
+double getMoney();
 
-void Atar::setReputation_Level(int level)
-{
-    this->Reputation_Level=level;
-}
-
-double Atar::getMoney()
-{
-    return this->Money;
-}
-
-int Atar::getReputation_Level()
-{
-    return this->Reputation_Level;
-}
+void setReputation_Level(int);
+int getReputation_Level();
 
 
+
+//repository of herbs of atar
+string repository_herbs[22]={"Narenj","KhareMaryam","Shahtare","KhakShir","Marze","Ocaliptoos","Darchin","Avishan","JoDoSar","Sir","Goon","Karchak","ShirinBayan","AloEvera","Asal","Jinsing","GolGavZaban","Zaferan","Ostokhodoos","Alcool","Naftalin","Kafoor"};
+double repository_amount[22]={0};
+
+
+
+private:
+double Money;//money of atar
+int Reputation_Level;//level of atar
+}amoo_atar;
 
 #endif

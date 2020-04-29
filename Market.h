@@ -146,7 +146,7 @@ Market::Market()
 
 void Market::Buy_Herbs_Level1(Atar &amo_atar)
 {
-     cout << "\t\t\tBuying Goods (Level 2)\n" << endl;
+    cout << "\t\t\tBuying Goods (Level 2)\n" << endl;
     cout << "Which Herbs do you need?" << endl;
     cout << "(1) Narenj  ×1  Cost:8,000" << endl;
     cout << "(2) Khar maryam  ×3  Cost:12,500" << endl;
@@ -309,7 +309,16 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
 {
     cout << "\t\t\tBuying Goods (Level 2)\n" << endl;
     cout << "Which Herbs do you need?" << endl;
-    cout << "(1) Babone  ×5  Cost:10,000" << endl;
+    cout << "(1) Babone  ×5  Cost:10,000" << endl;  //bayad hazf she .***************************
+
+    //shirin bayan ezafe shavad 
+    /*
+    888888888888888888        shirin bayan ezafe shavad 
+    8888888888888888888888         shirin bayan ezafe shavad 
+    8888888888888888888888888888         shirin bayan ezafe shavad 
+    88888888888888888888888888888888888          shirin bayan ezafe shavad 
+    */
+   
     cout << "(2) Barg Aloevera  ×3  Cost:15,500" << endl;
     cout << "(3) Asal  ×1  Cost:35,500" << endl;
     cout << "(4) Ocaliptos  ×1  Cost:14,700" << endl;
