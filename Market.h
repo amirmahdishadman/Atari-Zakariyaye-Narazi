@@ -165,143 +165,185 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
     int choice;
     cin >> choice;
     cout << endl;
-    switch (choice)
+
+    bool loop = true;
+    while (loop == true)
     {
-    case 1:
-        if (amo_atar.getMoney() >= 8000)
+        switch (choice)
         {
-            cout << "You Got the Narenj" << endl;
-            //be anbar atar ezafe she
+        case 1:
+            if (amo_atar.getMoney() >= 8000)
+            {
+                cout << "You Got the Narenj" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[0]++;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 8000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 2:
+            if (amo_atar.getMoney() >= 12500)
+            {
+                cout << "You Got the Khar maryam" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[1] += 3;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 12500);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 3:
+            if (amo_atar.getMoney() >= 12500)
+            {
+                cout << "You Got the Shahtare" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[2] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 12500);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 4:
+            if (amo_atar.getMoney() >= 14700)
+            {
+                cout << "You Got the Ocaliptos" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[5] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 14700);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 5:
+            if (amo_atar.getMoney() >= 5000)
+            {
+                cout << "You Got the Khakshir" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[3] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 5000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 6:
+            if (amo_atar.getMoney() >= 8000)
+            {
+                cout << "You Got the Marze" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[4] += 5;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 8000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 7:
+            if (amo_atar.getMoney() >= 10000)
+            {
+                cout << "You Got the Darchin" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[6] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 10000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 8:
+            if (amo_atar.getMoney() >= 10000)
+            {
+                cout << "You Got the Avishan" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[7] += 5;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 10000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 9:
+            if (amo_atar.getMoney() >= 20000)
+            {
+                cout << "You Got the Jo dosar" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[8] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 20000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 10:
+            if (amo_atar.getMoney() >= 8000)
+            {
+                cout << "You Got the Sir" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[9] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 8000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 11:
+            if (amo_atar.getMoney() >= 15000)
+            {
+                cout << "You Got the Karchak" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[11] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 15000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 12:
+            if (amo_atar.getMoney() >= 12000)
+            {
+                cout << "You Got the Gon" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[10] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 12000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+        case 0:
+            loop = false;
+            break;
+        default:
+            break;
         }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 2:
-        if (amo_atar.getMoney() >= 12500)
-        {
-            cout << "You Got the Khar maryam" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 3:
-        if (amo_atar.getMoney() >= 12500)
-        {
-            cout << "You Got the Shahtare" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 4:
-        if (amo_atar.getMoney() >= 14700)
-        {
-            cout << "You Got the Ocaliptos" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 5:
-        if (amo_atar.getMoney() >= 5000)
-        {
-            cout << "You Got the Khakshir" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 6:
-        if (amo_atar.getMoney() >= 8000)
-        {
-            cout << "You Got the Marze" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 7:
-        if (amo_atar.getMoney() >= 10000)
-        {
-            cout << "You Got the Darchin" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 8:
-        if (amo_atar.getMoney() >= 10000)
-        {
-            cout << "You Got the Avishan" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 9:
-        if (amo_atar.getMoney() >= 20000)
-        {
-            cout << "You Got the Jo dosar" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 10:
-        if (amo_atar.getMoney() >= 8000)
-        {
-            cout << "You Got the Sir" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 11:
-        if (amo_atar.getMoney() >= 15000)
-        {
-            cout << "You Got the Karchak" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 12:
-        if (amo_atar.getMoney() >= 12000)
-        {
-            cout << "You Got the Gon" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-    case 0:
-        break;
-    default:
-        break;
     }
 }
 
@@ -322,100 +364,130 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
     int choice;
     cin >> choice;
     cout << endl;
-    switch (choice)
+
+    bool loop2 = true;
+    while (loop2 == true)
     {
-    case 1:
-        if (amo_atar.getMoney() >= 10000)
+        switch (choice)
         {
-            cout << "You Got the Babone" << endl;
-            //be anbar atar ezafe she
+        case 1:
+            if (amo_atar.getMoney() >= 7000)
+            {
+                cout << "You Got the Shirin Bayan" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[12] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 7000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 2:
+            if (amo_atar.getMoney() >= 15500)
+            {
+                cout << "You Got the Barg Alovera" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[13] += 3;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 15500);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 3:
+            if (amo_atar.getMoney() >= 35500)
+            {
+                cout << "You Got the Asal" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[14] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 35500);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 4:
+            if (amo_atar.getMoney() >= 14700)
+            {
+                cout << "You Got the Ocaliptos" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[5] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 14700);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 5:
+            if (amo_atar.getMoney() >= 25000)
+            {
+                cout << "You Got the Jinsing" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[15] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 25000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 6:
+            if (amo_atar.getMoney() >= 8000)
+            {
+                cout << "You Got the Gol Gavzabon" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[16] += 5;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 8000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 7:
+            if (amo_atar.getMoney() >= 15000)
+            {
+                cout << "You Got the Ostokhoddos" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[18] += 5;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 15000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 8:
+            if (amo_atar.getMoney() >= 95000)
+            {
+                cout << "You Got the Zafaran" << endl;
+                //increament of amounts in inventor
+                amo_atar.repository_amount[18] += 1;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 95000);
+            }
+            else
+            {
+                cout << "You don't have enough money!" << endl;
+            }
+            break;
+        case 0:
+            loop2 = false;
+            break;
+        default:
+            break;
         }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 2:
-        if (amo_atar.getMoney() >= 15500)
-        {
-            cout << "You Got the Barg Alovera" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 3:
-        if (amo_atar.getMoney() >= 35500)
-        {
-            cout << "You Got the Asal" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 4:
-        if (amo_atar.getMoney() >= 14700)
-        {
-            cout << "You Got the Ocaliptos" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 5:
-        if (amo_atar.getMoney() >= 25000)
-        {
-            cout << "You Got the Jinsing" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 6:
-        if (amo_atar.getMoney() >= 8000)
-        {
-            cout << "You Got the Gol Gavzabon" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 7:
-        if (amo_atar.getMoney() >= 15000)
-        {
-            cout << "You Got the Ostokhoddos" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 8:
-        if (amo_atar.getMoney() >= 95000)
-        {
-            cout << "You Got the Zafaran" << endl;
-            //be anbar atar ezafe she
-        }
-        else
-        {
-            cout << "You don't have enough money!" << endl;
-        }
-        break;
-    case 0:
-        break;
-    default:
-        break;
     }
 }
 
@@ -434,66 +506,84 @@ void Market::Buy(Atar &amo_atar)
     cout << "Your choice: ";
     cin >> choice;
     cout << endl;
-    switch (choice)
-    {
-    case 1:
-        Buy_Herbs_Level1(amo_atar);
-        break;
-    case 2:
-        if (Check_Herbs_Level2() == true)
-        {
-            Buy_Herbs_Level1(amo_atar);
-        }
-        break;
-    case 3:
-        if (amo_atar.getMoney() >= 150000)
-        {
-            Security = true;
-            cout << "Your application is secure now!" << endl;
-        }
-        else
-        {
-            cout << "You Don't have enough money!" << endl;
-        }
-        break;
-    case 4:
-        if (amo_atar.getMoney() >= 200000)
-        {
-            GUI = true;
-            cout << "GUI V2 initialized..." << endl;
-        }
-        else
-        {
-            cout << "You Don't have enough money!" << endl;
-        }
-        break;
-    case 5:
-        if (amo_atar.getMoney() >= 200000)
-        {
-            Increasing_Server_Capacity = true;
-            cout << "Your Server's Capacity Increased.\nNow you can more customers" << endl;
-        }
-        else
-        {
-            cout << "You Don't have enough money!" << endl;
-        }
-        break;
-    case 6:
-        if (amo_atar.getMoney() >= 350000)
-        {
-            Lab = true;
-            cout << "Labratory is ready to use..." << endl;
-        }
-        else
-        {
-            cout << "You Don't have enough money!" << endl;
-        }
-        break;
-    case 0:
-        break;
 
-    default:
-        cout << "Wrong Number!\nTry Again:" << endl;
+    bool loop3 = true;
+    while (loop3 == true)
+    {
+        switch (choice)
+        {
+        case 1:
+            Buy_Herbs_Level1(amo_atar);
+            break;
+        case 2:
+            if (Check_Herbs_Level2() == true)
+            {
+                Buy_Herbs_Level1(amo_atar);
+            }
+            break;
+        case 3:
+            if (amo_atar.getMoney() >= 150000)
+            {
+                //Initialize Security
+                Security = true;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 150000);
+                cout << "Your application is secure now!" << endl;
+            }
+            else
+            {
+                cout << "You Don't have enough money!" << endl;
+            }
+            break;
+        case 4:
+            if (amo_atar.getMoney() >= 200000)
+            {
+                //Initialize Second Graphic interface
+                GUI = true;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 200000);
+                cout << "GUI V2 initialized..." << endl;
+            }
+            else
+            {
+                cout << "You Don't have enough money!" << endl;
+            }
+            break;
+        case 5:
+            if (amo_atar.getMoney() >= 200000)
+            {
+                //Unlock more patients in a pass
+                Increasing_Server_Capacity = true;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 200000);
+                cout << "Your Server's Capacity Increased.\nNow you can more customers" << endl;
+            }
+            else
+            {
+                cout << "You Don't have enough money!" << endl;
+            }
+            break;
+        case 6:
+            if (amo_atar.getMoney() >= 350000)
+            {
+                //Unlock Lab
+                Lab = true;
+                //decreament of amo atar's money
+                amo_atar.setMoney(amo_atar.getMoney() - 350000);
+                cout << "Labratory is ready to use..." << endl;
+            }
+            else
+            {
+                cout << "You Don't have enough money!" << endl;
+            }
+            break;
+        case 0:
+            loop3 = false;
+            break;
+
+        default:
+            cout << "Wrong Number!\nTry Again:" << endl;
+        }
     }
 }
 
