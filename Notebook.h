@@ -5,10 +5,6 @@
 
 using namespace std;
 
-//OP_overloading for printing Notebook informarions(Reading Notebook)
-template <typename T>
-inline ostream &operator<<(ostream &Output, vector <T> &);
-
 class Notebook
 {
 private:
@@ -22,6 +18,9 @@ public:
 
     //System of Notebook
     void Initialize_NoteBook();
+    //OP_overloading for printing Notebook informarions(Reading Notebook)
+    template <typename T>
+    friend inline ostream &operator<<(ostream &, vector <T> &);
 };
 template <typename T>
 ostream &operator<<(ostream &Output, vector <T> &n1)
