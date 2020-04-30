@@ -1,11 +1,7 @@
-#ifndef patient
-#define patient
-#include <vector>
-#include<iostream>
+#ifndef Patient_H
+#define Patient_H
 #include"Atar.h"
 #include"Notebook.h"
-
-using namespace std;
 
 class Patients
 {
