@@ -8,6 +8,7 @@ using namespace std;
 class Notebook
 {
 private:
+    //For keeping Notes
     vector <string> notebook;
 public:
     //For Editing NoteBook
@@ -18,10 +19,15 @@ public:
 
     //System of Notebook
     void Initialize_NoteBook();
+
     //OP_overloading for printing Notebook informarions(Reading Notebook)
     template <typename T>
     friend inline ostream &operator<<(ostream &, vector <T> &);
+
+    //For Reading Notes
+    void Read_Note();
 };
+
 template <typename T>
 ostream &operator<<(ostream &Output, vector <T> &n1)
 {
@@ -31,6 +37,12 @@ ostream &operator<<(ostream &Output, vector <T> &n1)
     Output << "Page(" << page << ")" << endl;
     Output << n1[page - 1] << endl;
     return Output;
+}
+
+void Notebook::Read_Note()
+{
+    cout << "You choosed to read your notes..." << endl;
+    cout << notebook << endl;
 }
 
 void Notebook::Add_Note()
@@ -45,7 +57,7 @@ void Notebook::Edit_Note()
     int page;
     cin >> page;
     cout << "Enter your text and press ENTER..." << endl;
-    if (page <= notebook.size())
+    if (page <= notebook.size() && page != 0)
     {
         cin >> notebook[page - 1];
     }
@@ -67,8 +79,7 @@ void Notebook::Initialize_NoteBook()
         switch (choice)
         {
         case 1:
-            cout << "You choosed to read your notes..." << endl;
-            cout << notebook << endl;
+            Read_Note();
             break;
         case 2:
             Add_Note();
