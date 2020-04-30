@@ -1,11 +1,24 @@
-#ifndef a
-#define a
+#ifndef App_H
+#define App_H
+#include "Atar.h"
+#include "Patients.h"
+#include "Internet.h"
+#include "Market.h"
+#include "Notebook.h"
+#include "Laboratory.h"
 
+using namespace std;
 
 class App
 {
-
-static void ShowMenu(Atar &);
-
+public:
+    //Initializing classes
+    Atar Amo_Atar;
+    Market Bazar;
+    Notebook NoteBook;
+    Labratory Lab;
+    
+    //App System Function
+    void ShowMenu();
 };
 #endif
