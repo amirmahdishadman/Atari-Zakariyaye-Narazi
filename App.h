@@ -1,11 +1,28 @@
-#ifndef a
-#define a
+#ifndef App_H
+#define App_H
+#include <fstream>
+#include "Atar.h"
+#include "Patients.h"
+#include "Internet.h"
+#include "Market.h"
+#include "Notebook.h"
+#include "Laboratory.h"
 
+using namespace std;
 
 class App
 {
+public:
+    //Initializing classes
+    Atar Amo_Atar;
+    Market Bazar;
+    Notebook NoteBook;
+    Labratory Lab;
+    
+    //App System Function
+    void ShowMenu();
 
-static void ShowMenu(Atar &);
-
+    //For Saving the Game
+    void SaveProcess();
 };
 #endif
