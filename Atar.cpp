@@ -13,7 +13,7 @@ inline ostream &operator<<(ostream &Output, vector <T> &vct)
 
 void Atar::setMoney(double money)
 {
-    cout << repository_herbs << "ndisnd" << endl;
+    // cout << repository_herbs << "ndisnd" << endl;
     this->Money=money;
 }
 double Atar::getMoney()
@@ -47,6 +47,9 @@ int Atar::getReputation_amount()
 Atar::Atar()
 {
     initialize_vectors();
+    Level2_Rep=30;
+    Level3_Rep=70;
+    Level4_Rep=150;
 }
 void Atar::initialize_vectors()
 {
@@ -79,3 +82,26 @@ double Atar::get_repository_amount(string herb_name)
     return repository_amount[index];
 }
 
+void Atar::Show_State(Atar &amoo_atar)
+{
+    cout<<"~> Meghdar Daroo Haye Mojod:"<<endl;
+    cout<<amoo_atar.repository_herbs;
+    cout<<amoo_atar.repository_amount;
+    cout<<endl;
+
+    cout<<"Mizan Servat Shoma : "<<amoo_atar.getMoney()<<"   |     Mizan Sath Shohrat Shoma : "<<amoo_atar.getReputation_Level()<<endl;
+    cout<<"Mizan Shohrat Shoma : "<<amoo_atar.getReputation_amount()<<"    |    Mizan Shohrat Lazem Baraye ";
+    if(amoo_atar.getReputation_Level()==1)
+    {
+        cout<<"Sath 2 : "<<amoo_atar.Level2_Rep-amoo_atar.getReputation_amount()<<endl;
+    }
+    else if(amoo_atar.getReputation_Level()==2)
+    {
+        cout<<"Sath 3 : "<<amoo_atar.Level3_Rep-amoo_atar.getReputation_amount()<<endl;
+    }
+    else if(amoo_atar.getReputation_Level()==3)
+    {
+        cout<<"Barande Shodan : "<<amoo_atar.Level4_Rep-amoo_atar.getReputation_amount()<<endl;
+    }
+    
+}

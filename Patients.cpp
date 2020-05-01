@@ -1,6 +1,6 @@
 #include <ctime>
+#include <iomanip>
 #include "Patients.h"
-#include<iomanip>
 
 using namespace std;
 
@@ -110,9 +110,7 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
 
 
     //*****************************cost show end*************************************
-
-
-    // to hamin tabe man bare herb o zadam hala to baraye meghdar o gheymat hame sathaye dg to hamin bzn
+    return output;
 }
 
 
@@ -350,24 +348,47 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                 }
                 else if(costpos=="toomuch")
                 {
-                    cout<<"Mage Sar Gardanas ???!!! ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl;
+                    cout<<"Mage Sar Gardanas ?!"<<endl;
+                    cout<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl;
                     Reputation_Change-=5;
                     break;
                 }
             }
 
         }
-        amoo_atar.setReputation_amount(amoo_atar.getReputation_amount+Reputation_Change);
+        amoo_atar.setReputation_amount(amoo_atar.getReputation_amount()+Reputation_Change);
         cout<<"Sath Shohrat Shoma Dar in Forosh "<<Reputation_Change<<" Taghir Kard."<<endl;
-        amoo_atar.setMoney(amoo_atar.getMoney+(Money_change));
-        cout<<"You get "<<Money_change<<" Money in this deal.";
+        amoo_atar.setMoney(amoo_atar.getMoney()+(Money_change));
+         cout<<"Frosh Shoma Dar In Kharid  ~> "<<Money_change<<" Bood."<<endl;
+
+        cout<<"----------------------------------------------------------------------------"<<endl;
 
 
 
 
 
-
-
+    }
+    if(amoo_atar.getReputation_amount()>=150)
+    {
+        cout<<"####################################################################"<<endl;
+        cout<<"# -- -- -- -- -- -- -- -- --  YOU WON!  -- -- -- -- -- -- -- -- -- #"<<endl;
+        cout<<"####################################################################"<<endl;
+        amoo_atar.setReputation_Level(4);
+        exit(0);
+    }
+    else if(amoo_atar.getReputation_amount()>=70&&amoo_atar.getReputation_Level()==2)
+    {
+        cout<<"############################################################################"<<endl;
+        cout<<"# -- -- -- -- -- -- -- -- --  You Are Level 3!  -- -- -- -- -- -- -- -- -- #"<<endl;
+        cout<<"############################################################################"<<endl;
+        amoo_atar.setReputation_Level(3);
+    }
+    else if(amoo_atar.getReputation_amount()>=30&&amoo_atar.getReputation_Level()==1)
+    {
+        cout<<"###########################################################################"<<endl;
+        cout<<"# -- -- -- -- -- -- -- -- -- You Are Level 2!  -- -- -- -- -- -- -- -- -- #"<<endl;
+        cout<<"###########################################################################"<<endl;
+        amoo_atar.setReputation_Level(2);
     }
 }
 
@@ -521,7 +542,6 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
 
 Patients Patients::get_patient(int level)//end 
 {
-    srand(time(0));
     switch (level)
     {
         case 1:
@@ -570,14 +590,13 @@ Patients Patients::get_patient(int level)//end
         }
 
     }
-
+    return *this;
 }
 
 
 
 void Patients::set_number_of_patients(int level,bool server_is_byed)//end aval ino seda mizanim
 {
-    srand(time(0));
     int num=0;
     if(server_is_byed)
     {

@@ -22,8 +22,13 @@ private:
 public:
     //Constructor for initializing setters
     Atar();
+    int Level2_Rep;
+    int Level3_Rep;
+    int Level4_Rep;
     //set Vectors
     void initialize_vectors();
+    //SHow info about atar
+    void Show_State(Atar&);
     //return index of each herb
     int get_repository_herbs_index(string);
     //set repository amount by herbname

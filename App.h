@@ -18,11 +18,15 @@ public:
     Market Bazar;
     Notebook NoteBook;
     Labratory Lab;
+    Patients Patient;
     
     //App System Function
     void ShowMenu();
 
     //For Saving the Game
     void SaveProcess();
+
+    //For Loading the Game
+    void LoadProcess();
 };
 #endif
