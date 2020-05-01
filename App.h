@@ -1,5 +1,6 @@
 #ifndef App_H
 #define App_H
+#include <fstream>
 #include "Atar.h"
 #include "Patients.h"
 #include "Internet.h"
@@ -20,5 +21,8 @@ public:
     
     //App System Function
     void ShowMenu();
+
+    //For Saving the Game
+    void SaveProcess();
 };
 #endif

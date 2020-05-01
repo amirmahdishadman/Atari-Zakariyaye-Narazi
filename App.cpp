@@ -59,3 +59,21 @@ void App::ShowMenu()
       }
    }
 }
+
+void App::SaveProcess()
+{
+   ofstream OutFile("Save.txt", ios::out);
+   if (!OutFile)
+   {
+      cerr << "Save Failed, Attempt Again!" << endl;
+   }
+   else
+   {
+      OutFile << "Level: " << Amo_Atar.getReputation_Level() << endl;
+      OutFile << "Reputation: " << Amo_Atar.getReputation_amount() << endl;
+      OutFile << "Money: " << Amo_Atar.getMoney() << endl;
+      OutFile << "Inventory: " << Amo_Atar.repository_herbs;
+      OutFile << "Sec: " << Bazar.Security << " HLv1: " << Bazar.Herbs_Level2 << " HLv2: " << Bazar.Herbs_Level3
+      << " GUI: " << Bazar.GUI << " Cap: " << Bazar.Increasing_Server_Capacity << " Lab: " << Bazar.Lab << endl;
+   }
+}
