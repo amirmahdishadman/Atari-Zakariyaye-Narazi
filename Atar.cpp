@@ -46,12 +46,16 @@ int Atar::getReputation_amount()
 //aded ------------------------------------------------------------------------------------------------
 Atar::Atar()
 {
-    initialize_repository_vectors();
+    initialize_vectors();
 }
-void Atar::initialize_repository_vectors()
+void Atar::initialize_vectors()
 {
     repository_herbs.reserve(22);
+    repository_herbs = {"Narenj", "khar maryam", "Shahtare", "KhakShir", "Marze", "Ocaliptos"
+    , "Darchin", "Avishan", "Jo dosar", "Sir", "Gon", "Karchak", "Shirin Bayan", "Barg Aloevera", "Asal"
+    , "Jinsing", "Gol Gavzabon", "Zaferan", "Ostokhoddos", "Alcohol", "Naphtaline", "Kafoor"};
     repository_amount.reserve(22);
+    Reputation_amount = {0};
 }
 int Atar::get_repository_herbs_index(string herb_name)
 {
