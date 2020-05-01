@@ -17,7 +17,7 @@ public:
     bool Lab;
     /*Setters for set values*/
     void set_Security();
-    void set_Herbs_Level2();
+    void set_Herbs_Level2();//kharideshon vabaste be sath
     void set_Herbs_Level3();
     void set_GUI();
     void set_Increasing_Server_Capacity();
