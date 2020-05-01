@@ -17,7 +17,7 @@ public:
     bool Lab;
     /*Setters for set values*/
     void set_Security();
-    void set_Herbs_Level2();//kharideshon vabaste be sath
+    void set_Herbs_Level2();
     void set_Herbs_Level3();
     void set_GUI();
     void set_Increasing_Server_Capacity();
@@ -35,6 +35,8 @@ public:
     void Buy(Atar &);
     void Buy_Herbs_Level1(Atar &);
     void Buy_Herbs_Level2(Atar &);
+    //Check Atar's Level to Unlock related options
+    void Check_Level(Atar &);
 };
 
 void Market::set_Security()
@@ -491,8 +493,18 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
     }
 }
 
+void Market::Check_Level(Atar &amo_atar)
+{
+    if (amo_atar.getReputation_Level() >= 2)
+    {
+        Herbs_Level2 = true;
+    }
+}
+
 void Market::Buy(Atar &amo_atar)
 {
+    Check_Level(amo_atar);
+
     cout << "\t\t\t Welcome to The Market" << endl;
     cout << "What Do you want to buy ?" << endl;
     cout << "(1) Level 1 goods" << endl;
@@ -518,7 +530,7 @@ void Market::Buy(Atar &amo_atar)
         case 2:
             if (Check_Herbs_Level2() == true)
             {
-                Buy_Herbs_Level1(amo_atar);
+                Buy_Herbs_Level2(amo_atar);
             }
             break;
         case 3:
@@ -564,7 +576,7 @@ void Market::Buy(Atar &amo_atar)
             }
             break;
         case 6:
-            if (amo_atar.getMoney() >= 350000)
+            if (amo_atar.getMoney() >= 350000 && amo_atar.getReputation_Level() >= 3)
             {
                 //Unlock Lab
                 Lab = true;
@@ -574,7 +586,7 @@ void Market::Buy(Atar &amo_atar)
             }
             else
             {
-                cout << "You Don't have enough money!" << endl;
+                cout << "Shoma hano be pol ya sathe kafi naresidid!" << endl;
             }
             break;
         case 0:
