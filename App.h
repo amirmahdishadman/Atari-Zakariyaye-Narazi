@@ -25,5 +25,8 @@ public:
 
     //For Saving the Game
     void SaveProcess();
+
+    //For Loading the Game
+    void LoadProcess();
 };
 #endif
