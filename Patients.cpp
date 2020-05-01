@@ -357,17 +357,39 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
             }
 
         }
-        amoo_atar.setReputation_amount(amoo_atar.getReputation_amount+Reputation_Change);
+        amoo_atar.setReputation_amount(amoo_atar.getReputation_amount()+Reputation_Change);
         cout<<"Sath Shohrat Shoma Dar in Forosh "<<Reputation_Change<<" Taghir Kard."<<endl;
-        amoo_atar.setMoney(amoo_atar.getMoney+(Money_change));
-        cout<<"You get "<<Money_change<<" Money in this deal.";
+        amoo_atar.setMoney(amoo_atar.getMoney()+(Money_change));
+         cout<<"Frosh Shoma Dar In Kharid  ~> "<<Money_change<<" Bood."<<endl;
+
+        cout<<"----------------------------------------------------------------------------"<<endl;
 
 
 
 
 
-
-
+    }
+    if(amoo_atar.getReputation_amount()>=150)
+    {
+        cout<<"####################################################################"<<endl;
+        cout<<"# -- -- -- -- -- -- -- -- --  YOU WON!  -- -- -- -- -- -- -- -- -- #"<<endl;
+        cout<<"####################################################################"<<endl;
+        amoo_atar.setReputation_Level(4);
+        exit(0);
+    }
+    else if(amoo_atar.getReputation_amount()>=70&&amoo_atar.getReputation_Level()==2)
+    {
+        cout<<"############################################################################"<<endl;
+        cout<<"# -- -- -- -- -- -- -- -- --  You Are Level 3!  -- -- -- -- -- -- -- -- -- #"<<endl;
+        cout<<"############################################################################"<<endl;
+        amoo_atar.setReputation_Level(3);
+    }
+    else if(amoo_atar.getReputation_amount()>=30&&amoo_atar.getReputation_Level()==1)
+    {
+        cout<<"###########################################################################"<<endl;
+        cout<<"# -- -- -- -- -- -- -- -- -- You Are Level 2!  -- -- -- -- -- -- -- -- -- #"<<endl;
+        cout<<"###########################################################################"<<endl;
+        amoo_atar.setReputation_Level(2);
     }
 }
 

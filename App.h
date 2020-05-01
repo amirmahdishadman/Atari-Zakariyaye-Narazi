@@ -18,6 +18,7 @@ public:
     Market Bazar;
     Notebook NoteBook;
     Labratory Lab;
+    Patients Patient;
     
     //App System Function
     void ShowMenu();

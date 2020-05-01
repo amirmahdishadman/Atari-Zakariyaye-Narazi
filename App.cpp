@@ -34,28 +34,57 @@ void App::ShowMenu()
       //Control Inputs
       switch (listnumber)
       {
-      case 1:
-         break;
-      case 2:
-         Internet::internet(Amo_Atar.getReputation_Level());
-         break;
-      case 3:
-         break;
-      case 4:
-         Bazar.Buy(Amo_Atar);
-         break;
-      case 5:
-         NoteBook.Initialize_NoteBook();
-         break;
-      case 6:
-         Lab.Initialize_Labratory(Bazar.Check_Lab(), Amo_Atar);
-         break;
-      case 0:
-         cout << "Kharej shodan az bazi..." << endl;
-         exit(0);
-      default:
-         cout << "Itemi ba in shomare vojod nadarad" << endl;
-         break;
+         case 1:
+         {
+            Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Amo_Atar,NoteBook);
+            break;
+         }
+         case 2:
+         {
+            Internet::internet(Amo_Atar.getReputation_Level());
+            break;
+         }
+         
+         case 3:
+         {
+            Amo_Atar.Show_State(Amo_Atar);
+            break;
+         }
+            
+         case 4:
+         {
+            Bazar.Buy(Amo_Atar);
+            break;
+         }
+            
+         case 5:
+         {
+            NoteBook.Initialize_NoteBook();
+            break;
+         }
+         //Lab ********************************
+         if(Bazar.Check_Lab() == true)
+         {
+             case 6:
+            {
+               Lab.Initialize_Labratory(Bazar.Check_Lab(), Amo_Atar);
+               break;
+            }
+         }
+         //end Lab *****************************
+         case 0:
+         {
+            cout << "Kharej shodan az bazi..." << endl;
+            exit(0);
+            break;
+         }
+            
+         default:
+         {
+            cout << "Itemi ba in shomare vojod nadarad" << endl;
+            break;
+         }
+         
       }
    }
 }
