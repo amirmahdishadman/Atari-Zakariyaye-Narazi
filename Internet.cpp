@@ -1,11 +1,13 @@
 #include "Internet.h"
-#include<iostream>
+#include <iostream>
+
 using namespace std;
+
 void Internet::internet(int level)
 {
 
 cout<<"Baraye Motalee Darbare Daro Ha Be Link Zir Morajee konid:"<<endl;
-cout<<"https://github.com/amirmahdishadman/Drug-and-disease-information"<<endl;
+cout<<"\thttps://github.com/amirmahdishadman/Drug-and-disease-information"<<endl;
 switch(level)
 {
 
