@@ -98,7 +98,7 @@ void App::ShowMenu()
 
 void App::SaveProcess()
 {
-   ofstream OutFile("Save.txt", ios::binary);
+   ofstream OutFile("Save.txt", ios::out);
    if (!OutFile)
    {
       cerr << "Save Failed, Attempt Again!" << endl;
@@ -110,14 +110,18 @@ void App::SaveProcess()
       OutFile << Amo_Atar.getMoney() << endl;
       OutFile << Bazar.Security << " " << Bazar.Herbs_Level2 << " " << Bazar.Herbs_Level3
       << " " << Bazar.GUI << " " << Bazar.Increasing_Server_Capacity << " " << Bazar.Lab << endl;
-      OutFile << Amo_Atar.repository_herbs;
+      for (int i = 0; i < 22; i++)
+      {
+         OutFile << Amo_Atar.repository_herbs[i] << " ";
+      }
+      
       OutFile.close();
    }
 }
 
 void App::LoadProcess()
 {
-   ifstream InFile("Save.txt", ios::binary);
+   ifstream InFile("Save.txt", ios::in);
    if (!InFile)
    {
       cerr << "Loading Failed,\n Maybe you've deleted the save.txt file or file format's been Corrupted!" << endl;
