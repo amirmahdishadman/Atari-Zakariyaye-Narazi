@@ -1,23 +1,37 @@
 #include <ctime>
-#include <iomanip>
+#include<iomanip>
 #include "Patients.h"
-
+//#define TestCase         //<<<---------->>> For Using TestCase Oncomment it!
 using namespace std;
 
 ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat sakhtam, edamaro boro
 {  
      // alan ino uncoment kon va tedade bimaraye sathe yek o bezari kar mikone
-    //***************************Herbs show start*********************************
-    cout<<"Herbs: "<<endl;
+    //***************************Herbs-cost-amount show start*********************************
+    cout<<"            ____________________________________________________________________________________"<<endl;
+
+            cout<<setw(30)<<"Esme Daroo"<< " ";
+            cout<<setw(30)<<"Gheymat Monsefane"<< " ";
+            cout<<setw(30)<<"Meghdar Monsefane"<< " ";
+            cout<<endl;
+            cout<<endl;
+            cout<<"            ____________________________________________________________________________________"<<endl;
+
+
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 3; j++)
         {//instance-vector-sathebimari-kole bimariya dar in sath-giyaha az 1 ta3
-        if(i==3&&j==0)
-        {
-            continue;
-        }
-            cout<< setw(12) << patients.patients_vect[0][i].Herb[j] << " ";
+            if(i==3&&j==0)
+            {
+                continue;
+            }
+            cout<<setw(30)<<patients.patients_vect[0][i].Herb[j] << " ";
+            cout<<setw(30)<<patients.patients_vect[0][i].cost[j] << " ";
+            cout<<setw(30)<<patients.patients_vect[0][i].Amount[j] << " ";
+            cout<<endl;
+            cout<<"            ____________________________________________________________________________________"<<endl;
+            
         }
         
     }
@@ -30,117 +44,51 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
         {
             continue;
         }
-            cout<< setw(12) << patients.patients_vect[1][i].Herb[j] << " ";
+            cout<<setw(30)<<patients.patients_vect[1][i].Herb[j] << " ";
+            cout<<setw(30)<<patients.patients_vect[1][i].cost[j] << " ";
+            cout<<setw(30)<<patients.patients_vect[1][i].Amount[j] << " ";
+            cout<<endl;
+            cout<<"            ____________________________________________________________________________________"<<endl;
         }
         
     }
      for (int i = 0; i < 3; i++)
     {
-        cout<< setw(12) << patients.patients_vect[2][i].Herb[0] << " ";
+        cout<<setw(30)<<patients.patients_vect[2][i].Herb[0] << " ";
+        cout<<setw(30)<<patients.patients_vect[2][i].cost[0] << " ";
+        cout<<setw(30)<<patients.patients_vect[2][i].Amount[0] << " ";
+        cout<<endl;
+        cout<<"            ____________________________________________________________________________________"<<endl;
     }
-    //*****************************Herbs show end************************************
+    //*****************************Herbs-cost-amount show end************************************
 
 
-    //*****************************cost show start************************************
-    cout<<"Fair Cost: "<<endl;
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {//instance-vector-sathebimari-kole bimariya dar in sath-giyaha az 1 ta3
-        if(i==3&&j==0)
-        {
-            continue;
-        }
-            cout<< setw(12) << patients.patients_vect[0][i].cost[j] << " ";
-        }
-        
-    }
-     for (int i = 0; i < 3; i++)
-    {
-        
-        for (int j = 0; j < 3; j++)
-        {//instance-vector-sathebimari-kole bimariya dar in sath-giyaha az 1 ta3
-         if(i==2&&j==2)
-        {
-            continue;
-        }
-            cout<< setw(12) << patients.patients_vect[1][i].cost[j] << " ";
-        }
-        
-    }
-     for (int i = 0; i < 3; i++)
-    {
-        cout<< setw(12) << patients.patients_vect[2][i].cost[0] << " ";
-    }
-
-
-    //*****************************cost show end*************************************
-
-    //*****************************amount show start************************************
-    cout<<"Fair Amount: "<<endl;
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {//instance-vector-sathebimari-kole bimariya dar in sath-giyaha az 1 ta3
-        if(i==3&&j==0)
-        {
-            continue;
-        }
-            cout<< setw(12) << patients.patients_vect[0][i].Amount[j] << " ";
-        }
-        
-    }
-     for (int i = 0; i < 3; i++)
-    {
-        
-        for (int j = 0; j < 3; j++)
-        {//instance-vector-sathebimari-kole bimariya dar in sath-giyaha az 1 ta3
-         if(i==2&&j==2)
-        {
-            continue;
-        }
-            cout<< setw(12) << patients.patients_vect[1][i].Amount[j] << " ";
-        }
-        
-    }
-     for (int i = 0; i < 3; i++)
-    {
-        cout<< setw(12) << patients.patients_vect[2][i].Amount[0] << " ";
-    }
-
-
-    //*****************************cost show end*************************************
     return output;
 }
 
 
-Patients::Patients()
-{
-    set_patients_vect();
-}
 
 //******************Refer************************
-void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Notebook &notebook)
+void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Notebook &notebook,Patients &patient)
 {
     bool herbbool=true,amountisok=true,costisok=true;
     char notelist;
     char herbcount;
     int herbcountint=0;
-    Patients P;
-    set_number_of_patients(Level,Server_Capacity);
-    cout<<"Tedad "<<Number_of_patients<<" Moshtari Morajee Karde and."<<endl<<endl<<endl;
+    patient.set_number_of_patients(Level,Server_Capacity);
+    cout<<endl<<endl<<endl<<endl<<"Tedad "<<this->Number_of_patients<<" Moshtari Morajee Karde Ast."<<endl<<endl;
     cout<<"-> Sharh Daroo Ha:"<<endl;
-    cout<<P<<endl<<endl<<endl;
-    cout<<">Be Atari Zakariyaye Narazi Khosh Amadid."<<endl<<">Moshkel Khod Ra Befarmaid :"<<endl;//can be beautiful mode
+    cout<<patient<<endl<<endl<<endl;
+    cout<<" ~>Be Atari Zakariyaye Narazi Khosh Amadid."<<endl<<endl;//can be beautiful mode
     //---------------------------------------------------------------
-    for(int i=1;i<=Number_of_patients;i++)
+    for(int i=1;i<=this->Number_of_patients;i++)
     {
         bool save_customer=true;
         double Reputation_Change=0;
         double Money_change=0;
-        P=get_patient(Level);
-        cout<<"Salam. Man Moshkel "<<P.Ill<<"Ra Daram."<<endl;
-        cout<<"Atar aziz Ba Tavajoh be Bimari , Mavared zir ra Javab Dahid."<<endl;
+        patient=get_patient(Level);
+        cout<<"Salam. Man "<<patient.Ill<<" Daram."<<endl<<endl;
+        cout<<"Atar aziz Ba Tavajoh be Bimari , Mavared zir ra Javab Dahid."<<endl<<endl;
 
 
 
@@ -219,25 +167,25 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
             cout<<"Lotfan Gheymat Mored Nazar Daroye shomare "<<j<<" Ra Bar Asas Jadval Vared Konid:"<<endl;
             cin>>cost;
 
-            int herbindex=Herbs_system_check(P,herb);
+            int herbindex=Herbs_system_check(patient,herb);
             string costpos;
             string amountpos;
             if (herbindex==-1)
             {
                 herbbool=false;
-                cout<<"Daroye Tajviz Shode ba Bimari Motabeghat Nadarad."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
+                cout<<"Daroye Tajviz Shode ba Bimari Motabeghat Nadarad."<<endl<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
                 Reputation_Change-=5;
                 break;
                 //ok
             }
             else
             {
-                costpos=Cost_system_check(P.cost[herbindex],cost);
-                amountpos=Amount_system_check(P.Amount[herbindex],amount);
+                costpos=Cost_system_check(patient.cost[herbindex],cost);
+                amountpos=Amount_system_check(patient.Amount[herbindex],amount);
 
                 if(amoo_atar.get_repository_amount(herb)<amount)
                 {
-                    cout<<"Enghad Daro Nadarim "<<endl<<"Shoma Moshtari Ra Az Dast Dadid."<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
+                    cout<<" ******* Enghad Daro Nadarim ! ******* "<<endl<<"Shoma Moshtari Ra Az Dast Dadid."<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
                     break;
                 }
                 else if(costpos=="toolow")
@@ -261,7 +209,7 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                         Reputation_Change-=8;
                         Reputation_Change+=4;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=((cost/P.Amount[herbindex])*amount);
+                        Money_change=((cost/patient.Amount[herbindex])*amount);
                     }
                     else if(amountpos=="=")
                     {
@@ -269,15 +217,15 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                         Reputation_Change+=4;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=(((cost/P.Amount[herbindex])*amount));
+                        Money_change=(((cost/patient.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="hedye")
                     {
                         cout<<"Aghaaaaa Kheyli Chakeram Khoda Kheyret bede Dam Shoma Garm"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change+=4;
                         Reputation_Change+=4;
-                        amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(P.Amount[herbindex]));
-                        Money_change=(((cost/P.Amount[herbindex])*amount));
+                        amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(patient.Amount[herbindex]));
+                        Money_change=(((cost/patient.Amount[herbindex])*amount));
                     }
                 }
                 else if(costpos=="=")
@@ -294,7 +242,7 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                         Reputation_Change-=8;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=(((cost/P.Amount[herbindex])*amount));
+                        Money_change=(((cost/patient.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="=")
                     {
@@ -302,15 +250,15 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                         Reputation_Change+=2;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                       Money_change=(((cost/P.Amount[herbindex])*amount));
+                       Money_change=(((cost/patient.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="hedye")
                     {
                         cout<<"Haji Khoda Kheyret bede"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change+=4;
                         Reputation_Change+=2;
-                        amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(P.Amount[herbindex]));
-                        Money_change=(((cost/P.Amount[herbindex])*amount));
+                        amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(patient.Amount[herbindex]));
+                        Money_change=(((cost/patient.Amount[herbindex])*amount));
                     }
                 }
                 else if(costpos=="geran")
@@ -327,7 +275,7 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                         Reputation_Change-=4;
                         Reputation_Change-=8;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=(((cost/P.Amount[herbindex])*amount));
+                        Money_change=(((cost/patient.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="=")
                     {
@@ -335,21 +283,20 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                         Reputation_Change-=4;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=(((cost/P.Amount[herbindex])*amount));
+                        Money_change=(((cost/patient.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="hedye")
                     {
                         cout<<"Chon Hedye dadi Mikharam vali dg Geron nade haji."<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change-=4;
                         Reputation_Change+=4;
-                        amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(P.Amount[herbindex]));
-                        Money_change=(((cost/P.Amount[herbindex])*amount));
+                        amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(patient.Amount[herbindex]));
+                        Money_change=(((cost/patient.Amount[herbindex])*amount));
                     }
                 }
                 else if(costpos=="toomuch")
                 {
-                    cout<<"Mage Sar Gardanas ?!"<<endl;
-                    cout<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl;
+                    cout<<"Mage Sar Gardanas ?!"<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl;
                     Reputation_Change-=5;
                     break;
                 }
@@ -357,9 +304,11 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
 
         }
         amoo_atar.setReputation_amount(amoo_atar.getReputation_amount()+Reputation_Change);
-        cout<<"Sath Shohrat Shoma Dar in Forosh "<<Reputation_Change<<" Taghir Kard."<<endl;
+        cout<<"----------------------------------------------------------------------------"<<endl
+        <<"Sath Shohrat Shoma Dar in Foroosh "<<Reputation_Change<<" Vahed Taghir Kard."<<endl;
+
         amoo_atar.setMoney(amoo_atar.getMoney()+(Money_change));
-         cout<<"Frosh Shoma Dar In Kharid  ~> "<<Money_change<<" Bood."<<endl;
+         cout<<endl<<"Frosh Shoma Dar In Kharid  ~> "<<Money_change<<" Bood."<<endl;
 
         cout<<"----------------------------------------------------------------------------"<<endl;
 
@@ -397,6 +346,11 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
 void Patients::set_patients_vect()//level 3 monde --dar initializer
 {
     Patients p;
+    patients_vect.reserve(3);
+    patients_vect[0].reserve(4);
+    patients_vect[1].reserve(3);
+    patients_vect[2].reserve(3);
+
     /*
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     *                                                             *
@@ -409,9 +363,9 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[1]="khar maryam";
     p.Herb[2]="Narenj";
    
-    p.cost[0]=12500;
-    p.cost[1]=12500;
-    p.cost[2]=8000;
+    p.cost[0]=15500;
+    p.cost[1]=15500;
+    p.cost[2]=10000;
 
     p.Amount[0]=1;
     p.Amount[1]=3;
@@ -423,9 +377,9 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[1]="KhakShir";
     p.Herb[2]="Darchin";
 
-    p.cost[0]=8000;
-    p.cost[1]=5000;
-    p.cost[2]=10000;
+    p.cost[0]=9500;
+    p.cost[1]=6000;
+    p.cost[2]=12000;
 
     p.Amount[0]=5;
     p.Amount[1]=1;
@@ -437,9 +391,9 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[1]="Jo dosar";
     p.Herb[2]="Sir";
 
-    p.cost[0]=10000;
-    p.cost[1]=20000;
-    p.cost[2]=8000;
+    p.cost[0]=12000;
+    p.cost[1]=24000;
+    p.cost[2]=9000;
 
     p.Amount[0]=5;
     p.Amount[1]=1;
@@ -451,9 +405,9 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[1]="Karchak";
     p.Herb[2]="Gon";
    
-    p.cost[0]=5000;
-    p.cost[1]=15000;
-    p.cost[2]=12000;
+    p.cost[0]=57000;
+    p.cost[1]=17500;
+    p.cost[2]=14000;
 
     p.Amount[0]=1;
     p.Amount[1]=1;
@@ -471,9 +425,9 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[1]="Shirin Bayan";
     p.Herb[2]="Barg Aloevera";
    
-    p.cost[0]=35500;
-    p.cost[1]=7000;
-    p.cost[2]=15500;
+    p.cost[0]=40500;
+    p.cost[1]=8000;
+    p.cost[2]=17900;
 
     p.Amount[0]=1;
     p.Amount[1]=1;
@@ -485,9 +439,9 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[1]="Jinsing";
     p.Herb[2]="Ocaliptoos";
    
-    p.cost[0]=8000;
-    p.cost[1]=25000;
-    p.cost[2]=14700;
+    p.cost[0]=9300;
+    p.cost[1]=31000;
+    p.cost[2]=16100;
 
     p.Amount[0]=5;
     p.Amount[1]=1;
@@ -499,9 +453,9 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[1]="Gol Gavzabon";
     p.Herb[2]="Ostokhoddos";
    
-    p.cost[0]=95000;
-    p.cost[1]=8000;
-    p.cost[2]=15000;
+    p.cost[0]=110000;
+    p.cost[1]=9500;
+    p.cost[2]=17000;
 
     p.Amount[0]=1;
     p.Amount[1]=5;
@@ -514,22 +468,26 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     *                                                             *
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
     */
-    p.Ill="Alcohol";
+    p.Ill="Niyaz Be Alcohol";
+
+    p.Herb[0]="Alcohol";
    
     p.cost[0]=30000;
 
     p.Amount[0]=1;
 
     this->patients_vect[2][0]=p;
+    p.Ill="Niyaz Be Naphtaline";
 
-    p.Ill="Naphtaline";
+    p.Herb[0]="Naphtaline";
   
     p.cost[0]=5000;
     
     p.Amount[0]=1;
     this->patients_vect[2][1]=p;
+    p.Ill="Niyaz Be Kafoor";
 
-    p.Ill="Kafoor";
+    p.Herb[0]="Kafoor";
   
     p.cost[0]=5000;
     
@@ -546,13 +504,20 @@ Patients Patients::get_patient(int level)//end
     {
         case 1:
         {  
+            
+            #ifndef TestCase
             int cn;
             cn=rand()%4;
             return this->patients_vect[0][cn];
+            #endif
+            #ifdef TestCase
+            return this->patients_vect[0][0];
+            #endif
             break; 
         }
         case 2:
         {
+            #ifndef TestCase
             int cn1,cn2,cn3;
             cn1=rand()%4;
             cn2=rand()%3;
@@ -565,10 +530,15 @@ Patients Patients::get_patient(int level)//end
             {
                 return this->patients_vect[1][cn2];
             }
+            #endif
+            #ifdef TestCase
+            return this->patients_vect[1][0];
+            #endif
             break;
         }
         case 3:
         {
+            #ifndef TestCase
             int cn1,cn2,cn3,cn4;
             cn1=rand()%4;
             cn2=rand()%3;
@@ -584,11 +554,15 @@ Patients Patients::get_patient(int level)//end
             }
             else
             {
-                return this->patients_vect[3][cn3];
+                return this->patients_vect[2][cn3];
             }
+            #endif
+            #ifdef TestCase
+            return this->patients_vect[2][0];
+            #endif
             break;
         }
-
+        
     }
     return *this;
 }
@@ -597,6 +571,7 @@ Patients Patients::get_patient(int level)//end
 
 void Patients::set_number_of_patients(int level,bool server_is_byed)//end aval ino seda mizanim
 {
+    #ifndef TestCase
     int num=0;
     if(server_is_byed)
     {
@@ -607,6 +582,10 @@ void Patients::set_number_of_patients(int level,bool server_is_byed)//end aval i
         num=rand()%4+1;
     }
     this->Number_of_patients=num;
+    #endif
+    #ifdef TestCase
+    this->Number_of_patients=1;
+    #endif
 }
 
 

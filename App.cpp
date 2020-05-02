@@ -7,22 +7,23 @@ void App::ShowMenu()
 
    //User Choice
    int listnumber;
-   cin >> listnumber;
-
+   
+   Patient.set_patients_vect();
    //Game Loop
    while (true)
    {
+      
       //Check whether Lab is Unlocked or not
       if (Bazar.Check_Lab() == true)
       {
-         cout << "Lotfan Az Item haye Zir Entekhab Konid  (Be sorat shomare menu :1 2 3 ...) : " << endl
+         cout << "Lotfan Az Item haye Zir Entekhab Konid  (Be sorat shomare menu : 1 , 2 , 3 , ...) : " << endl
            << "1-Morajee Moshtari" << endl
            << "2-Internet" << endl
            << "3-Moshahede Vaziyat" << endl
            << "4-Bazar" << endl
            << "5-NoteBook" << endl
            << "6-Azmayeshgah"
-           << "0-Kharej shodan az bazi" << endl;
+           << "0-Kharej Shodan Az Bazi" << endl;
       }
       else
       {
@@ -32,18 +33,18 @@ void App::ShowMenu()
            << "3-Moshahede Vaziyat" << endl
            << "4-Bazar" << endl
            << "5-NoteBook" << endl
-           << "0-Kharej shodan az bazi" << endl;
+           << "0-Kharej Shodan Az Bazi" << endl;
       }
 
       //Saving The Game
       SaveProcess();
-
+      cin >> listnumber;
       //Control Inputs
       switch (listnumber)
       {
          case 1:
          {
-            Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Amo_Atar,NoteBook);
+            Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Amo_Atar,NoteBook,Patient);
             break;
          }
          case 2:
@@ -81,14 +82,14 @@ void App::ShowMenu()
          //end Lab *****************************
          case 0:
          {
-            cout << "Kharej shodan az bazi..." << endl;
+            cout << "Kharej Shodan Az Bazi..." << endl;
             exit(0);
             break;
          }
             
          default:
          {
-            cout << "Itemi ba in shomare vojod nadarad" << endl;
+            cout << "Itemi Ba In Shomare Vojod Nadarad !" << endl;
             break;
          }
          

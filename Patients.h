@@ -9,7 +9,6 @@ class Patients
 friend ostream &operator<<(ostream &,Patients &);
 
 public:
-    Patients();
     void set_patients_vect();
     //OP_overloading for printing Herbs, Amounts, Costs Defualt informarions
 
@@ -18,7 +17,7 @@ public:
     int Number_of_patients;
     void set_number_of_patients(int, bool); //set the number of patients in an loop.
     //----------------------------------------------------------------------------------------------
-    void Patients_refer(int,bool,Atar&,Notebook&); //int for level of atar and bool for extera server option.
+    void Patients_refer(int,bool,Atar&,Notebook&,Patients&); //int for level of atar and bool for extera server option.
 
     //------------------------------------------------
 

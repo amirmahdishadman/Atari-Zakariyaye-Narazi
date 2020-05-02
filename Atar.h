@@ -6,10 +6,6 @@
 
 using namespace std;
 
-//OP_overloading for printing Herbs, Amounts, Costs in Inventory informarions
-template <typename T>
-inline ostream &operator<<(ostream &, vector <T> &);
-
 class Atar
 {
 private:

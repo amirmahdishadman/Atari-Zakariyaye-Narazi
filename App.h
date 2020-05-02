@@ -7,6 +7,7 @@
 #include "Market.h"
 #include "Notebook.h"
 #include "Laboratory.h"
+#include<iostream>
 
 using namespace std;
 

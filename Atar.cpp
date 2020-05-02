@@ -1,7 +1,9 @@
 #include"Atar.h"
+//#define TestCase          //<<<---------->>> For Using TestCase Oncomment it!
 
+//OP_overloading for printing Herbs, Amounts, Costs in Inventory informarions
 template <typename T>
-inline ostream &operator<<(ostream &Output, vector <T> &vct)
+ostream &operator<<(ostream &Output, vector <T> &vct)
 {
     for (int i = 0; i < 22; i++)
     {
@@ -13,7 +15,6 @@ inline ostream &operator<<(ostream &Output, vector <T> &vct)
 
 void Atar::setMoney(double money)
 {
-    // cout << repository_herbs << "ndisnd" << endl;
     this->Money=money;
 }
 double Atar::getMoney()
@@ -47,9 +48,23 @@ int Atar::getReputation_amount()
 Atar::Atar()
 {
     initialize_vectors();
+    #ifndef TestCase
     Level2_Rep=30;
     Level3_Rep=70;
     Level4_Rep=150;
+    setReputation_amount(0);
+    setReputation_Level(1);
+    setMoney(300000);
+    #endif
+    #ifdef TestCase
+    initialize_vectors();
+    Level2_Rep=10;
+    Level3_Rep=30;
+    Level4_Rep=60;
+    setMoney(100000000)
+    setReputation_amount(0);
+    setReputation_Level(1);
+    #endif
 }
 void Atar::initialize_vectors()
 {
@@ -58,7 +73,8 @@ void Atar::initialize_vectors()
     , "Darchin", "Avishan", "Jo dosar", "Sir", "Gon", "Karchak", "Shirin Bayan", "Barg Aloevera", "Asal"
     , "Jinsing", "Gol Gavzabon", "Zaferan", "Ostokhoddos", "Alcohol", "Naphtaline", "Kafoor"};
     repository_amount.reserve(22);
-    Reputation_amount = {0};
+    repository_amount = {0};
+    
 }
 int Atar::get_repository_herbs_index(string herb_name)
 {
@@ -89,7 +105,7 @@ void Atar::Show_State(Atar &amoo_atar)
     cout<<amoo_atar.repository_amount;
     cout<<endl;
 
-    cout<<"Mizan Servat Shoma : "<<amoo_atar.getMoney()<<"   |     Mizan Sath Shohrat Shoma : "<<amoo_atar.getReputation_Level()<<endl;
+    cout<<"Mizan Servat Shoma : "<<amoo_atar.getMoney()<<"    |     Mizan Sath Shohrat Shoma : "<<amoo_atar.getReputation_Level()<<endl;
     cout<<"Mizan Shohrat Shoma : "<<amoo_atar.getReputation_amount()<<"    |    Mizan Shohrat Lazem Baraye ";
     if(amoo_atar.getReputation_Level()==1)
     {
