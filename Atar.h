@@ -1,37 +1,29 @@
 #ifndef Atar_H
 #define Atar_H
-#include <iostream>
-#include <vector>
-#include <iomanip>
-
-using namespace std;
+#include "Security_Layer.h"
 
 class Atar
 {
-friend ostream &operator<<(ostream &, Atar &);
 private:
-    //Atar's money
-    double Money;
-    //Atar's Level
-    int Reputation_Level;
-    //Atar's Reputation_amount (necessary for changing levels)
-    int Reputation_amount;
+    //pointer to proxy class (PTPC)
+    Security_Layer* ptr = NULL;
 public:
     //Constructor for initializing setters
     Atar();
-    int Level2_Rep;
-    int Level3_Rep;
-    int Level4_Rep;
     //set Vectors
     void initialize_vectors();
     //SHow info about atar
     void Show_State();
     //return index of each herb
     int get_repository_herbs_index(string);
-    //set repository amount by herbname
-    void set_repository_amount(string,double);
-    //get repository amount by herbname
+    //set repository amount by Herb Name
+    void set_repository_amount(string, double);
+    //set repository amount by index
+    void set_repository_amount(double, int);
+    //get repository amount by Herb Name
     double get_repository_amount(string);
+    //get repository amount by index
+    double get_repository_amount(int);
     //set Atar's money
     void setMoney(double);
     //return Atar's Money
@@ -44,14 +36,9 @@ public:
     void setReputation_amount(int);
     //return Reputation relates on levels
     int getReputation_amount();
-    //repository of herbs of atar
-    vector <string> repository_herbs;
-    vector<string> herbvecreturn();
-    //max 12 char
-    //Balaei o Hamono Ba to set_repository_herbs() besaz o bezn badam to constructoresh ejra kon #check
-    //22
-    vector <double> repository_amount; //setter getter yadet nare #check
-    vector<double> amountvecreturn();
-    //inam hamintor
+    //return Levelx_Rep
+    int get_Level2_Rep();
+    int get_Level3_Rep();
+    int get_Level4_Rep();
 };
 #endif
