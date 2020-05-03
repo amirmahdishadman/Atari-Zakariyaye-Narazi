@@ -195,3 +195,14 @@ void App::LoadProcess()
       }
    }
 }
+
+void App::Hacker()
+{
+   if (Bazar.Check_Security() == false)
+   {
+      double increament;
+      increament = (rand() % 11) * 1000;
+      Amo_Atar.setMoney(Amo_Atar.getMoney() - increament);
+      cout << "\n Az Hesabe shoma Pol bardasht Shode\nHarche Zod Tar Option Security ra Bekharid!" << endl;
+   }
+}
