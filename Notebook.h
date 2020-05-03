@@ -20,9 +20,8 @@ public:
     //System of Notebook
     void Initialize_NoteBook();
 
-    //OP_overloading for printing Notebook informarions(Reading Notebook)
-    template <typename T>
-    friend inline ostream &operator<<(ostream &, vector <T> &);
+    //Printing Notes
+    void print();
 
     //For Reading Notes
     void Read_Note();
