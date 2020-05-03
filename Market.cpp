@@ -109,11 +109,11 @@ Market::Market()
 
 void Market::Buy_Herbs_Level1(Atar &amo_atar)
 {
-    cout << "\t\t\tBuying Goods (Level 2)\n" << endl;
+    cout << "\t\t\tKharide Kala (Level 1)\n" << endl;
     bool loop = true;
     while (loop == true)
     {
-        cout << "Which Herbs do you need?" << endl;
+        cout << "Giyahe Khod Ra Entekhab Konid:" << endl;
         cout << "(1) Narenj  ×1  Cost:8,000" << endl;
         cout << "(2) KharMaryam  ×3  Cost:12,500" << endl;
         cout << "(3) Shahtare  ×1  Cost:12,500" << endl;
@@ -127,7 +127,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
         cout << "(11) Karchak ×1  Cost:15,000" << endl;
         cout << "(12) Gon ×1  Cost:12,000" << endl;
         cout << "press 0 to back to the Market Menu if you are not moshtari here!" << endl;
-        cout << "Your choice: ";
+        cout << "choice: ";
         int choice;
         cin >> choice;
         cout << endl;
@@ -313,11 +313,11 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
 
 void Market::Buy_Herbs_Level2(Atar &amo_atar)
 {
-    cout << "\t\t\tBuying Goods (Level 2)\n" << endl;
+    cout << "\t\t\tKharide Kala (Level 2)\n" << endl;
     bool loop2 = true;
     while (loop2 == true)
     {
-        cout << "Which Herbs do you need?" << endl;
+        cout << "Giyahe Khod Ra Entekhab Konid:" << endl;
         cout << "(1) ShirinBayan  ×1  Cost:7,000" << endl;
         cout << "(2) BargAloevera  ×3  Cost:15,500" << endl;
         cout << "(3) Asal  ×1  Cost:35,500" << endl;
@@ -465,12 +465,12 @@ void Market::Buy(Atar &amo_atar)
 {
     Check_Level(amo_atar);
 
-    cout << "\n\t\t\t Welcome to The Market" << endl;
+    cout << "\n\t\t*------*[Market]*------*" << endl;
     int choice;
     bool loop3 = true;
     while (loop3 == true)
     {
-        cout << "\nWhat Do you want to buy ?" << endl;
+        cout << "\nChe Optioni Mikhayd Bekharid?" << endl;
         cout << "(1) Level 1 goods" << endl;
         cout << "(2) Level 2 goods" << endl;
         cout << "(3) Security   Cost: 150,000T" << endl;
