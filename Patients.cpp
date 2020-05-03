@@ -77,6 +77,7 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
     string herbcount;
     int herbcountint=0;
     patient.set_number_of_patients(Level,Server_Capacity);
+    cout << "\t\t*------*[NoteBook Menu]*------*" << endl;
     cout<<endl<<endl<<endl<<endl<<"Tedad "<<this->Number_of_patients<<" Moshtari Morajee Karde Ast."<<endl<<endl;
     cout<<"-> Sharh Daroo Ha:"<<endl;
     cout<<patient<<endl<<endl<<endl;

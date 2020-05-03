@@ -151,6 +151,7 @@ public:
 
     void Show_State()
     {
+        cout << "\n\t\t*------*[NoteBook Menu]*------*" << endl;
         cout << "~> Meghdar Daroo Haye Mojod:" << endl;
         while (Start != 22)
         {
