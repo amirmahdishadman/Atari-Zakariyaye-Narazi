@@ -2,12 +2,16 @@
 //#define TestCase          //<<<---------->>> For Using TestCase Oncomment it!
 
 //OP_overloading for printing Herbs, Amounts, Costs in Inventory informarions
+static int Start = 0, i = 0;
+static int End = 5, j = 5;
 template <typename T>
 ostream &operator<<(ostream &Output, vector <T> &vct)
 {
-    for (int i = 0; i < 22; i++)
+    Start = i;
+    End = j;
+    for (Start; Start < End; Start++)
     {
-        Output <<setw(12)<< vct[i] << " ";
+        Output <<setw(12)<< vct[Start] << " ";
     }
     Output << endl;
     return Output;
@@ -70,8 +74,8 @@ void Atar::initialize_vectors()
 {
     repository_herbs.reserve(22);
     repository_herbs = {"Narenj", "khar maryam", "Shahtare", "KhakShir", "Marze", "Ocaliptos"
-    , "Darchin", "Avishan", "Jo dosar", "Sir", "Gon", "Karchak", "Shirin Bayan", "Barg Aloevera", "Asal"
-    , "Jinsing", "Gol Gavzabon", "Zaferan", "Ostokhoddos", "Alcohol", "Naphtaline", "Kafoor"};
+    , "Darchin", "Avishan", "Jo dosar", "Sir", "Gon", "Karchak", "ShirinBayan", "BargAloevera", "Asal"
+    , "Jinsing", "GolGavzabon", "Zaferan", "Ostokhoddos", "Alcohol", "Naphtaline", "Kafoor"};
     repository_amount.reserve(22);
     repository_amount = {0};
     
@@ -101,9 +105,24 @@ double Atar::get_repository_amount(string herb_name)
 void Atar::Show_State(Atar &amoo_atar)
 {
     cout<<"~> Meghdar Daroo Haye Mojod:"<<endl;
-    cout<<amoo_atar.repository_herbs;
-    cout<<amoo_atar.repository_amount;
-    cout<<endl;
+    while (Start != 22)
+    {
+        i = Start;
+        j = End;
+        cout<<amoo_atar.repository_herbs;
+        cout<<amoo_atar.repository_amount;
+        cout << "-------------------------------------------------------------" << endl;
+        if (Start == 20)
+        {
+            End = 22;
+        }
+        else
+        {
+            End += 5;
+        }  
+    }
+    Start = 0;
+    End = 5;
 
     cout<<"Mizan Servat Shoma : "<<amoo_atar.getMoney()<<"    |     Mizan Sath Shohrat Shoma : "<<amoo_atar.getReputation_Level()<<endl;
     cout<<"Mizan Shohrat Shoma : "<<amoo_atar.getReputation_amount()<<"    |    Mizan Shohrat Lazem Baraye ";
