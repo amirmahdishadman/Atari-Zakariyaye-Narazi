@@ -68,7 +68,7 @@ void Notebook::Initialize_NoteBook()
     bool loop = true;
     while (loop == true)
     {
-        cout << "\n\t\t*------*[NoteBook]*------*" << endl;
+        cout << "\n\t\t\t   *------*[NoteBook]*------*" << endl;
         cout << "Reading(1) | Addition(2) | Edition(3) | Back To Last Menu(0)" << endl;
         cout << "Entekhabe Shoma: ";
         cin >> choice;

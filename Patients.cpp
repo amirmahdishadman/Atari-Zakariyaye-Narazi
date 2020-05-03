@@ -77,11 +77,14 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
     string herbcount;
     int herbcountint=0;
     patient.set_number_of_patients(Level,Server_Capacity);
-    cout << "\t\t*------*[NoteBook Menu]*------*" << endl;
-    cout<<endl<<endl<<endl<<endl<<"Tedad "<<this->Number_of_patients<<" Moshtari Morajee Karde Ast."<<endl<<endl;
-    cout<<"-> Sharh Daroo Ha:"<<endl;
-    cout<<patient<<endl<<endl<<endl;
-    cout<<" ~>Be Atari Zakariyaye Narazi Khosh Amadid."<<endl<<endl;//can be beautiful mode
+    cout << "\t\t\t*------*[PATIENTS]*------*\n\n\n\n" << endl;
+    cout << "━─━─━━─━━━─━─━「₪」━━─━─━━━─━─━─━" << endl;
+    cout <<"Tedad "<<this->Number_of_patients<<" Moshtari Morajee Karde Ast."<<endl<<endl;
+    cout << "━─━─━━─━━━─━─━「₪」━━─━─━━━─━─━─━" << endl;
+    cout <<"-> Sharh Daroo Ha:"<<endl;
+    cout <<patient<<endl<<endl<<endl;
+    cout <<"\t\t   Be Atari Zakariyaye Narazi Khosh Amadid."<<endl<<endl;
+    cout <<"\t\t    *＊✿❀                        　❀✿＊*" << endl;
     //---------------------------------------------------------------
     for(int i=1;i<=patient.Number_of_patients;i++)
     {
@@ -89,7 +92,9 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
         double Reputation_Change=0;
         double Money_change=0;
         P=get_patient(Level);
-        cout<<"Salam. Man "<<P.Ill<<" Daram."<<endl<<endl;
+        cout << "\n\n\t\t   █▒▒▒▒▒▒▒█     BIMAR HA     █▒▒▒▒▒▒▒█" << endl;
+        cout<<"\t\t\t   Salam. Man "<<P.Ill<<" Daram."<<endl;
+        cout << "\t\t     ࿇ ══━━━━═━━━━✥◈✥═━━━━━━━━══ ࿇\n" << endl;
         cout<<"Atar Aziz Ba Tavajoh Be Bimari , Mavared Zir Ra Javab Dahid."<<endl<<endl;
 
 

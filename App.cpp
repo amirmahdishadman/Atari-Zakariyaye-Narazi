@@ -8,23 +8,52 @@ void App::ShowMenu()
    
    //User Choice
    int listnumber;
+
+   //Welcome
+   cout << "    _____                      _____   __                " << endl;
+   cout << "   /  _  \\   _____   ____     /  _  \\_/  |______ _______ " << endl;
+   cout << "  /  /_\\  \\ /     \\ /  _ \\   /  /_\\  \\   __\\__  \\_  __ \\" << endl;
+   cout << " /    |    \\  Y Y  (  <_> ) /    |    \\  |  / __ \\|  | \\/" << endl;
+   cout << " \\____|__  /__|_|  /\\____/  \\____|__  /__| (____  /__|   " << endl;
+   cout << "         \\/      \\/                 \\/          \\/       " << endl;
+   cout << "  ██████   █████  ███    ███ ███████ " << endl;
+   cout << " ██       ██   ██ ████  ████ ██      " << endl;
+   cout << " ██   ███ ███████ ██ ████ ██ █████   " << endl;
+   cout << " ██    ██ ██   ██ ██  ██  ██ ██      " << endl;
+   cout << "  ██████  ██   ██ ██      ██ ███████" << endl;
    
+
    //Game Loop
    while (true)
    {
+      //GUI
+      if (Bazar.Check_GUI() == true)
+      {
+         cout << "╔═━────━▒      ۞      ▒━────━═╗" << endl;
+                                  
+         cout << "   /\\/\\   ___ _ __  _   _  " << endl;
+         cout << "  /    \\ / _ \\ '_ \\| | | | " << endl;
+         cout << " / /\\/\\ \\  __/ | | | |_| | " << endl;
+         cout << " \\/    \\/\\___|_| |_|\\__,_| " << endl;
+      }
       
       //Check whether Lab is Unlocked or not
       if (Bazar.Check_Lab() == true)
       {
-         cout << "\nLotfan Az Item haye Zir Entekhab Konid: " << endl
-           << "1-Morajee Moshtari" << endl
-           << "2-Internet" << endl
-           << "3-Moshahede Vaziyat" << endl
-           << "4-Bazar" << endl
-           << "5-NoteBook" << endl
-           << "6-Azmayeshgah" << endl
-           << "7-Game Loading" << endl
-           << "0-Kharej Shodan Az Bazi" << endl;
+         cout << "\n\t\tLotfan Az Item haye Zir Entekhab Konid: " << endl
+           << "-_*[1-Morajee Moshtari" << endl
+           << "-_*[2-Internet" << endl
+           << "-_*[3-Moshahede Vaziyat" << endl
+           << "-_*[4-Bazar" << endl
+           << "-_*[5-NoteBook" << endl
+           << "-_*[6-Azmayeshgah" << endl
+           << "-_*[7-Game Loading" << endl
+           << "-_*[0-Kharej Shodan Az Bazi\n" << endl;
+         //GUI
+         if (Bazar.Check_GUI() == true)
+         {
+            cout << "╚═━────━▒      ۞      ▒━────━═╝" << endl;
+         }
       }
       else
       {
@@ -35,22 +64,83 @@ void App::ShowMenu()
            << "4-Bazar" << endl
            << "5-NoteBook" << endl
            << "6-Game Loading" << endl
-           << "0-Kharej Shodan Az Bazi" << endl;
+           << "0-Kharej Shodan Az Bazi\n" << endl;
+         //GUI
+         if (Bazar.Check_GUI() == true)
+         {
+            cout << "╚═━────━▒      ۞      ▒━────━═╝" << endl;
+         }
       }
 
-      cout << "Menu?: ";
+      cout << "Choice?: ";
       cin >> listnumber;
+
+      //GUI
+      if (Bazar.Check_GUI() == true)
+      {
+         cout << "------------" << endl;
+      }
 
       //Control Inputs
       switch (listnumber)
       {
          case 1:
          {
+            //GUI
+            if (Bazar.Check_GUI() == true)
+            {
+               cout << "\t\t     ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁PATIENTS▁▁▁▁▁▁▁▁▁▂▃▄▅\n" << endl;
+               cout << "                     /:""|       .@@@@@," << endl;
+               cout << "     |: 66|_      @@@@@@@@, " << endl;
+               cout << "     C     _)     aa`@@@@@@ " << endl;
+               cout << "      \\ ._|      (_   ?@@@@ " << endl;
+               cout << "       ) /        =' @@@@" << endl;
+               cout << "      /`\\         \\(``` " << endl;
+               cout << "     || |Y|       //`\\        .""~~~~~"". " << endl;
+               cout << "     || |#|      / | ||       |  .:.  | " << endl;
+               cout << "     || |#|      \\ | ||    A  | /6 6\\ | " << endl;
+               cout << "     || |#|      / | ||   |~|_|_\\ e /_|_     .@@@@, " << endl;
+               cout << "     :| |=:     /  | |\\   |_|)___`""`___(8    aa`@@@," << endl;
+               cout << "     ||_|,|    |   |_| \\     |~~~~~~~~~|     =  `@@@ " << endl;
+               cout << "     \\)))||    |   (((  |    \\_________/       )_/`@' " << endl;
+               cout << "  |~~~`-`~~~|  `~\\~~~~~~|     |/ /_\\ \\|       / || @ " << endl;
+               cout << "  |         |     `\\   /      ()/___\\()       | || @ " << endl;
+               cout << "  |_________|       ( ||      ||~~~~~||       /~|| " << endl;
+               cout << "  |_________|       | ||      ||     ||      /__W_\\ " << endl;
+               cout << "      | ||          | ||      ||     ||        ||| " << endl;
+               cout << "      |_||__      __|_||      ||_____||       _||| " << endl;
+               cout << " jgs  (____))    (:;:;))      ||-----||      ((___) " << endl;
+               cout << "------------------------------------------------ " << endl;
+            }
+            
             Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Amo_Atar,NoteBook,Patient);
             break;
          }
          case 2:
          {
+            //GUI
+            if (Bazar.Check_GUI() == true)
+            {
+               cout << "\t\t     ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁INTERNET▁▁▁▁▁▁▁▁▁▂▃▄▅" << endl;
+               cout << "\t\t        .__________________________. " << endl;
+               cout << "\t\t        | .___________________. |==| " << endl;
+               cout << "\t\t        | | ................. | |  | " << endl;
+               cout << "\t\t        | | ::::INTERNET::::: | |  | " << endl;
+               cout << "\t\t        | | ::::::::::::::::: | |  | " << endl;
+               cout << "\t\t        | | :::::GITHUB:::::: | |  | " << endl;
+               cout << "\t\t        | | ::::::::::::::::: | |  | " << endl;
+               cout << "\t\t        | | ::::::::::::::::: | |  | " << endl;
+               cout << "\t\t        | | ::::::::::::::::: | | ,| " << endl;
+               cout << "\t\t        | !___________________! |(c| " << endl;
+               cout << "\t\t        !_______________________!__! " << endl;
+               cout << "\t\t       /                            \\ " << endl;
+               cout << "\t\t      /  [][][][][][][][][][][][][]  \\ " << endl;
+               cout << "\t\t     /  [][][][][][][][][][][][][][]  \\ " << endl;
+               cout << "\t\t    (  [][][][][____________][][][][]  ) " << endl;
+               cout << "\t\t     \\ ------------------------------ / " << endl;
+               cout << "\t\t      \\______________________________/ " << endl;
+            }
+            
             Internet::internet(Amo_Atar.getReputation_Level());
             break;
          }
@@ -69,6 +159,20 @@ void App::ShowMenu()
             
          case 5:
          {
+            //GUI
+            if (Bazar.Check_GUI() == true)
+            {
+               cout << "\t\t       ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁NOTEBOOK▁▁▁▁▁▁▁▁▁▂▃▄▅" << endl;
+               cout << "\t\t    (`/\" " << endl;
+               cout << "\t\t    `=\\/\\ __...--~~~~~-._   _.-~~~~~--...__" << endl;
+               cout << "\t\t     `=\\/\\               \\ /               \\" << endl;
+               cout << "\t\t      `=\\/                V                 \\" << endl;
+               cout << "\t\t      //_\\___--~~~~~~-._  |  _.-~~~~~~--...__\\" << endl;
+               cout << "\t\t     //  ) (..----~~~~._\\ | /_.~~~~----.....__\\" << endl;
+               cout << "\t\t    ===( INK )==========\\|//====================" << endl;
+               cout << "\t\t   _____\\___/__________`---`_____________________" << endl;
+
+            }
             NoteBook.Initialize_NoteBook();
             break;
          }
@@ -104,15 +208,17 @@ void App::ShowMenu()
             cout << "\tSaving The Game..." << endl;
             SaveProcess();
             cout << "============================== GoodBye! ==============================" << endl;
-
-
-            // cout << "    _____                      _____   __                " << endl;
-            // cout << "   /  _  \\   _____   ____     /  _  \\_/  |______ _______ " << endl;
-            // cout << "  /  /_\\  \\ /     \\ /  _ \\   /  /_\\  \\   __\\__  \\_  __ \\" << endl;
-            // cout << " /    |    \\  Y Y  (  <_> ) /    |    \\  |  / __ \\|  | \\/" << endl;
-            // cout << " \\____|__  /__|_|  /\\____/  \\____|__  /__| (____  /__|   " << endl;
-            // cout << "         \\/      \\/                 \\/          \\/       " << endl;
-
+            //GUI
+            if (Bazar.Check_GUI() ==  true)
+            {
+               cout << "\t         wWWWw               wWWWw" << endl;
+               cout << "\t   vVVVv (___) wWWWw         (___)  vVVVv  " << endl;
+               cout << "\t   (___)  ~Y~  (___)  vVVVv   ~Y~   (___)  " << endl;
+               cout << "\t    ~Y~   \\|    ~Y~   (___)    |/    ~Y~" << endl;
+               cout << "\t    \\|   \\ |/   \\| /  \\~Y~/   \\|    \\ |/" << endl;
+               cout << "\t   \\\\|// \\\\|// \\\\|/// \\\\|//  \\\\|// \\\\|/// " << endl;
+               cout << "\t   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
+            }
             exit(0);
             break;
          }
