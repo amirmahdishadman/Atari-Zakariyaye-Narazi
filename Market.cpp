@@ -497,9 +497,9 @@ void Market::Buy(Atar &amo_atar)
             
             break;
         case 3:
-            if (amo_atar.getMoney() >= 150000)
+            if (Security == false)
             {
-                if (Security == false)
+                if (amo_atar.getMoney() >= 150000)
                 {
                     //Initialize Security
                     Security = true;
@@ -509,18 +509,19 @@ void Market::Buy(Atar &amo_atar)
                 }
                 else
                 {
-                    cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
+                    cout << "\nPole Kafi Nadarid!" << endl;
+
                 }
             }
             else
             {
-                cout << "\nPole Kafi Nadarid!" << endl;
+                cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
             }
             break;
         case 4:
-            if (amo_atar.getMoney() >= 200000)
+            if (GUI == false)
             {
-                if (GUI == false)
+                if (amo_atar.getMoney() >= 200000)
                 {
                     //Initialize Second Graphic interface
                     GUI = true;
@@ -530,18 +531,18 @@ void Market::Buy(Atar &amo_atar)
                 }
                 else
                 {
-                    cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
+                    cout << "\nPole Kafi Nadarid!" << endl;
                 }
             }
             else
             {
-                cout << "\nPole Kafi Nadarid!" << endl;
+                cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
             }
             break;
         case 5:
-            if (amo_atar.getMoney() >= 200000)
+            if (Increasing_Server_Capacity == false)
             {
-                if (Increasing_Server_Capacity == false)
+                if (amo_atar.getMoney() >= 200000)
                 {
                     //Unlock more patients in a pass
                     Increasing_Server_Capacity = true;
@@ -551,18 +552,18 @@ void Market::Buy(Atar &amo_atar)
                 }
                 else
                 {
-                    cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
+                    cout << "\nPole Kafi Nadarid!!" << endl;
                 }
             }
             else
             {
-                cout << "\nPole Kafi Nadarid!!" << endl;
+                cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
             }
             break;
         case 6:
-            if (amo_atar.getMoney() >= 350000 && amo_atar.getReputation_Level() >= 3)
+            if (Lab == false)
             {
-                if (Lab == false)
+                if (amo_atar.getMoney() >= 350000 && amo_atar.getReputation_Level() >= 3)
                 {
                     //Unlock Lab
                     Lab = true;
@@ -572,13 +573,13 @@ void Market::Buy(Atar &amo_atar)
                 }
                 else
                 {
-                    cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
+                    cout << "\nShoma Hanoz Be Pol Ya Sathe Kafi Naresidid" << endl;
                 }
                 
             }
             else
             {
-                cout << "\nShoma Hanoz Be Pol Ya Sathe Kafi Naresidid" << endl;
+                cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
             }
             break;
         case 0:
