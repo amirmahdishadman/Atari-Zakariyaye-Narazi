@@ -123,7 +123,7 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
 
         //**********************Manage Number of Herbs************************
 
-        cout<<" ~> Chand Daro Tajviz Mikonid ? (Enter Betwin 1,2,3):"<<endl;
+        cout<<" ~> Chand Daro Tajviz Mikonid ? (Enter Between 1,2,3):"<<endl;
         bool herbcountrepeat=true;
         while(herbcountrepeat)
         {
@@ -422,8 +422,8 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     */
     p.Ill="Moshkelate Poosti";
     p.Herb[0]="Asal";
-    p.Herb[1]="Shirin Bayan";
-    p.Herb[2]="Barg Aloevera";
+    p.Herb[1]="ShirinBayan";
+    p.Herb[2]="BargAloevera";
    
     p.cost[0]=40500;
     p.cost[1]=8000;
@@ -450,7 +450,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
 
     p.Ill="Afsordegi va Na Arami";
     p.Herb[0]="Zaferan";
-    p.Herb[1]="Gol Gavzabon";
+    p.Herb[1]="GolGavzabon";
     p.Herb[2]="Ostokhoddos";
    
     p.cost[0]=110000;
