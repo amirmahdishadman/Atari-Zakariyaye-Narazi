@@ -1,7 +1,7 @@
 #include <ctime>
 #include<iomanip>
 #include "Patients.h"
-//#define TestCase         //<<<---------->>> For Using TestCase Oncomment it!
+#define TestCase         //<<<---------->>> For Using TestCase Oncomment it!
 using namespace std;
 
 ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat sakhtam, edamaro boro
@@ -71,9 +71,10 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
 //******************Refer************************
 void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Notebook &notebook,Patients &patient)
 {
+    Patients P;
     bool herbbool=true,amountisok=true,costisok=true;
     char notelist;
-    char herbcount;
+    string herbcount;
     int herbcountint=0;
     patient.set_number_of_patients(Level,Server_Capacity);
     cout<<endl<<endl<<endl<<endl<<"Tedad "<<this->Number_of_patients<<" Moshtari Morajee Karde Ast."<<endl<<endl;
@@ -81,14 +82,14 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
     cout<<patient<<endl<<endl<<endl;
     cout<<" ~>Be Atari Zakariyaye Narazi Khosh Amadid."<<endl<<endl;//can be beautiful mode
     //---------------------------------------------------------------
-    for(int i=1;i<=this->Number_of_patients;i++)
+    for(int i=1;i<=patient.Number_of_patients;i++)
     {
-        bool save_customer=true;
+        
         double Reputation_Change=0;
         double Money_change=0;
-        patient=get_patient(Level);
-        cout<<"Salam. Man "<<patient.Ill<<" Daram."<<endl<<endl;
-        cout<<"Atar aziz Ba Tavajoh be Bimari , Mavared zir ra Javab Dahid."<<endl<<endl;
+        P=get_patient(Level);
+        cout<<"Salam. Man "<<P.Ill<<" Daram."<<endl<<endl;
+        cout<<"Atar Aziz Ba Tavajoh Be Bimari , Mavared Zir Ra Javab Dahid."<<endl<<endl;
 
 
 
@@ -122,34 +123,42 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
 
 
         //**********************Manage Number of Herbs************************
-
-        cout<<" ~> Chand Daro Tajviz Mikonid ? (Enter Between 1,2,3):"<<endl;
+if(P.Ill=="Alcohol"||P.Ill=="Naphtaline"||P.Ill=="Kafoor")
+{
+        herbcount=1;
+}
+else
+{
+      cout<<" ~> Chand Daro Tajviz Mikonid ? (Enter Between 1,2,3):"<<endl;
         bool herbcountrepeat=true;
         while(herbcountrepeat)
         {
-        cin>>herbcount;
-        if(herbcount=='1')
-        {
-            herbcountint=1;
-            herbcountrepeat=false;
-        }
-        else if(herbcount=='2')
-        {
-            herbcountint=2;
-            herbcountrepeat=false;
-        }
-        else if(herbcount=='3')
-        {
-            herbcountint=3;
-            herbcountrepeat=false;
-        }
-        else
-        {
-            cout<<" ~> Lotfan Vorodi Dorost Vared Konid :) "<<endl;
-            cout<<" ~> Chand Daro Tajviz Mikonid ? (Max 3 and Min 1):"<<endl;
-        }
+            cin>>herbcount;
+            if(herbcount=="1")
+            {
+                herbcountint=1;
+                herbcountrepeat=false;
+            }
+            else if(herbcount=="2")
+            {
+                herbcountint=2;
+                herbcountrepeat=false;
+            }
+            else if(herbcount=="3")
+            {
+                herbcountint=3;
+                herbcountrepeat=false;
+            }
+            else
+            {
+                cout<<" ~> Lotfan Vorodi Dorost Vared Konid :) "<<endl;
+                cout<<" ~> Chand Daro Tajviz Mikonid ? (Max 3 and Min 1):"<<endl;
+            }
 
         }
+}
+
+      
 
         //*******************end of Manage Number of Herbs**********************
 
@@ -160,38 +169,39 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
         double cost;
         for(int j=1;j<=herbcountint;j++)
         {
-            cout<<"Lotfan Esme Daroye shomare "<<j<<" ra Bar Asas Jadval Vared Konid:"<<endl;
+            cout<<"Lotfan Esme Daro Ya Madde Shomare "<<j<<" Ra Bar Asas Jadval Vared Konid:"<<endl;
             cin>>herb;
-            cout<<"Lotfan Meghdar Mored Nazar Daroye shomare "<<j<<" Ra Bar Asas Jadval Vared Konid:(Shoma nemitavanid kamtar az 1 vared konid.)"<<endl;
+            cout<<"Lotfan Meghdar Mored Nazar Daro Ya Madde Shomare "<<j<<" Ra Bar Asas Jadval Vared Konid:(Shoma Nemitavanid Kamtar Az 1 Vared Konid.)"<<endl;
             cin>>amount;
-            cout<<"Lotfan Gheymat Mored Nazar Daroye shomare "<<j<<" Ra Bar Asas Jadval Vared Konid:"<<endl;
+            cout<<"Lotfan Gheymat Mored Nazar Daro Ya Madde Shomare "<<j<<" Ra Bar Asas Jadval Vared Konid:"<<endl;
             cin>>cost;
 
-            int herbindex=Herbs_system_check(patient,herb);
+            int herbindex=Herbs_system_check(P,herb);
             string costpos;
             string amountpos;
             if (herbindex==-1)
             {
                 herbbool=false;
-                cout<<"Daroye Tajviz Shode ba Bimari Motabeghat Nadarad."<<endl<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
+                cout<<"Daro Ya Made Dade Shode ba Niyaz Moshtari Motabeghat Nadarad."<<endl<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<endl<<"Age Chizi Forkhti Halalet Vali Dg Raft !"<<endl;
                 Reputation_Change-=5;
                 break;
                 //ok
             }
             else
             {
-                costpos=Cost_system_check(patient.cost[herbindex],cost);
-                amountpos=Amount_system_check(patient.Amount[herbindex],amount);
+                costpos=Cost_system_check(P.cost[herbindex],cost);
+                amountpos=Amount_system_check(P.Amount[herbindex],amount);
+                
 
                 if(amoo_atar.get_repository_amount(herb)<amount)
                 {
-                    cout<<" ******* Enghad Daro Nadarim ! ******* "<<endl<<"Shoma Moshtari Ra Az Dast Dadid."<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
+                    cout<<" ******* Enghad Daro Ya Made Nadarim ! ******* "<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age Chizi Forkhti Halalet Vali Dg Raft !"<<endl;
                     break;
                 }
                 else if(costpos=="toolow")
                 {
 
-                        cout<<"Moft Khori Be Ma Nayomade!!  (Gheymat Kamtar az had Mojaz bood) ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
+                        cout<<"Moft Khori Be Ma Nayomade!! (Gheymat Kamtar Az Had Mojaz Bood) ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age Chizi Forkhti Halalet Vali Dg Raft !"<<endl;
                         Reputation_Change-=5;
                         break;
                 }
@@ -199,50 +209,50 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                 {
                     if(amountpos=="toolow")
                     {
-                        cout<<"Yatim Gir Avordi? (Meghdar Daroo Kamtar az had Mojaz Bood!) ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
+                        cout<<"Yatim Gir Avordi? (Meghdar Daroo Kamtar Az Had Mojaz Bood!) ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age Chizi Forkhti Halalet Vali Dg Raft !"<<endl;
                         Reputation_Change-=5;
                         break;
                     }
                     else if(amountpos=="kamforoshi")
                     {
-                        cout<<"Agha Takhfif Midi Dige Chera Esfahani Bazi Dar Miyari ?"<<endl<<"Inaro baram Kenar bezar."<<endl;
+                        cout<<"Agha Takhfif Midi Dige Chera Esfahani Bazi Dar Miyari ?"<<endl<<"Inaro Baram Kenar Bezar."<<endl;
                         Reputation_Change-=8;
                         Reputation_Change+=4;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=((cost/patient.Amount[herbindex])*amount);
+                        Money_change+=((cost/P.Amount[herbindex])*amount);
                     }
                     else if(amountpos=="=")
                     {
-                        cout<<"Agha nokaram takhfif dadi damet garm"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
+                        cout<<"Agha Nokaram Takhfif Dadi Damet Garm"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change+=4;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=(((cost/patient.Amount[herbindex])*amount));
+                        Money_change+=(((cost/P.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="hedye")
                     {
-                        cout<<"Aghaaaaa Kheyli Chakeram Khoda Kheyret bede Dam Shoma Garm"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
+                        cout<<"Aghaaaaa Kheyli Chakeram Khoda Kheyret Bede Dam Shoma Garm"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change+=4;
                         Reputation_Change+=4;
                         amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(patient.Amount[herbindex]));
-                        Money_change=(((cost/patient.Amount[herbindex])*amount));
+                        Money_change+=(((cost/P.Amount[herbindex])*amount));
                     }
                 }
                 else if(costpos=="=")
                 {
                     if(amountpos=="toolow")
                     {
-                        cout<<"Yatim Gir Avordi? (Meghdar Daroo Kamtar az had Mojaz Bood!) ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
+                        cout<<"Yatim Gir Avordi? (Meghdar Daroo Kamtar Az Had Mojaz Bood!) ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age Chizi Forkhti Halalet Vali Dg Raft !"<<endl;
                         Reputation_Change-=5;
                         break;
                     }
                     else if(amountpos=="kamforoshi")
                     {
-                        cout<<"Haji Kam midi Halalet Nabashe."<<endl<<"Inaro Baram Kenar bezar"<<endl;
+                        cout<<"Haji Kam Midi Halalet Nabashe."<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change-=8;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=(((cost/patient.Amount[herbindex])*amount));
+                        Money_change+=(((cost/P.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="=")
                     {
@@ -250,48 +260,48 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
                         Reputation_Change+=2;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                       Money_change=(((cost/patient.Amount[herbindex])*amount));
+                       Money_change+=(((cost/P.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="hedye")
                     {
-                        cout<<"Haji Khoda Kheyret bede"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
+                        cout<<"Haji Khoda Kheyret Bede"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change+=4;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(patient.Amount[herbindex]));
-                        Money_change=(((cost/patient.Amount[herbindex])*amount));
+                        Money_change+=(((cost/P.Amount[herbindex])*amount));
                     }
                 }
                 else if(costpos=="geran")
                 {
                     if(amountpos=="toolow")
                     {
-                        cout<<"Yatim Gir Avordi Geronam midi ? (Meghdar Daroo Kamtar az had Mojaz Bood!) ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age chizi forkhti halalet vali dg raft !"<<endl;
+                        cout<<"Yatim Gir Avordi Geronam midi ? (Meghdar Daroo Kamtar Az Had Mojaz Bood!) ."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age Chizi Forkhti Halalet Vali Dg Raft !"<<endl;
                         Reputation_Change-=5;
                         break;
                     }
                     else if(amountpos=="kamforoshi")
                     {
-                        cout<<"Baba In Che Vazeshe ? Ham kam foroshi mikoni Ham geron midi ??? chon majboram mikharam ."<<endl<<"Inaro Baram Kenar Bezar"<<endl;
+                        cout<<"Baba In Che Vazeshe ? Ham Kam Foroshi Mikoni Ham Geron Midi ??? Chon Majboram Mikharam ."<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change-=4;
                         Reputation_Change-=8;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=(((cost/patient.Amount[herbindex])*amount));
+                        Money_change+=(((cost/P.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="=")
                     {
-                        cout<<"geron midi vali chare chie ?"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
+                        cout<<"Geron Midi Vali Chare Chie ?"<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change-=4;
                         Reputation_Change+=2;
                         amoo_atar.set_repository_amount(herb,amoo_atar.get_repository_amount(herb)-amount);
-                        Money_change=(((cost/patient.Amount[herbindex])*amount));
+                        Money_change+=(((cost/P.Amount[herbindex])*amount));
                     }
                     else if(amountpos=="hedye")
                     {
-                        cout<<"Chon Hedye dadi Mikharam vali dg Geron nade haji."<<endl<<"Inaro Baram Kenar Bezar"<<endl;
+                        cout<<"Chon Hedye Dadi Mikharam Vali dg Geron Nade Haji."<<endl<<"Inaro Baram Kenar Bezar"<<endl;
                         Reputation_Change-=4;
                         Reputation_Change+=4;
                         amoo_atar.set_repository_amount(herb,(amoo_atar.get_repository_amount(herb))-(patient.Amount[herbindex]));
-                        Money_change=(((cost/patient.Amount[herbindex])*amount));
+                        Money_change+=(((cost/P.Amount[herbindex])*amount));
                     }
                 }
                 else if(costpos=="toomuch")
@@ -308,16 +318,16 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
         <<"Sath Shohrat Shoma Dar in Foroosh "<<Reputation_Change<<" Vahed Taghir Kard."<<endl;
 
         amoo_atar.setMoney(amoo_atar.getMoney()+(Money_change));
-         cout<<endl<<"Frosh Shoma Dar In Kharid  ~> "<<Money_change<<" Bood."<<endl;
+         cout<<endl<<"DarAmad Shoma Dar In Foroosh  ~> "<<Money_change<<" Bood."<<endl;
 
         cout<<"----------------------------------------------------------------------------"<<endl;
-
+        cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;
 
 
 
 
     }
-    if(amoo_atar.getReputation_amount()>=150)
+    if(amoo_atar.getReputation_amount()>=amoo_atar.Level4_Rep)
     {
         cout<<"####################################################################"<<endl;
         cout<<"# -- -- -- -- -- -- -- -- --  YOU WON!  -- -- -- -- -- -- -- -- -- #"<<endl;
@@ -325,14 +335,14 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
         amoo_atar.setReputation_Level(4);
         exit(0);
     }
-    else if(amoo_atar.getReputation_amount()>=70&&amoo_atar.getReputation_Level()==2)
+    else if(amoo_atar.getReputation_amount()>=amoo_atar.Level3_Rep&&amoo_atar.getReputation_Level()==2)
     {
         cout<<"############################################################################"<<endl;
         cout<<"# -- -- -- -- -- -- -- -- --  You Are Level 3!  -- -- -- -- -- -- -- -- -- #"<<endl;
         cout<<"############################################################################"<<endl;
         amoo_atar.setReputation_Level(3);
     }
-    else if(amoo_atar.getReputation_amount()>=30&&amoo_atar.getReputation_Level()==1)
+    else if(amoo_atar.getReputation_amount()>=amoo_atar.Level2_Rep&&amoo_atar.getReputation_Level()==1)
     {
         cout<<"###########################################################################"<<endl;
         cout<<"# -- -- -- -- -- -- -- -- -- You Are Level 2!  -- -- -- -- -- -- -- -- -- #"<<endl;
@@ -343,7 +353,7 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
 
 
 
-void Patients::set_patients_vect()//level 3 monde --dar initializer
+void Patients::set_patients_vect()//level 3 monde --dar initializer 
 {
     Patients p;
     patients_vect.reserve(3);
@@ -360,7 +370,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     */
     p.Ill="Alerji";
     p.Herb[0]="Shahtare";
-    p.Herb[1]="khar maryam";
+    p.Herb[1]="KharMaryam";
     p.Herb[2]="Narenj";
    
     p.cost[0]=15500;
@@ -378,7 +388,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[2]="Darchin";
 
     p.cost[0]=9500;
-    p.cost[1]=6000;
+    p.cost[1]=5700;
     p.cost[2]=12000;
 
     p.Amount[0]=5;
@@ -400,12 +410,12 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Amount[2]=1;
     this->patients_vect[0][2]=p;
     
-    p.Ill="Khoshk Mazaji (Ubosat)";
+    p.Ill="Khoshk Mazaji";
     p.Herb[0]="KhakShir";
     p.Herb[1]="Karchak";
     p.Herb[2]="Gon";
    
-    p.cost[0]=57000;
+    p.cost[0]=5700;
     p.cost[1]=17500;
     p.cost[2]=14000;
 
@@ -454,7 +464,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Herb[2]="Ostokhoddos";
    
     p.cost[0]=110000;
-    p.cost[1]=9500;
+    p.cost[1]=9300;
     p.cost[2]=17000;
 
     p.Amount[0]=1;
@@ -573,7 +583,7 @@ void Patients::set_number_of_patients(int level,bool server_is_byed)//end aval i
 {
     #ifndef TestCase
     int num=0;
-    if(server_is_byed)
+    if(!server_is_byed)
     {
         num=rand()%2+1; //num=random()%2+1 , random() na. rand yes. #Check
     }

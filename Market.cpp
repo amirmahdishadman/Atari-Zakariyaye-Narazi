@@ -115,14 +115,14 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
     {
         cout << "Which Herbs do you need?" << endl;
         cout << "(1) Narenj  ×1  Cost:8,000" << endl;
-        cout << "(2) Khar maryam  ×3  Cost:12,500" << endl;
+        cout << "(2) KharMaryam  ×3  Cost:12,500" << endl;
         cout << "(3) Shahtare  ×1  Cost:12,500" << endl;
         cout << "(4) Ocaliptos  ×1  Cost:14,700" << endl;
         cout << "(5) Khakshir  ×1  Cost:5,000" << endl;
         cout << "(6) Marze  ×5  Cost:8,000" << endl;
         cout << "(7) Darchin  ×1  Cost:10,000" << endl;
         cout << "(8) Avishan ×5  Cost:10,000" << endl;
-        cout << "(9) Jo dosar ×1  Cost:20,000" << endl;
+        cout << "(9) Jodosar ×1  Cost:20,000" << endl;
         cout << "(10) Sir ×1  Cost:8,000" << endl;
         cout << "(11) Karchak ×1  Cost:15,000" << endl;
         cout << "(12) Gon ×1  Cost:12,000" << endl;
@@ -138,7 +138,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Narenj" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[0]++;
+                amo_atar.set_repository_amount("Narenj",amo_atar.get_repository_amount("Narenj")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 8000);
             }
@@ -150,9 +150,9 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
         case 2:
             if (amo_atar.getMoney() >= 12500)
             {
-                cout << "Kharidari Shod:  Khar maryam" << endl;
+                cout << "Kharidari Shod:  KharMaryam" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[1] += 3;
+                amo_atar.set_repository_amount("KharMaryam",amo_atar.get_repository_amount("KharMaryam")+3);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 12500);
             }
@@ -166,7 +166,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Shahtare" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[2] += 1;
+                amo_atar.set_repository_amount("Shahtare",amo_atar.get_repository_amount("Shahtare")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 12500);
             }
@@ -180,7 +180,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Ocaliptos" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[5] += 1;
+                amo_atar.set_repository_amount("Ocaliptos",amo_atar.get_repository_amount("Ocaliptos")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 14700);
             }
@@ -192,9 +192,9 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
         case 5:
             if (amo_atar.getMoney() >= 5000)
             {
-                cout << "Kharidari Shod:  Khakshir" << endl;
+                cout << "Kharidari Shod:  KhakShir" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[3] += 1;
+                amo_atar.set_repository_amount("KhakShir",amo_atar.get_repository_amount("KhakShir")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 5000);
             }
@@ -208,7 +208,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Marze" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[4] += 5;
+                amo_atar.set_repository_amount("Marze",amo_atar.get_repository_amount("Marze")+5);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 8000);
             }
@@ -223,6 +223,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
                 cout << "Kharidari Shod:  Darchin" << endl;
                 //increament of amounts in inventor
                 amo_atar.repository_amount[6] += 1;
+                amo_atar.set_repository_amount("Darchin",amo_atar.get_repository_amount("Darchin")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 10000);
             }
@@ -236,7 +237,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Avishan" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[7] += 5;
+                amo_atar.set_repository_amount("Avishan",amo_atar.get_repository_amount("Avishan")+5);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 10000);
             }
@@ -248,9 +249,9 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
         case 9:
             if (amo_atar.getMoney() >= 20000)
             {
-                cout << "Kharidari Shod:  Jo dosar" << endl;
+                cout << "Kharidari Shod:  Jodosar" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[8] += 1;
+                amo_atar.set_repository_amount("Jodosar",amo_atar.get_repository_amount("Jodosar")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 20000);
             }
@@ -264,7 +265,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Sir" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[9] += 1;
+                amo_atar.set_repository_amount("Sir",amo_atar.get_repository_amount("Sir")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 8000);
             }
@@ -278,7 +279,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Karchak" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[11] += 1;
+                amo_atar.set_repository_amount("Karchak",amo_atar.get_repository_amount("Karchak")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 15000);
             }
@@ -293,6 +294,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
                 cout << "Kharidari Shod:  Gon" << endl;
                 //increament of amounts in inventor
                 amo_atar.repository_amount[10] += 1;
+                amo_atar.set_repository_amount("Gon",amo_atar.get_repository_amount("Gon")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 12000);
             }
@@ -337,7 +339,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
             {
                 cout << "\nKharidari Shod:  ShirinBayan" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[12] += 1;
+                amo_atar.set_repository_amount("ShirinBayan",amo_atar.get_repository_amount("ShirinBayan")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 7000);
             }
@@ -349,9 +351,9 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
         case 2:
             if (amo_atar.getMoney() >= 15500)
             {
-                cout << "\nKharidari Shod:  Barg Alovera" << endl;
+                cout << "\nKharidari Shod:  BargAloevera" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[13] += 3;
+                amo_atar.set_repository_amount("BargAloevera",amo_atar.get_repository_amount("BargAloevera")+3);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 15500);
             }
@@ -365,7 +367,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
             {
                 cout << "\nKharidari Shod:  Asal" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[14] += 1;
+                amo_atar.set_repository_amount("Asal",amo_atar.get_repository_amount("Asal")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 35500);
             }
@@ -379,7 +381,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
             {
                 cout << "\nKharidari Shod:  Ocaliptos" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[5] += 1;
+                amo_atar.set_repository_amount("Ocaliptos",amo_atar.get_repository_amount("Ocaliptos")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 14700);
             }
@@ -393,7 +395,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
             {
                 cout << "\nKharidari Shod:  Jinsing" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[15] += 1;
+                amo_atar.set_repository_amount("Jinsing",amo_atar.get_repository_amount("Jinsing")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 25000);
             }
@@ -407,7 +409,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
             {
                 cout << "\nKharidari Shod:  GolGavzabon" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[16] += 5;
+                amo_atar.set_repository_amount("GolGavzabon",amo_atar.get_repository_amount("GolGavzabon")+5);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 8000);
             }
@@ -421,7 +423,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
             {
                 cout << "\nKharidari Shod:  Ostokhoddos" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[18] += 5;
+                amo_atar.set_repository_amount("Ostokhoddos",amo_atar.get_repository_amount("Ostokhoddos")+5);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 15000);
             }
@@ -433,9 +435,9 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
         case 8:
             if (amo_atar.getMoney() >= 95000)
             {
-                cout << "\nKharidari Shod:  Zafaran" << endl;
+                cout << "\nKharidari Shod:  Zaferan" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[18] += 1;
+                amo_atar.set_repository_amount("Zaferan",amo_atar.get_repository_amount("Zaferan")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 95000);
             }

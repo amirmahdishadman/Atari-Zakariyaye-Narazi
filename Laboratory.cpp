@@ -18,12 +18,12 @@ void Labratory::Make_Alcohol(Atar &amo_atar)
 
 bool Labratory::Check_Alcohol_inputs(int C, int H, int O, Atar &amo_atar)
 {
-    if (C == 2 && H == 6 && O == 2)
+    if (C == 2 && H == 6 && O == 1)
     {
         cout << "\t\t Alcohol Process End!" << endl;
         cout << "You Have Made 1 Bottle of Alcohol." << endl;
         //Amount increament in Inventory
-        amo_atar.repository_amount[19]++;
+        amo_atar.set_repository_amount("Alcohol",amo_atar.get_repository_amount("Alcohol")+1);
 
         return true;
     }
@@ -37,7 +37,7 @@ bool Labratory::Check_Alcohol_inputs(int C, int H, int O, Atar &amo_atar)
 
 void Labratory::Make_Comphor(Atar &amo_atar)
 {
-    cout << "Making Comphor Process Started...\n" << endl;
+    cout << "Making Kafoor Process Started...\n" << endl;
     int C,H,O;
     cout << "Enter the number of Carbons: ";
     cin >> C;
@@ -55,10 +55,10 @@ bool Labratory::Check_Comphor_inputs(int C, int H, int O, Atar &amo_atar)
 {
     if (C == 10 && H == 16 && O == 1)
     {
-        cout << "\t\t Comphor Process End!" << endl;
-        cout << "You Have Made 1 pack of Comphor." << endl;
+        cout << "\t\t Kafoor Process End!" << endl;
+        cout << "You Have Made 1 pack of Kafoor." << endl;
         //Amount increament in Inventory
-        amo_atar.repository_amount[21]++;
+        amo_atar.set_repository_amount("Kafoor",amo_atar.get_repository_amount("Kafoor")+1);
 
         return true;
     }
@@ -93,7 +93,7 @@ bool Labratory::Check_Naphtaline_inputs(int C, int H, int O, Atar &amo_atar)
         cout << "\t\t Naphtaline Process End!" << endl;
         cout << "You Have Made 1 pack of Naphtaline." << endl;
         //Amount increament in Inventory
-        amo_atar.repository_amount[20]++;
+        amo_atar.set_repository_amount("Naphtaline",amo_atar.get_repository_amount("Naphtaline")+1);
 
         return true;
     }
@@ -114,7 +114,7 @@ void Labratory::Initialize_Labratory(bool Lab, Atar &amo_atar)
         bool loop = true;
         while (loop == true)
         {
-            cout << "\n(1)Alcohol | (2)Comphor | (3)Naphtaline | (0)Back To Menu" << endl;
+            cout << "\n(1)Alcohol | (2)Kafoor | (3)Naphtaline | (0)Back To Menu" << endl;
             int choice;
             cin >> choice;
             switch (choice)

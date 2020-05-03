@@ -57,7 +57,7 @@ void App::ShowMenu()
          
          case 3:
          {
-            Amo_Atar.Show_State(Amo_Atar);
+            Amo_Atar.Show_State();
             break;
          }
             

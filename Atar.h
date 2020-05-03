@@ -8,6 +8,7 @@ using namespace std;
 
 class Atar
 {
+friend ostream &operator<<(ostream &, Atar &);
 private:
     //Atar's money
     double Money;
@@ -24,7 +25,7 @@ public:
     //set Vectors
     void initialize_vectors();
     //SHow info about atar
-    void Show_State(Atar&);
+    void Show_State();
     //return index of each herb
     int get_repository_herbs_index(string);
     //set repository amount by herbname
@@ -45,10 +46,12 @@ public:
     int getReputation_amount();
     //repository of herbs of atar
     vector <string> repository_herbs;
+    vector<string> herbvecreturn();
     //max 12 char
     //Balaei o Hamono Ba to set_repository_herbs() besaz o bezn badam to constructoresh ejra kon #check
     //22
     vector <double> repository_amount; //setter getter yadet nare #check
+    vector<double> amountvecreturn();
     //inam hamintor
 };
 #endif
