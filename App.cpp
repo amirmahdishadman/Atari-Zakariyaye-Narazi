@@ -124,6 +124,7 @@ void App::ShowMenu()
          }
          
       }
+      Hacker();
 
       //Saving The Game
       SaveProcess();
