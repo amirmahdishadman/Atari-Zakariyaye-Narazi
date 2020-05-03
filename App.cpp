@@ -2,6 +2,7 @@
 
 void App::ShowMenu()
 {
+   cout << "============================== Game Initialized! ==============================" << endl;
    //Loading The Game
    // LoadProcess(); DEBUUG
 
@@ -16,7 +17,7 @@ void App::ShowMenu()
       //Check whether Lab is Unlocked or not
       if (Bazar.Check_Lab() == true)
       {
-         cout << "Lotfan Az Item haye Zir Entekhab Konid  (Be sorat shomare menu : 1 , 2 , 3 , ...) : " << endl
+         cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
            << "1-Morajee Moshtari" << endl
            << "2-Internet" << endl
            << "3-Moshahede Vaziyat" << endl
@@ -27,7 +28,7 @@ void App::ShowMenu()
       }
       else
       {
-         cout << "Lotfan Az Item haye Zir Entekhab Konid  (Be sorat shomare menu :1 2 3 ...) : " << endl
+         cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
            << "1-Morajee Moshtari" << endl
            << "2-Internet" << endl
            << "3-Moshahede Vaziyat" << endl
@@ -36,9 +37,9 @@ void App::ShowMenu()
            << "0-Kharej Shodan Az Bazi" << endl;
       }
 
-      //Saving The Game
-      SaveProcess();
+      cout << "Menu?: ";
       cin >> listnumber;
+
       //Control Inputs
       switch (listnumber)
       {
@@ -82,7 +83,18 @@ void App::ShowMenu()
          //end Lab *****************************
          case 0:
          {
-            cout << "Kharej Shodan Az Bazi..." << endl;
+            cout << "\tSaving The Game..." << endl;
+            SaveProcess();
+            cout << "============================== GoodBye! ==============================" << endl;
+
+
+            // cout << "    _____                      _____   __                " << endl;
+            // cout << "   /  _  \\   _____   ____     /  _  \\_/  |______ _______ " << endl;
+            // cout << "  /  /_\\  \\ /     \\ /  _ \\   /  /_\\  \\   __\\__  \\_  __ \\" << endl;
+            // cout << " /    |    \\  Y Y  (  <_> ) /    |    \\  |  / __ \\|  | \\/" << endl;
+            // cout << " \\____|__  /__|_|  /\\____/  \\____|__  /__| (____  /__|   " << endl;
+            // cout << "         \\/      \\/                 \\/          \\/       " << endl;
+
             exit(0);
             break;
          }
@@ -94,6 +106,9 @@ void App::ShowMenu()
          }
          
       }
+
+      //Saving The Game
+      SaveProcess();
    }
 }
 
@@ -113,7 +128,7 @@ void App::SaveProcess()
       << " " << Bazar.GUI << " " << Bazar.Increasing_Server_Capacity << " " << Bazar.Lab << endl;
       for (int i = 0; i < 22; i++)
       {
-         OutFile << Amo_Atar.repository_herbs[i] << " ";
+         OutFile << Amo_Atar.repository_amount[i] << " ";
       }
       
       OutFile.close();
