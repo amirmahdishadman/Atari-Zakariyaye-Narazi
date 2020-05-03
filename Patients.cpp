@@ -123,9 +123,9 @@ void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Not
 
 
         //**********************Manage Number of Herbs************************
-if(P.Ill=="Alcohol"||P.Ill=="Naphtaline"||P.Ill=="Kafoor")
+if(P.Ill=="Niyaz Be Alcohol"||P.Ill=="Niyaz Be Naphtaline"||P.Ill=="Niyaz Be Kafoor")
 {
-        herbcount=1;
+        herbcountint=1;
 }
 else
 {
@@ -327,7 +327,7 @@ else
 
 
     }
-    if(amoo_atar.getReputation_amount()>=amoo_atar.Level4_Rep)
+    if(amoo_atar.getReputation_amount()>=amoo_atar.get_Level4_Rep())
     {
         cout<<"####################################################################"<<endl;
         cout<<"# -- -- -- -- -- -- -- -- --  YOU WON!  -- -- -- -- -- -- -- -- -- #"<<endl;
@@ -335,14 +335,14 @@ else
         amoo_atar.setReputation_Level(4);
         exit(0);
     }
-    else if(amoo_atar.getReputation_amount()>=amoo_atar.Level3_Rep&&amoo_atar.getReputation_Level()==2)
+    else if(amoo_atar.getReputation_amount()>=amoo_atar.get_Level3_Rep()&&amoo_atar.getReputation_Level()==2)
     {
         cout<<"############################################################################"<<endl;
         cout<<"# -- -- -- -- -- -- -- -- --  You Are Level 3!  -- -- -- -- -- -- -- -- -- #"<<endl;
         cout<<"############################################################################"<<endl;
         amoo_atar.setReputation_Level(3);
     }
-    else if(amoo_atar.getReputation_amount()>=amoo_atar.Level2_Rep&&amoo_atar.getReputation_Level()==1)
+    else if(amoo_atar.getReputation_amount()>=amoo_atar.get_Level2_Rep()&&amoo_atar.getReputation_Level()==1)
     {
         cout<<"###########################################################################"<<endl;
         cout<<"# -- -- -- -- -- -- -- -- -- You Are Level 2!  -- -- -- -- -- -- -- -- -- #"<<endl;
@@ -382,7 +382,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Amount[2]=1;
     this->patients_vect[0][0]=p;
 
-    p.Ill="Shekam ravi";
+    p.Ill="Shekam Ravi";
     p.Herb[0]="Marze";
     p.Herb[1]="KhakShir";
     p.Herb[2]="Darchin";
@@ -398,7 +398,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
 
     p.Ill="Zaf System Defaie Badan";
     p.Herb[0]="Avishan";
-    p.Herb[1]="Jo dosar";
+    p.Herb[1]="Jodosar";
     p.Herb[2]="Sir";
 
     p.cost[0]=12000;
@@ -458,7 +458,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Amount[2]=1;
     this->patients_vect[1][1]=p;
 
-    p.Ill="Afsordegi va Na Arami";
+    p.Ill="Afsordegi Va Na Arami";
     p.Herb[0]="Zaferan";
     p.Herb[1]="GolGavzabon";
     p.Herb[2]="Ostokhoddos";
