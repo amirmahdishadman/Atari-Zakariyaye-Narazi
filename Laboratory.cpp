@@ -110,13 +110,13 @@ void Labratory::Initialize_Labratory(bool Lab, Atar &amo_atar)
     if (Lab == true)
     {
         cout << "You Entered Labratory!" << endl;
-        cout << "(1)Alcohol | (2)Comphor | (3)Naphtaline | (0)Back To Menu" << endl;
-        int choice;
-        cin >> choice;
 
         bool loop = true;
         while (loop == true)
         {
+            cout << "\n(1)Alcohol | (2)Comphor | (3)Naphtaline | (0)Back To Menu" << endl;
+            int choice;
+            cin >> choice;
             switch (choice)
             {
             case 1:
@@ -132,7 +132,7 @@ void Labratory::Initialize_Labratory(bool Lab, Atar &amo_atar)
                 loop = false;
                 break;
             default:
-                cout << "Wrong Number!\nTry Again:" << endl;
+                cout << "Wrong Number!\nTry Again:\n" << endl;
             }
         }
     }
