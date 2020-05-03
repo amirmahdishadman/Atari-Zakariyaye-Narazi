@@ -21,7 +21,7 @@ bool Labratory::Check_Alcohol_inputs(int C, int H, int O, Atar &amo_atar)
     if (C == 2 && H == 6 && O == 1)
     {
         cout << "\t\t Alcohol Process End!" << endl;
-        cout << "You Have Made 1 Bottle of Alcohol." << endl;
+        cout << "Shoma Yek Bottry Alcohol Dorost Kardid." << endl;
         //Amount increament in Inventory
         amo_atar.set_repository_amount("Alcohol",amo_atar.get_repository_amount("Alcohol")+1);
 
@@ -29,7 +29,7 @@ bool Labratory::Check_Alcohol_inputs(int C, int H, int O, Atar &amo_atar)
     }
     else
     {
-        cout << "Wrong Combine!\n Try Again!" << endl;
+        cout << "Tarkibe Eshtebah!\n Try Again!" << endl;
         return false;
     }
     
@@ -56,7 +56,7 @@ bool Labratory::Check_Comphor_inputs(int C, int H, int O, Atar &amo_atar)
     if (C == 10 && H == 16 && O == 1)
     {
         cout << "\t\t Kafoor Process End!" << endl;
-        cout << "You Have Made 1 pack of Kafoor." << endl;
+        cout << "Shoma Yek Pack Kafoor Dorost Kardid." << endl;
         //Amount increament in Inventory
         amo_atar.set_repository_amount("Kafoor",amo_atar.get_repository_amount("Kafoor")+1);
 
@@ -64,7 +64,7 @@ bool Labratory::Check_Comphor_inputs(int C, int H, int O, Atar &amo_atar)
     }
     else
     {
-        cout << "Wrong Combine!\n Try Again!" << endl;
+        cout << "Tarkibe Eshtebah!\n Try Again!" << endl;
         return false;
     }
     
@@ -91,7 +91,7 @@ bool Labratory::Check_Naphtaline_inputs(int C, int H, int O, Atar &amo_atar)
     if (C == 10 && H == 8 && O == 0)
     {
         cout << "\t\t Naphtaline Process End!" << endl;
-        cout << "You Have Made 1 pack of Naphtaline." << endl;
+        cout << "Shoma Yek Pack Naphtaline Dorost Kardid." << endl;
         //Amount increament in Inventory
         amo_atar.set_repository_amount("Naphtaline",amo_atar.get_repository_amount("Naphtaline")+1);
 
@@ -99,7 +99,7 @@ bool Labratory::Check_Naphtaline_inputs(int C, int H, int O, Atar &amo_atar)
     }
     else
     {
-        cout << "Wrong Combine!\n Try Again!" << endl;
+        cout << "Tarkibe Eshtebah!\n Try Again!" << endl;
         return false;
     }
     
@@ -109,7 +109,7 @@ void Labratory::Initialize_Labratory(bool Lab, Atar &amo_atar)
 {
     if (Lab == true)
     {
-        cout << "You Entered Labratory!" << endl;
+        cout << "\n\t\t*------*[Labratory]*------*" << endl;
 
         bool loop = true;
         while (loop == true)
@@ -132,7 +132,7 @@ void Labratory::Initialize_Labratory(bool Lab, Atar &amo_atar)
                 loop = false;
                 break;
             default:
-                cout << "Wrong Number!\nTry Again:\n" << endl;
+                cout << "Vorodiye Eshtebah!\nTry Again:\n" << endl;
             }
         }
     }
