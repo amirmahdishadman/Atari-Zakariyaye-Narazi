@@ -499,11 +499,18 @@ void Market::Buy(Atar &amo_atar)
         case 3:
             if (amo_atar.getMoney() >= 150000)
             {
-                //Initialize Security
-                Security = true;
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 150000);
-                cout << "\nAmniyat Application Afzayesh Yaft!" << endl;
+                if (Security == false)
+                {
+                    //Initialize Security
+                    Security = true;
+                    //decreament of amo atar's money
+                    amo_atar.setMoney(amo_atar.getMoney() - 150000);
+                    cout << "\nAmniyat Application Afzayesh Yaft!" << endl;
+                }
+                else
+                {
+                    cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
+                }
             }
             else
             {
@@ -513,11 +520,18 @@ void Market::Buy(Atar &amo_atar)
         case 4:
             if (amo_atar.getMoney() >= 200000)
             {
-                //Initialize Second Graphic interface
-                GUI = true;
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 200000);
-                cout << "\nGUI V2 initialized..." << endl;
+                if (GUI == false)
+                {
+                    //Initialize Second Graphic interface
+                    GUI = true;
+                    //decreament of amo atar's money
+                    amo_atar.setMoney(amo_atar.getMoney() - 200000);
+                    cout << "\nGUI V2 initialized..." << endl;
+                }
+                else
+                {
+                    cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
+                }
             }
             else
             {
@@ -527,11 +541,18 @@ void Market::Buy(Atar &amo_atar)
         case 5:
             if (amo_atar.getMoney() >= 200000)
             {
-                //Unlock more patients in a pass
-                Increasing_Server_Capacity = true;
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 200000);
-                cout << "\nZarfiyate Server Afzayesh Yaft.\nHala Mitavanid Moshtarihaye Bishtari Begirid" << endl;
+                if (Increasing_Server_Capacity == false)
+                {
+                    //Unlock more patients in a pass
+                    Increasing_Server_Capacity = true;
+                    //decreament of amo atar's money
+                    amo_atar.setMoney(amo_atar.getMoney() - 200000);
+                    cout << "\nZarfiyate Server Afzayesh Yaft.\nHala Mitavanid Moshtarihaye Bishtari Begirid" << endl;
+                }
+                else
+                {
+                    cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
+                }
             }
             else
             {
@@ -541,11 +562,19 @@ void Market::Buy(Atar &amo_atar)
         case 6:
             if (amo_atar.getMoney() >= 350000 && amo_atar.getReputation_Level() >= 3)
             {
-                //Unlock Lab
-                Lab = true;
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 350000);
-                cout << "\nLabratory Amadast!" << endl;
+                if (Lab == false)
+                {
+                    //Unlock Lab
+                    Lab = true;
+                    //decreament of amo atar's money
+                    amo_atar.setMoney(amo_atar.getMoney() - 350000);
+                    cout << "\nLabratory Amadast!" << endl;
+                }
+                else
+                {
+                    cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
+                }
+                
             }
             else
             {
