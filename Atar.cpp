@@ -1,5 +1,5 @@
 #include"Atar.h"
-//#define TestCase          //<<<---------->>> For Using TestCase Oncomment it!
+#define TestCase          //<<<---------->>> For Using TestCase Oncomment it!
 
 //OP_overloading for printing Herbs, Amounts, Costs in Inventory informarions
 static int Start = 0, i = 0;
@@ -63,7 +63,7 @@ Atar::Atar()
     Level2_Rep=10;
     Level3_Rep=30;
     Level4_Rep=60;
-    setMoney(100000000)
+    setMoney(100000000);
     setReputation_amount(0);
     setReputation_Level(1);
     #endif
@@ -71,8 +71,8 @@ Atar::Atar()
 void Atar::initialize_vectors()
 {
     repository_herbs.reserve(22);
-    repository_herbs = {"Narenj", "khar maryam", "Shahtare", "KhakShir", "Marze", "Ocaliptos"
-    , "Darchin", "Avishan", "Jo dosar", "Sir", "Gon", "Karchak", "ShirinBayan", "BargAloevera", "Asal"
+    repository_herbs = {"Narenj", "KharMaryam", "Shahtare", "KhakShir", "Marze", "Ocaliptos"
+    , "Darchin", "Avishan", "Jodosar", "Sir", "Gon", "Karchak", "ShirinBayan", "BargAloevera", "Asal"
     , "Jinsing", "GolGavzabon", "Zaferan", "Ostokhoddos", "Alcohol", "Naphtaline", "Kafoor"};
     repository_amount.reserve(22);
     repository_amount = {0};
@@ -100,16 +100,27 @@ double Atar::get_repository_amount(string herb_name)
     return repository_amount[index];
 }
 
-void Atar::Show_State(Atar &amoo_atar)
+vector<double> Atar::amountvecreturn()
+{
+    
+    return this->repository_amount;
+}
+
+vector<string> Atar::herbvecreturn()
+{
+    return this->repository_herbs;
+}
+
+void Atar::Show_State()
 {
     cout<<"~> Meghdar Daroo Haye Mojod:"<<endl;
     while (Start != 22)
     {
         i = Start;
         j = End;
-        cout<<amoo_atar.repository_herbs;
-        cout<<amoo_atar.repository_amount;
-        cout << "-------------------------------------------------------------" << endl;
+        cout<<this->repository_herbs;
+        cout<<this->repository_amount;
+        cout << " ------------------------------------------------------------------" << endl;
         if (Start == 20)
         {
             End = 22;
@@ -122,19 +133,19 @@ void Atar::Show_State(Atar &amoo_atar)
     Start = 0;
     End = 5;
 
-    cout<<"Mizan Servat Shoma : "<<amoo_atar.getMoney()<<"    |     Mizan Sath Shohrat Shoma : "<<amoo_atar.getReputation_Level()<<endl;
-    cout<<"Mizan Shohrat Shoma : "<<amoo_atar.getReputation_amount()<<"    |    Mizan Shohrat Lazem Baraye ";
-    if(amoo_atar.getReputation_Level()==1)
+    cout<<"Mizan Servat Shoma : "<<this->getMoney()<<endl<<"Mizan Sath Shohrat Shoma : "<<this->getReputation_Level()<<endl;
+    cout<<"Mizan Shohrat Shoma : "<<this->getReputation_amount()<<endl<<"Mizan Shohrat Lazem Baraye ";
+    if(this->getReputation_Level()==1)
     {
-        cout<<"Sath 2 : "<<amoo_atar.Level2_Rep-amoo_atar.getReputation_amount()<<endl;
+        cout<<"Sath 2 : "<<this->Level2_Rep-this->getReputation_amount()<<endl;
     }
-    else if(amoo_atar.getReputation_Level()==2)
+    else if(this->getReputation_Level()==2)
     {
-        cout<<"Sath 3 : "<<amoo_atar.Level3_Rep-amoo_atar.getReputation_amount()<<endl;
+        cout<<"Sath 3 : "<<this->Level3_Rep-this->getReputation_amount()<<endl;
     }
-    else if(amoo_atar.getReputation_Level()==3)
+    else if(this->getReputation_Level()==3)
     {
-        cout<<"Barande Shodan : "<<amoo_atar.Level4_Rep-amoo_atar.getReputation_amount()<<endl;
+        cout<<"Barande Shodan : "<<this->Level4_Rep-this->getReputation_amount()<<endl;
     }
-    
+    cout<<endl<<"_________________________________________________________________________________"<<endl<<endl<<endl;
 }
