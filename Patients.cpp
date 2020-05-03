@@ -319,7 +319,7 @@ else
         <<"Sath Shohrat Shoma Dar in Foroosh "<<Reputation_Change<<" Vahed Taghir Kard."<<endl;
 
         amoo_atar.setMoney(amoo_atar.getMoney()+(Money_change));
-         cout<<endl<<"DarAmad Shoma Dar In Foroosh  ~> "<<Money_change<<" Bood."<<endl;
+         cout<<endl<<"Daramad Shoma Dar In Foroosh  ~> "<<Money_change<<" Bood."<<endl;
 
         cout<<"----------------------------------------------------------------------------"<<endl;
         cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;
