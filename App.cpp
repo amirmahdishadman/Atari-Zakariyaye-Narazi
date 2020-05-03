@@ -144,9 +144,11 @@ void App::SaveProcess()
       OutFile << Amo_Atar.getMoney() << endl;
       OutFile << Bazar.Security << " " << Bazar.Herbs_Level2 << " " << Bazar.Herbs_Level3
       << " " << Bazar.GUI << " " << Bazar.Increasing_Server_Capacity << " " << Bazar.Lab << endl;
+      double Amount;
       for (int i = 0; i < 22; i++)
       {
-         OutFile << Amo_Atar.repository_amount[i] << " ";
+         Amount = Amo_Atar.get_repository_amount(i);
+         OutFile << Amount << " ";
       }
       
       OutFile.close();
@@ -165,7 +167,7 @@ void App::LoadProcess()
       //Reading Inputs
       int Level, Reputation;
       double Money;
-      int Herbs_Amount[22];
+      double Herbs_Amount[22];
       InFile >> Level >> Reputation;
       InFile >> Money;
       bool sec, HLv2, HLv3, GUI, Cap, Lab;
@@ -189,7 +191,19 @@ void App::LoadProcess()
       Bazar.Lab = Lab;
       for (int i = 0; i < 22; i++)
       {
-         Amo_Atar.repository_amount[i] = Herbs_Amount[i];
+         Amo_Atar.set_repository_amount(Herbs_Amount[i], i);
       }
+      cout << "_-_-_-_-Loading Completed!_-_-_-_-" << endl;
+   }
+}
+
+void App::Hacker()
+{
+   if (Bazar.Check_Security() == false)
+   {
+      double increament;
+      increament = (rand() % 11) * 1000;
+      Amo_Atar.setMoney(Amo_Atar.getMoney() - increament);
+      cout << "\n Az Hesabe shoma Pol bardasht Shode\nHarche Zod Tar Option Security ra Bekharid!" << endl;
    }
 }
