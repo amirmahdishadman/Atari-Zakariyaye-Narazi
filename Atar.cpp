@@ -35,8 +35,6 @@ int Atar::getReputation_Level()
     return this->Reputation_Level;
 }
 
-
-
 void Atar::setReputation_amount(int amount)
 {
     this->Reputation_amount=amount;

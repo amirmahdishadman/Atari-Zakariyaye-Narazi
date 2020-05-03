@@ -20,7 +20,6 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
 
     for (int i = 0; i < 4; i++)
     {
-//kdgskfgukjfgkesbkfhbsk
         for (int j = 0; j < 3; j++)
         {//instance-vector-sathebimari-kole bimariya dar in sath-giyaha az 1 ta3
             if(i==3&&j==0)
