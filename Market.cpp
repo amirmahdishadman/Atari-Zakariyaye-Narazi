@@ -222,7 +222,6 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Darchin" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[6] += 1;
                 amo_atar.set_repository_amount("Darchin",amo_atar.get_repository_amount("Darchin")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 10000);
@@ -293,7 +292,6 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             {
                 cout << "Kharidari Shod:  Gon" << endl;
                 //increament of amounts in inventor
-                amo_atar.repository_amount[10] += 1;
                 amo_atar.set_repository_amount("Gon",amo_atar.get_repository_amount("Gon")+1);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 12000);
