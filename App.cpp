@@ -193,6 +193,7 @@ void App::LoadProcess()
       {
          Amo_Atar.set_repository_amount(Herbs_Amount[i], i);
       }
+      cout << "_-_-_-_-Loading Completed!_-_-_-_-" << endl;
    }
 }
 
