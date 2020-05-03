@@ -3,13 +3,12 @@
 void App::ShowMenu()
 {
    cout << "============================== Game Initialized! ==============================" << endl;
-   //Loading The Game
-   // LoadProcess(); DEBUUG
-
+   //Initializing Vectors
+   Patient.set_patients_vect();
+   
    //User Choice
    int listnumber;
    
-   Patient.set_patients_vect();
    //Game Loop
    while (true)
    {
@@ -17,23 +16,25 @@ void App::ShowMenu()
       //Check whether Lab is Unlocked or not
       if (Bazar.Check_Lab() == true)
       {
-         cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
+         cout << "\nLotfan Az Item haye Zir Entekhab Konid: " << endl
            << "1-Morajee Moshtari" << endl
            << "2-Internet" << endl
            << "3-Moshahede Vaziyat" << endl
            << "4-Bazar" << endl
            << "5-NoteBook" << endl
-           << "6-Azmayeshgah"
+           << "6-Azmayeshgah" << endl
+           << "7-Game Loading" << endl
            << "0-Kharej Shodan Az Bazi" << endl;
       }
       else
       {
-         cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
+         cout << "\nLotfan Az Item haye Zir Entekhab Konid: " << endl
            << "1-Morajee Moshtari" << endl
            << "2-Internet" << endl
            << "3-Moshahede Vaziyat" << endl
            << "4-Bazar" << endl
            << "5-NoteBook" << endl
+           << "6-Game Loading" << endl
            << "0-Kharej Shodan Az Bazi" << endl;
       }
 
@@ -71,16 +72,33 @@ void App::ShowMenu()
             NoteBook.Initialize_NoteBook();
             break;
          }
-         //Lab ********************************
-         if(Bazar.Check_Lab() == true)
+
+          case 6:
          {
-             case 6:
+            if (Bazar.Check_Lab() == true)
             {
                Lab.Initialize_Labratory(Bazar.Check_Lab(), Amo_Atar);
-               break;
             }
+            else
+            {
+               LoadProcess();
+            }
+            break;
          }
-         //end Lab *****************************
+
+         case 7:
+         {
+            if (Bazar.Check_Lab() == true)
+            {
+               LoadProcess();
+            }
+            else
+            {
+               cout << "Itemi Ba In Shomare Vojod Nadarad !" << endl;
+            }
+            break;
+         }
+
          case 0:
          {
             cout << "\tSaving The Game..." << endl;
@@ -144,6 +162,7 @@ void App::LoadProcess()
    }
    else
    {
+      //Reading Inputs
       int Level, Reputation;
       double Money;
       int Herbs_Amount[22];
@@ -156,8 +175,9 @@ void App::LoadProcess()
       {
          i++;
       }
+      //Close File For Saving Memory
       InFile.close();
-
+      //Setting Values
       Amo_Atar.setReputation_Level(Level);
       Amo_Atar.setReputation_amount(Reputation);
       Amo_Atar.setMoney(Money);
