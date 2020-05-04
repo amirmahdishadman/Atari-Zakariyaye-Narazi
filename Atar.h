@@ -40,5 +40,7 @@ public:
     int get_Level2_Rep();
     int get_Level3_Rep();
     int get_Level4_Rep();
+    //AI system
+    void Ai();
 };
 #endif

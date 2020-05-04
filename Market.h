@@ -15,6 +15,7 @@ public:
     bool GUI;
     bool Increasing_Server_Capacity;
     bool Lab;
+    bool Ai;
     /*Setters for set values*/
     void set_Security();
     void set_Herbs_Level2();
@@ -22,6 +23,7 @@ public:
     void set_GUI();
     void set_Increasing_Server_Capacity();
     void set_Lab();
+    void set_Ai();
     /*Return True if each option in market was purchased*/
     bool Check_Security();
     bool Check_Herbs_Level2();
@@ -29,6 +31,7 @@ public:
     bool Check_GUI();
     bool Check_Increasing_Server_Capacity();
     bool Check_Lab();
+    bool Check_Ai();
     //Constructor Just for set values
     Market();
     /*Buy System*/

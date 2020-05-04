@@ -81,3 +81,8 @@ void Atar::Show_State()
 {
     ptr->Show_State();
 }
+
+void Atar::Ai()
+{
+    ptr->Ai();
+} 

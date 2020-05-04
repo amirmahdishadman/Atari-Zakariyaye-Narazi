@@ -25,6 +25,12 @@ void Market::set_Lab()
     Lab = false;
 }
 
+void Market::set_Ai()
+{
+    Ai = false;
+}
+
+
 bool Market::Check_Security()
 {
     if (Security == true)
@@ -97,6 +103,18 @@ bool Market::Check_Lab()
     }
 }
 
+bool Market::Check_Ai()
+{
+    if (Ai == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 Market::Market()
 {
     set_Security();
@@ -105,6 +123,7 @@ Market::Market()
     set_GUI();
     set_Increasing_Server_Capacity();
     set_Lab();
+    set_Ai();
 }
 
 void Market::Buy_Herbs_Level1(Atar &amo_atar)
@@ -477,6 +496,7 @@ void Market::Buy(Atar &amo_atar)
         cout << "(4) GUI   Cost: 200,000T" << endl;
         cout << "(5) Increasing APP's Server Capacity(more customers) Cost: 200,000T" << endl;
         cout << "(6) Lab   Cost: 350,000T" << endl;
+        cout << "(7) AI    Cost 220,000 "<<endl;
         cout << "Press 0 to back to menu\n" << endl;
         cout << "Your choice: ";
         cin >> choice;
@@ -598,12 +618,28 @@ void Market::Buy(Atar &amo_atar)
                 cout << "\nShoma In Option ro Ghablan Kharidid!" << endl;
             }
             break;
-        case 0:
-            loop3 = false;
-            break;
+        case 7:
+            if (Ai == false)
+            {
+                if (amo_atar.getMoney() >= 220000 && amo_atar.getReputation_Level() >= 1)
+                {
+                    //Unlock Lab
+                    Ai = true;
+                    //decreament of amo atar's money
+                    amo_atar.setMoney(amo_atar.getMoney() - 220000);
+                    cout << "\nAi Roshan Shod!" << endl;
+                }
+                else
+                {
+                    cout << "\nShoma Hanoz Be Pol Ya Sathe Kafi Naresidid" << endl;
+                }
+            case 0:
+                loop3 = false;
+                break;
 
-        default:
-            cout << "\nVorodi Eshtebah!\nDobare Talash Konid:" << endl;
+            default:
+                cout << "\nVorodi Eshtebah!\nDobare Talash Konid:" << endl;
+            }
         }
     }
 }
