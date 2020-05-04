@@ -78,7 +78,7 @@ public:
         Level4_Rep=150;
         setReputation_amount(0);
         setReputation_Level(1);
-        setMoney(300000);
+        setMoney(400000);
         #endif
         #ifdef TestCase
         initialize_vectors();
@@ -151,7 +151,7 @@ public:
 
     void Show_State()
     {
-        cout << "\n\t\t*------*[NoteBook Menu]*------*" << endl;
+        cout << "\n\t\t*------*[STATUS]*------*" << endl;
         cout << "~> Meghdar Daroo Haye Mojod:" << endl;
         while (Start != 22)
         {
