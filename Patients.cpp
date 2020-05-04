@@ -69,8 +69,7 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
 
 
 //******************Refer************************
-void Patients::Patients_refer(int Level,bool Server_Capacity,Atar &amoo_atar,Notebook &notebook,Patients &patient)
-{
+ void Patients::Patients_refer(int Level,bool Server_Capacity,bool GUI,Atar &amoo_atar,Notebook &notebook,Patients &patient){
     Patients P;
     bool herbbool=true,amountisok=true,costisok=true;
     char notelist;
@@ -173,6 +172,10 @@ else
         string herb;
         double amount;
         double cost;
+        if (GUI)
+        {
+            Reputation_Change+=2;
+        }
         for(int j=1;j<=herbcountint;j++)
         {
             cout<<"Lotfan Esme Daro Ya Madde Shomare "<<j<<" Ra Bar Asas Jadval Vared Konid:"<<endl;
