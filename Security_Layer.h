@@ -193,4 +193,15 @@ public:
              << endl
              << endl;
     }
+    
+    void Ai()
+    {
+        for(int i=0;i<22;i++)
+        {
+            if(this->repository_amount[i]==1)
+            {
+                cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl<<endl<<endl;
+            }
+        }
+    }
 };

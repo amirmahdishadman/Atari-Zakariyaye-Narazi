@@ -112,8 +112,13 @@ void App::ShowMenu()
                cout << " jgs  (____))    (:;:;))      ||-----||      ((___) " << endl;
                cout << "------------------------------------------------ " << endl;
             }
-            
-            Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Amo_Atar,NoteBook,Patient);
+            Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Bazar.Check_GUI(),Amo_Atar,NoteBook,Patient);
+            if(Bazar.Check_Ai())
+            {
+               cout<<endl<<"*****************************AI ALARM*****************************"<<endl<<endl;
+               Amo_Atar.Ai();
+               cout<<"___________________________________________________________________"<<endl<<endl;
+            }
             break;
          }
          case 2:

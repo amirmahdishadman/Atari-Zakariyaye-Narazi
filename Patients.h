@@ -17,8 +17,7 @@ public:
     int Number_of_patients;
     void set_number_of_patients(int, bool); //set the number of patients in an loop.
     //----------------------------------------------------------------------------------------------
-    void Patients_refer(int,bool,Atar&,Notebook&,Patients&); //int for level of atar and bool for extera server option.
-
+     void Patients_refer(int,bool,bool,Atar&,Notebook&,Patients&); //int for level of atar and bool for extera server option.
     //------------------------------------------------
 
     string Cost_system_check(double, double);
