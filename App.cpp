@@ -2,7 +2,6 @@
 
 void App::ShowMenu()
 {
-   cout << "============================== Game Initialized! ==============================" << endl;
    //Initializing Vectors
    Patient.set_patients_vect();
    
@@ -10,6 +9,9 @@ void App::ShowMenu()
    int listnumber;
 
    //Welcome
+   if (Bazar.Check_Lab() == true)
+   {
+   cout << "============================== Game Initialized! ==============================" << endl;
    cout << "    _____                      _____   __                " << endl;
    cout << "   /  _  \\   _____   ____     /  _  \\_/  |______ _______ " << endl;
    cout << "  /  /_\\  \\ /     \\ /  _ \\   /  /_\\  \\   __\\__  \\_  __ \\" << endl;
@@ -21,7 +23,7 @@ void App::ShowMenu()
    cout << " ██   ███ ███████ ██ ████ ██ █████   " << endl;
    cout << " ██    ██ ██   ██ ██  ██  ██ ██      " << endl;
    cout << "  ██████  ██   ██ ██      ██ ███████" << endl;
-   
+   }
 
    //Game Loop
    while (true)
@@ -40,7 +42,7 @@ void App::ShowMenu()
       //Check whether Lab is Unlocked or not
       if (Bazar.Check_Lab() == true)
       {
-         cout << "\n\t\tLotfan Az Item haye Zir Entekhab Konid: " << endl
+         cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
            << "-_*[1-Morajee Moshtari" << endl
            << "-_*[2-Internet" << endl
            << "-_*[3-Moshahede Vaziyat" << endl
@@ -48,7 +50,7 @@ void App::ShowMenu()
            << "-_*[5-NoteBook" << endl
            << "-_*[6-Azmayeshgah" << endl
            << "-_*[7-Game Loading" << endl
-           << "-_*[0-Kharej Shodan Az Bazi\n" << endl;
+           << "-_*[0-Kharej Shodan Az Bazi" << endl;
          //GUI
          if (Bazar.Check_GUI() == true)
          {
@@ -57,14 +59,14 @@ void App::ShowMenu()
       }
       else
       {
-         cout << "\nLotfan Az Item haye Zir Entekhab Konid: " << endl
+         cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
            << "1-Morajee Moshtari" << endl
            << "2-Internet" << endl
            << "3-Moshahede Vaziyat" << endl
            << "4-Bazar" << endl
            << "5-NoteBook" << endl
            << "6-Game Loading" << endl
-           << "0-Kharej Shodan Az Bazi\n" << endl;
+           << "0-Kharej Shodan Az Bazi" << endl;
          //GUI
          if (Bazar.Check_GUI() == true)
          {
@@ -89,7 +91,7 @@ void App::ShowMenu()
             //GUI
             if (Bazar.Check_GUI() == true)
             {
-               cout << "\t\t     ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁PATIENTS▁▁▁▁▁▁▁▁▁▂▃▄▅\n" << endl;
+               cout << "     ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁PATIENTS▁▁▁▁▁▁▁▁▁▂▃▄▅" << endl;
                cout << "                     /:""|       .@@@@@," << endl;
                cout << "     |: 66|_      @@@@@@@@, " << endl;
                cout << "     C     _)     aa`@@@@@@ " << endl;
@@ -115,9 +117,7 @@ void App::ShowMenu()
             Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Bazar.Check_GUI(),Amo_Atar,NoteBook,Patient);
             if(Bazar.Check_Ai())
             {
-               cout<<endl<<"*****************************AI ALARM*****************************"<<endl<<endl;
                Amo_Atar.Ai();
-               cout<<"___________________________________________________________________"<<endl<<endl;
             }
             break;
          }
@@ -126,24 +126,24 @@ void App::ShowMenu()
             //GUI
             if (Bazar.Check_GUI() == true)
             {
-               cout << "\t\t     ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁INTERNET▁▁▁▁▁▁▁▁▁▂▃▄▅" << endl;
-               cout << "\t\t        .__________________________. " << endl;
-               cout << "\t\t        | .___________________. |==| " << endl;
-               cout << "\t\t        | | ................. | |  | " << endl;
-               cout << "\t\t        | | ::::INTERNET::::: | |  | " << endl;
-               cout << "\t\t        | | ::::::::::::::::: | |  | " << endl;
-               cout << "\t\t        | | :::::GITHUB:::::: | |  | " << endl;
-               cout << "\t\t        | | ::::::::::::::::: | |  | " << endl;
-               cout << "\t\t        | | ::::::::::::::::: | |  | " << endl;
-               cout << "\t\t        | | ::::::::::::::::: | | ,| " << endl;
-               cout << "\t\t        | !___________________! |(c| " << endl;
-               cout << "\t\t        !_______________________!__! " << endl;
-               cout << "\t\t       /                            \\ " << endl;
-               cout << "\t\t      /  [][][][][][][][][][][][][]  \\ " << endl;
-               cout << "\t\t     /  [][][][][][][][][][][][][][]  \\ " << endl;
-               cout << "\t\t    (  [][][][][____________][][][][]  ) " << endl;
-               cout << "\t\t     \\ ------------------------------ / " << endl;
-               cout << "\t\t      \\______________________________/ " << endl;
+               cout << "     ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁INTERNET▁▁▁▁▁▁▁▁▁▂▃▄▅" << endl;
+               cout << "        .__________________________. " << endl;
+               cout << "        | .___________________. |==| " << endl;
+               cout << "        | | ................. | |  | " << endl;
+               cout << "        | | ::::INTERNET::::: | |  | " << endl;
+               cout << "        | | ::::::::::::::::: | |  | " << endl;
+               cout << "        | | :::::GITHUB:::::: | |  | " << endl;
+               cout << "        | | ::::::::::::::::: | |  | " << endl;
+               cout << "        | | ::::::::::::::::: | |  | " << endl;
+               cout << "        | | ::::::::::::::::: | | ,| " << endl;
+               cout << "        | !___________________! |(c| " << endl;
+               cout << "        !_______________________!__! " << endl;
+               cout << "       /                            \\ " << endl;
+               cout << "      /  [][][][][][][][][][][][][]  \\ " << endl;
+               cout << "     /  [][][][][][][][][][][][][][]  \\ " << endl;
+               cout << "    (  [][][][][____________][][][][]  ) " << endl;
+               cout << "     \\ ------------------------------ / " << endl;
+               cout << "      \\______________________________/ " << endl;
             }
             
             Internet::internet(Amo_Atar.getReputation_Level());
@@ -167,15 +167,15 @@ void App::ShowMenu()
             //GUI
             if (Bazar.Check_GUI() == true)
             {
-               cout << "\t\t       ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁NOTEBOOK▁▁▁▁▁▁▁▁▁▂▃▄▅" << endl;
-               cout << "\t\t    (`/\" " << endl;
-               cout << "\t\t    `=\\/\\ __...--~~~~~-._   _.-~~~~~--...__" << endl;
-               cout << "\t\t     `=\\/\\               \\ /               \\" << endl;
-               cout << "\t\t      `=\\/                V                 \\" << endl;
-               cout << "\t\t      //_\\___--~~~~~~-._  |  _.-~~~~~~--...__\\" << endl;
-               cout << "\t\t     //  ) (..----~~~~._\\ | /_.~~~~----.....__\\" << endl;
-               cout << "\t\t    ===( INK )==========\\|//====================" << endl;
-               cout << "\t\t   _____\\___/__________`---`_____________________" << endl;
+               cout << "       ▅▄▃▁▁▁▁▁▁▁▁▁▁▁▁NOTEBOOK▁▁▁▁▁▁▁▁▁▂▃▄▅" << endl;
+               cout << "    (`/\" " << endl;
+               cout << "    `=\\/\\ __...--~~~~~-._   _.-~~~~~--...__" << endl;
+               cout << "     `=\\/\\               \\ /               \\" << endl;
+               cout << "      `=\\/                V                 \\" << endl;
+               cout << "      //_\\___--~~~~~~-._  |  _.-~~~~~~--...__\\" << endl;
+               cout << "     //  ) (..----~~~~._\\ | /_.~~~~----.....__\\" << endl;
+               cout << "    ===( INK )==========\\|//====================" << endl;
+               cout << "   _____\\___/__________`---`_____________________" << endl;
 
             }
             NoteBook.Initialize_NoteBook();
@@ -210,19 +210,19 @@ void App::ShowMenu()
 
          case 0:
          {
-            cout << "\tSaving The Game..." << endl;
+            cout << "Saving The Game..." << endl;
             SaveProcess();
             cout << "============================== GoodBye! ==============================" << endl;
             //GUI
             if (Bazar.Check_GUI() ==  true)
             {
-               cout << "\t         wWWWw               wWWWw" << endl;
-               cout << "\t   vVVVv (___) wWWWw         (___)  vVVVv  " << endl;
-               cout << "\t   (___)  ~Y~  (___)  vVVVv   ~Y~   (___)  " << endl;
-               cout << "\t    ~Y~   \\|    ~Y~   (___)    |/    ~Y~" << endl;
-               cout << "\t    \\|   \\ |/   \\| /  \\~Y~/   \\|    \\ |/" << endl;
-               cout << "\t   \\\\|// \\\\|// \\\\|/// \\\\|//  \\\\|// \\\\|/// " << endl;
-               cout << "\t   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
+               cout << "         wWWWw               wWWWw" << endl;
+               cout << "   vVVVv (___) wWWWw         (___)  vVVVv  " << endl;
+               cout << "   (___)  ~Y~  (___)  vVVVv   ~Y~   (___)  " << endl;
+               cout << "    ~Y~   \\|    ~Y~   (___)    |/    ~Y~" << endl;
+               cout << "    \\|   \\ |/   \\| /  \\~Y~/   \\|    \\ |/" << endl;
+               cout << "   \\\\|// \\\\|// \\\\|/// \\\\|//  \\\\|// \\\\|/// " << endl;
+               cout << "   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
             }
             exit(0);
             break;
@@ -272,7 +272,7 @@ void App::LoadProcess()
    ifstream InFile("Save.txt", ios::in);
    if (!InFile)
    {
-      cerr << "Loading Failed,\n Maybe you've deleted the save.txt file or file format's been Corrupted!" << endl;
+      cerr << "Loading Failed, Maybe you've deleted the save.txt file or file format's been Corrupted!" << endl;
    }
    else
    {
@@ -305,7 +305,7 @@ void App::LoadProcess()
       {
          Amo_Atar.set_repository_amount(Herbs_Amount[i], i);
       }
-      cout << "_-_-_-_-Loading Completed!_-_-_-_-" << endl;
+      cout << "Loading Completed!" << endl;
    }
 }
 
@@ -314,8 +314,8 @@ void App::Hacker()
    if (Bazar.Check_Security() == false)
    {
       double increament;
-      increament = (rand() % 11) * 1000;
+      increament = 10 * 1000;
       Amo_Atar.setMoney(Amo_Atar.getMoney() - increament);
-      cout << "\n Az Hesabe shoma Pol bardasht Shode\nHarche Zod Tar Option Security ra Bekharid!" << endl;
+      cout << " Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!" << endl;
    }
 }

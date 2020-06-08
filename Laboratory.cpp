@@ -2,7 +2,7 @@
 
 void Labratory::Make_Alcohol(Atar &amo_atar)
 {
-    cout << "Making Alcohol Process Started...\n" << endl;
+    cout << "Making Alcohol Process Started..." << endl;
     int C,H,O;
     cout << "Enter the number of Carbons: ";
     cin >> C;
@@ -20,7 +20,7 @@ bool Labratory::Check_Alcohol_inputs(int C, int H, int O, Atar &amo_atar)
 {
     if (C == 2 && H == 6 && O == 1)
     {
-        cout << "\t\t Alcohol Process End!" << endl;
+        cout << " Alcohol Process End!" << endl;
         cout << "Shoma Yek Bottry Alcohol Dorost Kardid." << endl;
         //Amount increament in Inventory
         amo_atar.set_repository_amount("Alcohol",amo_atar.get_repository_amount("Alcohol")+1);
@@ -29,7 +29,7 @@ bool Labratory::Check_Alcohol_inputs(int C, int H, int O, Atar &amo_atar)
     }
     else
     {
-        cout << "Tarkibe Eshtebah!\n Try Again!" << endl;
+        cout << "Tarkibe Eshtebah! Try Again!" << endl;
         return false;
     }
     
@@ -37,7 +37,7 @@ bool Labratory::Check_Alcohol_inputs(int C, int H, int O, Atar &amo_atar)
 
 void Labratory::Make_Comphor(Atar &amo_atar)
 {
-    cout << "Making Kafoor Process Started...\n" << endl;
+    cout << "Making Kafoor Process Started..." << endl;
     int C,H,O;
     cout << "Enter the number of Carbons: ";
     cin >> C;
@@ -55,7 +55,7 @@ bool Labratory::Check_Comphor_inputs(int C, int H, int O, Atar &amo_atar)
 {
     if (C == 10 && H == 16 && O == 1)
     {
-        cout << "\t\t Kafoor Process End!" << endl;
+        cout << " Kafoor Process End!" << endl;
         cout << "Shoma Yek Pack Kafoor Dorost Kardid." << endl;
         //Amount increament in Inventory
         amo_atar.set_repository_amount("Kafoor",amo_atar.get_repository_amount("Kafoor")+1);
@@ -64,7 +64,7 @@ bool Labratory::Check_Comphor_inputs(int C, int H, int O, Atar &amo_atar)
     }
     else
     {
-        cout << "Tarkibe Eshtebah!\n Try Again!" << endl;
+        cout << "Tarkibe Eshtebah! Try Again!" << endl;
         return false;
     }
     
@@ -72,7 +72,7 @@ bool Labratory::Check_Comphor_inputs(int C, int H, int O, Atar &amo_atar)
 
 void Labratory::Make_Naphtaline(Atar &amo_atar)
 {
-    cout << "Making Naphtaline Process Started...\n" << endl;
+    cout << "Making Naphtaline Process Started..." << endl;
     int C,H,O;
     cout << "Enter the number of Carbons: ";
     cin >> C;
@@ -90,7 +90,7 @@ bool Labratory::Check_Naphtaline_inputs(int C, int H, int O, Atar &amo_atar)
 {
     if (C == 10 && H == 8 && O == 0)
     {
-        cout << "\t\t Naphtaline Process End!" << endl;
+        cout << " Naphtaline Process End!" << endl;
         cout << "Shoma Yek Pack Naphtaline Dorost Kardid." << endl;
         //Amount increament in Inventory
         amo_atar.set_repository_amount("Naphtaline",amo_atar.get_repository_amount("Naphtaline")+1);
@@ -99,7 +99,7 @@ bool Labratory::Check_Naphtaline_inputs(int C, int H, int O, Atar &amo_atar)
     }
     else
     {
-        cout << "Tarkibe Eshtebah!\n Try Again!" << endl;
+        cout << "Tarkibe Eshtebah! Try Again!" << endl;
         return false;
     }
     
@@ -109,12 +109,12 @@ void Labratory::Initialize_Labratory(bool Lab, Atar &amo_atar)
 {
     if (Lab == true)
     {
-        cout << "\n\t\t*------*[Labratory]*------*" << endl;
+        cout << "*------*[Labratory]*------*" << endl;
 
         bool loop = true;
         while (loop == true)
         {
-            cout << "\n(1)Alcohol | (2)Kafoor | (3)Naphtaline | (0)Back To Menu" << endl;
+            cout << "(1)Alcohol | (2)Kafoor | (3)Naphtaline | (0)Back To Menu" << endl;
             int choice;
             cin >> choice;
             switch (choice)
@@ -132,7 +132,7 @@ void Labratory::Initialize_Labratory(bool Lab, Atar &amo_atar)
                 loop = false;
                 break;
             default:
-                cout << "Vorodiye Eshtebah!\nTry Again:\n" << endl;
+                cout << "Vorodiye Eshtebah!Try Again:" << endl;
             }
         }
     }

@@ -1,21 +1,17 @@
 #include <ctime>
 #include<iomanip>
 #include "Patients.h"
-#define TestCase         //<<<---------->>> For Using TestCase Oncomment it!
 using namespace std;
 
 ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat sakhtam, edamaro boro
 {  
      // alan ino uncoment kon va tedade bimaraye sathe yek o bezari kar mikone
     //***************************Herbs-cost-amount show start*********************************
-    cout<<"            ____________________________________________________________________________________"<<endl;
 
             cout<<setw(30)<<"Esme Daroo"<< " ";
             cout<<setw(30)<<"Gheymat Monsefane"<< " ";
             cout<<setw(30)<<"Meghdar Monsefane"<< " ";
             cout<<endl;
-            cout<<endl;
-            cout<<"            ____________________________________________________________________________________"<<endl;
 
 
     for (int i = 0; i < 4; i++)
@@ -30,8 +26,6 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
             cout<<setw(30)<<patients.patients_vect[0][i].cost[j] << " ";
             cout<<setw(30)<<patients.patients_vect[0][i].Amount[j] << " ";
             cout<<endl;
-            cout<<"            ____________________________________________________________________________________"<<endl;
-            
         }
         
     }
@@ -48,7 +42,6 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
             cout<<setw(30)<<patients.patients_vect[1][i].cost[j] << " ";
             cout<<setw(30)<<patients.patients_vect[1][i].Amount[j] << " ";
             cout<<endl;
-            cout<<"            ____________________________________________________________________________________"<<endl;
         }
         
     }
@@ -58,15 +51,12 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
         cout<<setw(30)<<patients.patients_vect[2][i].cost[0] << " ";
         cout<<setw(30)<<patients.patients_vect[2][i].Amount[0] << " ";
         cout<<endl;
-        cout<<"            ____________________________________________________________________________________"<<endl;
     }
     //*****************************Herbs-cost-amount show end************************************
 
 
     return output;
 }
-
-
 
 //******************Refer************************
  void Patients::Patients_refer(int Level,bool Server_Capacity,bool GUI,Atar &amoo_atar,Notebook &notebook,Patients &patient){
@@ -76,14 +66,11 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
     string herbcount;
     int herbcountint=0;
     patient.set_number_of_patients(Level,Server_Capacity);
-    cout << "\t\t\t*------*[PATIENTS]*------*\n\n\n\n" << endl;
-    cout << "━─━─━━─━━━─━─━「₪」━━─━─━━━─━─━─━" << endl;
-    cout <<"Tedad "<<this->Number_of_patients<<" Moshtari Morajee Karde Ast."<<endl<<endl;
-    cout << "━─━─━━─━━━─━─━「₪」━━─━─━━━─━─━─━" << endl;
+    cout << "*------*[PATIENTS]*------*" << endl;
+    cout <<"Tedad "<<this->Number_of_patients<<" Moshtari Morajee Karde Ast."<<endl;
     cout <<"-> Sharh Daroo Ha:"<<endl;
-    cout <<patient<<endl<<endl<<endl;
-    cout <<"\t\t   Be Atari Zakariyaye Narazi Khosh Amadid."<<endl<<endl;
-    cout <<"\t\t    *＊✿❀                        　❀✿＊*" << endl;
+    cout <<patient;
+    cout <<"   Be Atari Zakariyaye Narazi Khosh Amadid."<<endl;
     //---------------------------------------------------------------
     for(int i=1;i<=patient.Number_of_patients;i++)
     {
@@ -91,10 +78,9 @@ ostream &operator<<(ostream &output,Patients &patients) //#Check. sample o barat
         double Reputation_Change=0;
         double Money_change=0;
         P=get_patient(Level);
-        cout << "\n\n\t\t   █▒▒▒▒▒▒▒█     BIMAR HA     █▒▒▒▒▒▒▒█" << endl;
-        cout<<"\t\t\t   Salam. Man "<<P.Ill<<" Daram."<<endl;
-        cout << "\t\t     ࿇ ══━━━━═━━━━✥◈✥═━━━━━━━━══ ࿇\n" << endl;
-        cout<<"Atar Aziz Ba Tavajoh Be Bimari , Mavared Zir Ra Javab Dahid."<<endl<<endl;
+        cout << "Bimar Ha:" << endl;
+        cout<<"   Salam. Man "<<P.Ill<<" Daram."<<endl;
+        cout<<"Atar Aziz Ba Tavajoh Be Bimari , Mavared Zir Ra Javab Dahid."<<endl;
 
 
 
@@ -191,7 +177,7 @@ else
             if (herbindex==-1)
             {
                 herbbool=false;
-                cout<<"Daro Ya Made Dade Shode ba Niyaz Moshtari Motabeghat Nadarad."<<endl<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<endl<<"Age Chizi Forkhti Halalet Vali Dg Raft !"<<endl;
+                cout<<"Daro Ya Made Dade Shode ba Niyaz Moshtari Motabeghat Nadarad."<<endl<<"Shoma Moshtari Ra Az Dast Dadid!"<<endl<<"Age Chizi Forkhti Halalet Vali Dg Raft !"<<endl;
                 Reputation_Change-=5;
                 break;
                 //ok
@@ -323,13 +309,11 @@ else
 
         }
         amoo_atar.setReputation_amount(amoo_atar.getReputation_amount()+Reputation_Change);
-        cout<<"----------------------------------------------------------------------------"<<endl
-        <<"Sath Shohrat Shoma Dar in Foroosh "<<Reputation_Change<<" Vahed Taghir Kard."<<endl;
+        cout <<"Sath Shohrat Shoma Dar in Foroosh "<<Reputation_Change<<" Vahed Taghir Kard."<<endl;
 
         amoo_atar.setMoney(amoo_atar.getMoney()+(Money_change));
-         cout<<endl<<"Daramad Shoma Dar In Foroosh  ~> "<<Money_change<<" Bood."<<endl;
+         cout<<"Daramad Shoma Dar In Foroosh  ~> "<<Money_change<<" Bood."<<endl;
 
-        cout<<"----------------------------------------------------------------------------"<<endl;
         cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;
 
 
@@ -338,29 +322,22 @@ else
     }
     if(amoo_atar.getReputation_amount()>=amoo_atar.get_Level4_Rep())
     {
-        cout<<"####################################################################"<<endl;
-        cout<<"# -- -- -- -- -- -- -- -- --  YOU WON!  -- -- -- -- -- -- -- -- -- #"<<endl;
-        cout<<"####################################################################"<<endl;
+        cout << "YOU WON!" << endl;
         amoo_atar.setReputation_Level(4);
         exit(0);
     }
     else if(amoo_atar.getReputation_amount()>=amoo_atar.get_Level3_Rep()&&amoo_atar.getReputation_Level()==2)
     {
-        cout<<"############################################################################"<<endl;
-        cout<<"# -- -- -- -- -- -- -- -- --  You Are Level 3!  -- -- -- -- -- -- -- -- -- #"<<endl;
-        cout<<"############################################################################"<<endl;
+        cout << "You Are Level 3!" << endl;
+
         amoo_atar.setReputation_Level(3);
     }
     else if(amoo_atar.getReputation_amount()>=amoo_atar.get_Level2_Rep()&&amoo_atar.getReputation_Level()==1)
     {
-        cout<<"###########################################################################"<<endl;
-        cout<<"# -- -- -- -- -- -- -- -- -- You Are Level 2!  -- -- -- -- -- -- -- -- -- #"<<endl;
-        cout<<"###########################################################################"<<endl;
+        cout << "You Are Level 2!" << endl;
         amoo_atar.setReputation_Level(2);
     }
 }
-
-
 
 void Patients::set_patients_vect()//level 3 monde --dar initializer 
 {
@@ -516,69 +493,79 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
 
 }
 
-
 Patients Patients::get_patient(int level)//end 
 {
     switch (level)
     {
         case 1:
         {  
-            
-            #ifndef TestCase
-            int cn;
-            cn=rand()%4;
-            return this->patients_vect[0][cn];
-            #endif
-            #ifdef TestCase
-            return this->patients_vect[0][0];
-            #endif
+                bool loop=true;
+                int d_number;
+                while(loop)
+                {
+                    cout<<"Lotfan Shomare Bimari Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
+                    cin>>d_number;
+                    if(d_number>=1&&d_number<=4)
+                    {
+                        loop=false;
+                        return this->patients_vect[0][d_number-1];
+                    }
+                    else
+                    {
+                        cout<<"Lotfan Dar Vared Kardan Tedad Deghat Konid !!!"<<endl;
+                    } 
+                }
             break; 
         }
         case 2:
         {
-            #ifndef TestCase
-            int cn1,cn2,cn3;
-            cn1=rand()%4;
-            cn2=rand()%3;
-            cn3=rand()%2;
-            if(cn3==0)
-            {
-                return this->patients_vect[0][cn1];
-            }
-            else
-            {
-                return this->patients_vect[1][cn2];
-            }
-            #endif
-            #ifdef TestCase
-            return this->patients_vect[1][0];
-            #endif
+        
+             bool loop=true;
+                int d_number;
+                int d_level;
+                while(loop)
+                {
+                    cout<<"Lotfan Shomare Sath Bimari Fard Ra Az 1 Ta 2 Vared Konid :"<<endl;
+                    cin>>d_level;
+
+                    cout<<"Lotfan Shomare Bimari Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
+                    cin>>d_number;
+                    
+                    if((d_number>=1&&d_number<=4)&&(d_level>=1&&d_level<=2))
+                    {
+                        loop=false;
+                        return this->patients_vect[d_level-1][d_number-1];
+                    }
+                    else
+                    {
+                        cout<<"Lotfan Dar Vared Kardan Tedad Deghat Konid !!!"<<endl;
+                    } 
+                }
             break;
         }
         case 3:
         {
-            #ifndef TestCase
-            int cn1,cn2,cn3,cn4;
-            cn1=rand()%4;
-            cn2=rand()%3;
-            cn3=rand()%3;
-            cn4=rand()%3;
-            if(cn4==0)
-            {
-                return this->patients_vect[0][cn1];
-            }
-            else if(cn4==1)
-            {
-                return this->patients_vect[1][cn2];
-            }
-            else
-            {
-                return this->patients_vect[2][cn3];
-            }
-            #endif
-            #ifdef TestCase
-            return this->patients_vect[2][0];
-            #endif
+            bool loop=true;
+                int d_number;
+                int d_level;
+                while(loop)
+                {
+                    cout<<"Lotfan Shomare Sath Bimari Fard Ra Az 1 Ta 3 Vared Konid :"<<endl;
+                    cin>>d_level;
+
+                    cout<<"Lotfan Shomare Bimari Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
+                    cin>>d_number;
+                    
+                    if((d_number>=1&&d_number<=4)&&(d_level>=1&&d_level<=3))
+                    {
+                        loop=false;
+                        return this->patients_vect[d_level-1][d_number-1];
+                    }
+                    else
+                    {
+                        cout<<"Lotfan Dar Vared Kardan Tedad Deghat Konid !!!"<<endl;
+                    } 
+                }
             break;
         }
         
@@ -586,44 +573,34 @@ Patients Patients::get_patient(int level)//end
     return *this;
 }
 
-
-
 void Patients::set_number_of_patients(int level,bool server_is_byed)//end aval ino seda mizanim
 {
-    #ifndef TestCase
-    int num=0;
-    if(!server_is_byed)
+    bool loop=true;
+    int num=2;
+    int p_number;
+    while (loop)
     {
-        num=rand()%2+1; //num=random()%2+1 , random() na. rand yes. #Check
-    }
-    else
+         if(server_is_byed)
     {
-        num=rand()%4+1;
+          num=4; 
     }
-    this->Number_of_patients=num;
-    #endif
-    #ifdef TestCase
-    this->Number_of_patients=1;
-    #endif
+        cout<<"Lotfan Tedad Morajee Konandegan ra vared konid:(Bishtarin Tedad Mojaz "<<num<<" Ta Mibashad Va Kamtarin Tedad 1 Mibashad.)"<<endl;
+        cin>>p_number;
+        if(p_number<=num && p_number>=1)
+        {
+            this->Number_of_patients=p_number;
+            loop=false;
+        }
+        else
+        {
+            cout<<"Lotfan Dar Vared Kardan Tedad Deghat Konid !!!"<<endl;
+        }
+        
+    }
 }
-
-
-
-
 
 string Patients::Cost_system_check(double const_cost,double in_cost)//saghf geran foroshi = 5000 toman //saghf takhfif =5000 toman
 {
-    /*
-    Return Values:
-
-    toolow
-    discount
-    =
-    geran
-    toomuch
-    false
-    */
-
     if(in_cost<const_cost-5000)
     {
         return "toolow";
@@ -648,25 +625,10 @@ string Patients::Cost_system_check(double const_cost,double in_cost)//saghf gera
     {
         return "false";
     }
-
-
-
-
-
 }
-
 
 int Patients::Herbs_system_check(Patients p,string in_herb)
 {
-
-  /*
-    Return Values:
-
-    0 index
-    1 index
-    2 index
-    -1 = false
-    */
 
   if(in_herb==p.Herb[0])
   {
@@ -684,25 +646,10 @@ int Patients::Herbs_system_check(Patients p,string in_herb)
   {
       return -1;
   }
-  
-  
-
 }
-
 
 string Patients::Amount_system_check(double const_amount,double in_amount)//had aghal bayad 1 vahed befroshad dar gheyr in sorat eroor va sagh heydye dadan namahdood ast .
 {
-
-     /*
-    Return Values:
-
-    toolow
-    kamforoshi
-    =
-    hedye
-    false
-    */
-
     if(in_amount<1)
     {
         return "toolow";

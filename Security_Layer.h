@@ -151,7 +151,7 @@ public:
 
     void Show_State()
     {
-        cout << "\n\t\t*------*[STATUS]*------*" << endl;
+        cout << "*------*[STATUS]*------*" << endl;
         cout << "~> Meghdar Daroo Haye Mojod:" << endl;
         while (Start != 22)
         {
@@ -159,7 +159,6 @@ public:
             j = End;
             cout << this->repository_herbs;
             cout << this->repository_amount;
-            cout << " ------------------------------------------------------------------" << endl;
             if (Start == 20)
             {
                 End = 22;
@@ -188,10 +187,7 @@ public:
         {
             cout << "Barande Shodan : " << this->Level4_Rep - this->getReputation_amount() << endl;
         }
-        cout << endl
-             << "_________________________________________________________________________________" << endl
-             << endl
-             << endl;
+        cout << endl;
     }
     
     void Ai()
@@ -200,7 +196,7 @@ public:
         {
             if(this->repository_amount[i]==1)
             {
-                cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl<<endl<<endl;
+                cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl;
             }
         }
     }

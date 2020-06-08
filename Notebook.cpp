@@ -12,7 +12,7 @@ void Notebook::print()
     }
     else
     {
-        cout << "\t-Safhei ba in shomare vojod nadarad!-" << endl;
+        cout << "-Safhei ba in shomare vojod nadarad!-" << endl;
     }
 }
 
@@ -56,7 +56,7 @@ void Notebook::Edit_Note()
     }
     else
     {
-        cout << "\t-Safhei ba in shomare vojod nadarad!-" << endl;
+        cout << "-Safhei ba in shomare vojod nadarad!-" << endl;
     }
     
 }
@@ -68,7 +68,7 @@ void Notebook::Initialize_NoteBook()
     bool loop = true;
     while (loop == true)
     {
-        cout << "\n\t\t\t   *------*[NoteBook]*------*" << endl;
+        cout << "   *------*[NoteBook]*------*" << endl;
         cout << "Reading(1) | Addition(2) | Edition(3) | Back To Last Menu(0)" << endl;
         cout << "Entekhabe Shoma: ";
         cin >> choice;
@@ -88,7 +88,7 @@ void Notebook::Initialize_NoteBook()
             loop = false;
             break;
         default:
-            cout << "Vorodi Eshtebah!\nDobare Talash Konid!:\n" << endl;
+            cout << "Vorodi Eshtebah!Dobare Talash Konid!:" << endl;
         }
     }
 }

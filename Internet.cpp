@@ -3,7 +3,7 @@
 using namespace std;
 void Internet::internet(int level)
 {
-    cout << "\n\t\t\t *------*[Internet]*------*" << endl;
+    cout << " *------*[Internet]*------*" << endl;
     cout << endl
          << endl
          << endl
