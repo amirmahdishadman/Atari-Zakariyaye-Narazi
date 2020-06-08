@@ -4,11 +4,6 @@ using namespace std;
 void Internet::internet(int level)
 {
     cout << " *------*[Internet]*------*" << endl;
-    cout << endl
-         << endl
-         << endl
-         << "_____________________________________________________________________" << endl
-         << endl;
 
     cout << "~> Baraye Motalee Darbare Daro Ha Be Link Zir Morajee Konid:" << endl
          << endl;
@@ -41,8 +36,4 @@ void Internet::internet(int level)
         break;
     }
     }
-
-    cout << endl
-         << endl
-         << endl;
 }

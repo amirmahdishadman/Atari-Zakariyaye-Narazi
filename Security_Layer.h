@@ -187,7 +187,6 @@ public:
         {
             cout << "Barande Shodan : " << this->Level4_Rep - this->getReputation_amount() << endl;
         }
-        cout << endl;
     }
     
     void Ai()

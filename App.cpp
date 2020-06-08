@@ -316,6 +316,6 @@ void App::Hacker()
       double increament;
       increament = 10 * 1000;
       Amo_Atar.setMoney(Amo_Atar.getMoney() - increament);
-      cout << " Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!" << endl;
+      cout << "Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!" << endl;
    }
 }

@@ -2,10 +2,11 @@
 #define Market_H
 #include <iostream>
 #include "Atar.h"
+#include "Herb.h"
 
 using namespace std;
 
-class Market
+class Market: protected Herb
 {
 public:
     /*Option that Amo Atar can buy!*/
@@ -40,5 +41,7 @@ public:
     void Buy_Herbs_Level2(Atar &);
     //Check Atar's Level to Unlock related options
     void Check_Level(Atar &);
+    //
+    void Herbs();
 };
 #endif

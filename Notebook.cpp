@@ -5,20 +5,20 @@ void Notebook::print()
     int page;
     cout << "|*Lotfan Shomareye Safehe ra vared konid: *|" << endl;
     cin >> page;
-    cout << "Page(" << page << ")" << endl;
+    cout << "Safhe(" << page << ")" << endl;
     if (page <= notebook.size() && page != 0)
     {
         cout << notebook[page - 1] << endl;
     }
     else
     {
-        cout << "-Safhei ba in shomare vojod nadarad!-" << endl;
+        cout << "\t-Safhei ba in shomare vojod nadarad!-" << endl;
     }
 }
 
 void Notebook::Read_Note()
 {
-    cout << "*[Reading Notes]*" << endl;
+    cout << "*[Khandan Yaddasht]*" << endl;
     if (notebook.size() > 0)
     {
         print();
@@ -31,7 +31,7 @@ void Notebook::Read_Note()
 
 void Notebook::Add_Note()
 {
-    cout << "*[Add Notes]*" << endl;
+    cout << "*[Ezafe Kardan Yaddasht]*" << endl;
     cout << "Matn ra Benevisid va Enter ra Bezanid..." << endl;
     notebook.resize(notebook.size() + 1);
     string str;
@@ -42,7 +42,7 @@ void Notebook::Add_Note()
 
 void Notebook::Edit_Note()
 {
-    cout << "*[Edit Notes]*" << endl;
+    cout << "*[Eslahe Yaddasht]*" << endl;
     cout << "|*Lotfan Shomareye Safehe ra vared konid: *|" << endl;
     int page;
     cin >> page;
@@ -56,7 +56,7 @@ void Notebook::Edit_Note()
     }
     else
     {
-        cout << "-Safhei ba in shomare vojod nadarad!-" << endl;
+        cout << "\t-Safhei ba in shomare vojod nadarad!-" << endl;
     }
     
 }
@@ -68,8 +68,8 @@ void Notebook::Initialize_NoteBook()
     bool loop = true;
     while (loop == true)
     {
-        cout << "   *------*[NoteBook]*------*" << endl;
-        cout << "Reading(1) | Addition(2) | Edition(3) | Back To Last Menu(0)" << endl;
+        cout << "\n\t\t\t   *------*[Daftar Yaddasht]*------*" << endl;
+        cout << "Khandan(1) | Ezafe Kardan(2) | Eslah(3) | Bazgasht Be Menu Ghabl(0)" << endl;
         cout << "Entekhabe Shoma: ";
         cin >> choice;
         cout << endl;
@@ -88,7 +88,7 @@ void Notebook::Initialize_NoteBook()
             loop = false;
             break;
         default:
-            cout << "Vorodi Eshtebah!Dobare Talash Konid!:" << endl;
+            cout << "Vorodi Eshtebah!\nDobare Talash Konid!:\n" << endl;
         }
     }
 }

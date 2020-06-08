@@ -23,7 +23,7 @@ public:
     //Printing Notes
     void print();
 
-    //For Reading Notes
+    //For Yaddasht Ha
     void Read_Note();
 };
 #endif
