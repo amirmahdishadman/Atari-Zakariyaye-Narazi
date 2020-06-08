@@ -313,12 +313,6 @@ else
 
         amoo_atar.setMoney(amoo_atar.getMoney()+(Money_change));
          cout<<"Daramad Shoma Dar In Foroosh  ~> "<<Money_change<<" Bood."<<endl;
-
-        cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;cout<<"^"<<endl;
-
-
-
-
     }
     if(amoo_atar.getReputation_amount()>=amoo_atar.get_Level4_Rep())
     {
