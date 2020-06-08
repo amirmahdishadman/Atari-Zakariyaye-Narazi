@@ -146,7 +146,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
         cout << "(11) Karchak ×1  Cost:15,000" << endl;
         cout << "(12) Gon ×1  Cost:12,000" << endl;
         cout << "press 0 to back to the Market Menu if you are not moshtari here!" << endl;
-        cout << "choice: ";
+        cout << "Entekhab: ";
         int choice;
         cin >> choice;
         cout << endl;
@@ -346,7 +346,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
         cout << "(7) Ostokhoddos  ×5  Cost:15,000" << endl;
         cout << "(8) Zafaran Alaye Daraje yek! ×1  Cost:95,000" << endl;
         cout << "press 0 to back to the Market Menu if you are not moshtari here!" << endl;
-        cout << "Your choice: ";
+        cout << "Entekhab Shoma: ";
         int choice;
         cin >> choice;
         switch (choice)
@@ -498,7 +498,7 @@ void Market::Buy(Atar &amo_atar)
         cout << "(6) Lab   Cost: 350,000T" << endl;
         cout << "(7) AI    Cost 220,000 "<<endl;
         cout << "Press 0 to back to menu" << endl;
-        cout << "Your choice: ";
+        cout << "Entekhab Shoma: ";
         cin >> choice;
         switch (choice)
         {
