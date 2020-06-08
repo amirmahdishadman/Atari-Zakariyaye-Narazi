@@ -5,7 +5,7 @@ void Labratory::Make_Alcohol(Atar &amo_atar)
     cout << "Farayande Dorost Kardan Alcohol...\n"
          << endl;
     int C, H, O;
-    cout << "Tedade Carbon: ";
+    cout << "Tedade Carbon: " << endl;
     try
     {
         cin >> C;
@@ -22,8 +22,7 @@ void Labratory::Make_Alcohol(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
-    cout << "Tedade Hydrogen: ";
+    cout << "Tedade Hydrogen: " << endl;
     try
     {
         cin >> H;
@@ -32,8 +31,7 @@ void Labratory::Make_Alcohol(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
-    cout << "Tedade Oxygen: ";
+    cout << "Tedade Oxygen: " << endl;
     try
     {
         cin >> O;
@@ -42,7 +40,6 @@ void Labratory::Make_Alcohol(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
     Check_Alcohol_inputs(C, H, O, amo_atar);
 }
 
@@ -69,7 +66,7 @@ void Labratory::Make_Comphor(Atar &amo_atar)
     cout << "Farayande Dorost Kardan Kafoor...\n"
          << endl;
     int C, H, O;
-    cout << "Tedade Carbon: ";
+    cout << "Tedade Carbon: " << endl;
     try
     {
         cin >> C;
@@ -78,8 +75,7 @@ void Labratory::Make_Comphor(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
-    cout << "Tedade Hydrogen: ";
+    cout << "Tedade Hydrogen: " << endl;
     try
     {
         cin >> H;
@@ -88,8 +84,7 @@ void Labratory::Make_Comphor(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
-    cout << "Tedade Oxygen: ";
+    cout << "Tedade Oxygen: " << endl;
     try
     {
         cin >> O;
@@ -98,7 +93,6 @@ void Labratory::Make_Comphor(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
     Check_Comphor_inputs(C, H, O, amo_atar);
 }
 
@@ -125,7 +119,7 @@ void Labratory::Make_Naphtaline(Atar &amo_atar)
     cout << "Farayande Dorost Kardan Naphtaline...\n"
          << endl;
     int C, H, O;
-    cout << "Tedade Carbon: ";
+    cout << "Tedade Carbon: " << endl;
     try
     {
         cin >> C;
@@ -134,8 +128,7 @@ void Labratory::Make_Naphtaline(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
-    cout << "Tedade Hydrogen: ";
+    cout << "Tedade Hydrogen: " << endl;
     try
     {
         cin >> H;
@@ -144,8 +137,7 @@ void Labratory::Make_Naphtaline(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
-    cout << "Tedade Oxygen: ";
+    cout << "Tedade Oxygen: " << endl;
     try
     {
         cin >> O;
@@ -154,7 +146,6 @@ void Labratory::Make_Naphtaline(Atar &amo_atar)
     {
         cout << "Alan Mifrestimon Hava AmoAtar, Tarkib Ghalat!" << endl;
     }
-    cout << endl;
     Check_Naphtaline_inputs(C, H, O, amo_atar);
 }
 

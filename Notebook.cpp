@@ -70,7 +70,7 @@ void Notebook::Initialize_NoteBook()
     {
         cout << "\n\t\t\t   *------*[Daftar Yaddasht]*------*" << endl;
         cout << "Khandan(1) | Ezafe Kardan(2) | Eslah(3) | Bazgasht Be Menu Ghabl(0)" << endl;
-        cout << "Entekhabe Shoma: ";
+        cout << "Entekhabe Shoma: " << endl;
         cin >> choice;
         cout << endl;
         switch (choice)

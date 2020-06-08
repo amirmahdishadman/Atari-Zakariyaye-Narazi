@@ -74,7 +74,7 @@ void App::ShowMenu()
          }
       }
 
-      cout << "Entekhab?: ";
+      cout << "Entekhab?: " << endl;
       cin >> listnumber;
 
       //GUI

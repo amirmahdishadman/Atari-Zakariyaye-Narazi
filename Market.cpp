@@ -223,7 +223,7 @@ void Market::Buy_Herbs_Level1(Atar &amo_atar)
             cout << "(" << i+1 << ")" << herbs[i].get_Name() << "  ×"<< herbs[i].get_Quantity() << "  Gheymat:" << herbs[i].get_Cost() << endl;
 
         cout << "press 0 to back to the Market Menu if you are not moshtari here!" << endl;
-        cout << "Entekhab: ";
+        cout << "Entekhab: " << endl;
         int choice;
         cin >> choice;
         cout << endl;
@@ -417,7 +417,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
             cout << "(" << i+1 << ")" << herbs[i].get_Name() << "  × "<< herbs[i].get_Quantity() << "  Gheymat:" << herbs[i].get_Cost() << endl;
         
         cout << "press 0 to back to the Market Menu if you are not moshtari here!" << endl;
-        cout << "Your choice: ";
+        cout << "Your choice: " << endl;
         int choice;
         cin >> choice;
         switch (choice)
@@ -569,7 +569,7 @@ void Market::Buy(Atar &amo_atar)
         cout << "(6) Lab   Gheymat: 350,000T" << endl;
         cout << "(7) AI    Gheymat 220,000 "<<endl;
         cout << "Press 0 to back to menu\n" << endl;
-        cout << "Your choice: ";
+        cout << "Your choice: " << endl;
         cin >> choice;
         switch (choice)
         {
