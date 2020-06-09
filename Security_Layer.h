@@ -152,7 +152,7 @@ public:
     void Show_State()
     {
         cout << "*------*[STATUS]*------*" << endl;
-        cout << "~> Meghdar Daroo Haye Mojod:" << endl;
+        cout << "Meghdar Daroo Haye Mojod:" << endl;
         while (Start != 22)
         {
             i = Start;
