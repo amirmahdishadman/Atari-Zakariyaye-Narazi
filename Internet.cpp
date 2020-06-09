@@ -3,8 +3,6 @@
 using namespace std;
 void Internet::internet(int level)
 {
-    cout << " *------*[Internet]*------*" << endl;
-
     cout << "Baraye Motalee Darbare Daro Ha Be Link Zir Morajee Konid:" << endl;
     cout << "https://github.com/amirmahdishadman/Drug-and-disease-information" << endl;
     switch (level)
