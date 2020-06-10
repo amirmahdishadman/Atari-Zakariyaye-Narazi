@@ -1,4 +1,3 @@
-//#define TestCase          //<<<---------->>> For Using TestCase Oncomment it!
 #include <iostream>
 #include <string>
 #include <vector>
@@ -72,23 +71,12 @@ public:
     Security_Layer()
     {
         initialize_vectors();
-        #ifndef TestCase
-        Level2_Rep=30;
-        Level3_Rep=70;
-        Level4_Rep=150;
-        setReputation_amount(0);
-        setReputation_Level(1);
-        setMoney(400000);
-        #endif
-        #ifdef TestCase
-        initialize_vectors();
         Level2_Rep=10;
         Level3_Rep=30;
-        Level4_Rep=60;
-        setMoney(100000000);
+        Level4_Rep=50;
         setReputation_amount(0);
         setReputation_Level(1);
-        #endif
+        setMoney(300000);
     }
     void initialize_vectors()
     {
@@ -151,7 +139,7 @@ public:
 
     void Show_State()
     {
-        cout << "Meghdar Daroo Haye Mojod:" << endl;
+        cout << "~> Meghdar Daroo Haye Mojod:" << endl;
         while (Start != 22)
         {
             i = Start;
@@ -194,7 +182,7 @@ public:
         {
             if(this->repository_amount[i]==1)
             {
-                cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl;
+                cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl<<endl<<endl;
             }
         }
     }
