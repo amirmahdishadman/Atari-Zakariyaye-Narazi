@@ -43,14 +43,14 @@ void App::ShowMenu()
       if (Bazar.Check_Lab() == true)
       {
          cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
-           << "-_*[1-Morajee Moshtari" << endl
-           << "-_*[2-Internet" << endl
-           << "-_*[3-Moshahede Vaziyat" << endl
-           << "-_*[4-Bazar" << endl
-           << "-_*[5-NoteBook" << endl
-           << "-_*[6-Azmayeshgah" << endl
-           << "-_*[7-Game Loading" << endl
-           << "-_*[0-Kharej Shodan Az Bazi" << endl;
+           << "1-Morajee Moshtari" << endl
+           << "2-Internet" << endl
+           << "3-Moshahede Vaziyat" << endl
+           << "4-Bazar" << endl
+           << "5-NoteBook" << endl
+           << "6-Azmayeshgah" << endl
+           << "7-Game Loading" << endl
+           << "0-Kharej Shodan Az Bazi" << endl;
          //GUI
          if (Bazar.Check_GUI() == true)
          {
@@ -59,14 +59,14 @@ void App::ShowMenu()
       }
       else
       {
-         cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
-           << "1-Morajee Moshtari" << endl
-           << "2-Internet" << endl
-           << "3-Moshahede Vaziyat" << endl
-           << "4-Bazar" << endl
-           << "5-NoteBook" << endl
-           << "6-Game Loading" << endl
-           << "0-Kharej Shodan Az Bazi" << endl;
+         // cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
+         //   << "1-Morajee Moshtari" << endl
+         //   << "2-Internet" << endl
+         //   << "3-Moshahede Vaziyat" << endl
+         //   << "4-Bazar" << endl
+         //   << "5-NoteBook" << endl
+         //   << "6-Game Loading" << endl
+         //   << "0-Kharej Shodan Az Bazi" << endl;
          //GUI
          if (Bazar.Check_GUI() == true)
          {
@@ -74,7 +74,7 @@ void App::ShowMenu()
          }
       }
 
-      cout << "Entekhab?: " << endl;
+      // cout << "Entekhab?: " << endl;
       cin >> listnumber;
 
       //GUI
@@ -203,7 +203,7 @@ void App::ShowMenu()
             }
             else
             {
-               cout << "Itemi Ba In Shomare Vojod Nadarad !" << endl;
+               cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
             }
             break;
          }
@@ -212,7 +212,7 @@ void App::ShowMenu()
          {
             cout << "Saving The Game..." << endl;
             SaveProcess();
-            cout << "============================== GoodBye! ==============================" << endl;
+            // cout << "============================== GoodBye! ==============================" << endl;
             //GUI
             if (Bazar.Check_GUI() ==  true)
             {
@@ -230,7 +230,7 @@ void App::ShowMenu()
             
          default:
          {
-            cout << "Itemi Ba In Shomare Vojod Nadarad !" << endl;
+            cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
             break;
          }
          
