@@ -1,6 +1,10 @@
 Nokte 1: [Tamame Khoroji ha ba nakharidane option security va AI hast] ~~~~> Akharesh baraye security ye nokte mizani k hala agar option security kharidari shode bod khorojiaye khate akhar nabod
 
-Nokte 2: [Dar tamamiye [[[Menu]]]] ha ba zadane gozine 0 be menu ghabli bazgardande mishim. deghat kon in baraye menu hast, na vasate amaliyat  hatman kamel zekr kon inaro (ba negareshe dorost riz be rizi k migam o zekr kon!!! :D) jomleye marofe mane be to]
+Nokte 2: [Dar tamamiye [[[Menu]]]] ha ba zadane gozine 0 be menu ghabli bazgardande mishim. deghat kon in baraye menu hast, na vasate amaliyat  hatman kamel zekr kon inaro (ba negareshe dorost riz be rizi k migam o zekr kon!!! :D) jomleye marofe mane be to
+agar ba zaane gozine 0 be menu asli bargardonde beshan va option security kharidari nashode bashe ba in khoroji moshahede mishan
+O:
+Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!
+Agaram security ro kharide bashan k hichi]
 
 Nokte 3: [Jahaei k gofte nashode sepas be menu ghabl bargardad yaniiii be menu ghabl bar nmigarde va baz vorodi migire!!!]
 
@@ -8,40 +12,48 @@ Nokte 4: [Pas az payane amaliyat ba moafaghiyat be menu ghabli bayad bazgasht. b
 
 Nokte 5: [Estefade az carbon hydrogen oxygen dar azmayeshgah be tore namahdod ast va niyazi be kharid nist bekhatere hamin to bazar ham chizi nmibinid az in 3ta]
 
-*****Menu Asli:
-Adam Moafaghiyat (Vorodi Eshtebah out of range)
+Nokte 6: Rajebe File ha az man soal bepors badan k gozaresh tamom shod.
+
+Nokte 7: Az Menu asli gozine 2 Internet testcase tarahi nmishe vali ghalebesho ghanonasho bayad rayat konan to file zip baresi mishe
+==============================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+
+*****Menu Asli*:(bedone lab range 0ta6 e ba lab 0ta 7 hast)
 I:
+1
+[Moafaghiyat](hichi)
+
+[Adam Moafaghiyat] (Vorodi Eshtebah out of range)
+O:
+Vorodi Eshtebah!Dobare Talash Konid.
 ==============================================================================
 
 *****Patients:
 [Ba Mahdiye]
 ==============================================================================
 
-*****Internet:
+*****Internet*:
 I:
 2
-O:(Ghable hameye ina Optione security bayad tozih ade beshe - Link Gthube makhsose harkas - Khoroji vabaste be sath... sathe 3 masalan passwor har 3ta bayad bashe)
->>>
+[Moafaghiyat](Ghable hameye ina Optione security bayad tozih ade beshe - Link Gthube makhsose harkas - Khoroji vabaste be sath... sathe 3 masalan passwor har 3ta bayad bashe)
+O:
 Baraye Motalee Darbare Daro Ha Be Link Zir Morajee Konid:
-https://github.com/amirmahdishadman/Drug-and-disease-information
+<Link Repository Githube khodeshon>
 File 1 Password : File1.Level1.AmoAtar7249
 Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!
 
 I:
-2
+2(ba sathe 2)
 O:
-(ba sathe 2)
 
 I:
-2
+2(ba sathe 3)
 O:
-(ba sathe 3)
-
-Adame Moafaghiyat (Vorodi Eshtebah out of range)
-I:
 ==============================================================================
 
-*****Moshahede Vaziyat:
+*****Moshahede Vaziyat*:
 I:
 3
 O:
@@ -56,14 +68,14 @@ Meghdar Daroo Haye Mojod:
            0            0            0            0            0 
   Naphtaline       Kafoor 
            0            0 
-Mizan Servat Shoma : 400000
+Mizan Servat Shoma : 400000 inaaaaaaaaaaaaaaaaaaro bayad avaz koni adadaaaaashoooooo (az ghasd injori neveshtam k fkr nkoni khorojiye)
 Mizan Sath Shohrat Shoma : 1
 Mizan Shohrat Shoma : 0
 Mizan Shohrat Lazem Baraye Sath 2 : 30
 Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!
 ==============================================================================
 
-*****Bazar:
+*****Bazar*:
 I:
 4
 1 (Menu kharide option ha)
@@ -86,17 +98,19 @@ Shoma In Option ro Ghablan Kharidid!
 ---------------
 [Moafaghiyat]
 O:
-Kharidari Shod:  [Esme giyah]
+Kharidari Shod:  [Esme giyah] {Dobare To hamin menu vase kharide giyahe vymise va ba sefr faghat be mennu ghabli mitone brgrde}
+
 [Adame Moafaghiyat]: (Out of range)
 O:
 Vorodi Eshtebah!Dobare Talash Konid.
+
 [Adame Moafaghiyat]: (Out of Money)
 O:
 Shoma Pole Kafi Nadarid
 ---------------
 ==============================================================================
 
-*****Internet:
+*****NoteBook:
 I:
 5(Menu Daftar Yaddasht)
 ---------------
@@ -145,16 +159,19 @@ Safhei ba in shomare vojod nadarad! {Sepas be menu ghabl yani menu daftar yaddas
 ---------------
 ==============================================================================
 
-*****Game Loading
+*****Game Loading*
 I:6(dar sorate nadashtane Azmayeshgah)
 I:7(dar sorate dashtane Azmayeshgah)
 (TestCase tarahi nemishe o khoroji nadare Vali to file zip baresi mishe va bayad ghabliyate load bazi ro dashte bashe)
 ==============================================================================
 
-*****Azmayeshgah
+*****Azmayeshgah*
 I:
 6(Entekhabe Azmayeshgah to menu asli)
 1(Entekhabe farayande alchol)
+--------------
+[Moafaghiyat](hichi)
+++++
 2 6 1 (Vorodiye tedade be tartib carbon hydrogen oxygen baraye alchol)
 [Moafaghiyat]
 O:
@@ -167,10 +184,13 @@ Tarkibe Eshtebah! Dobare Talash Konid!
 [Adame Moafaghiyat]: (Yeki Az [Noe] Vorodi ha Eshtebah bashad)
 O:
 Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!! {Va baranme bayad be payan beresad o be biron biyayad zira k Azmayeshgah o dam o tashkilat mitereke, pas kheyli bayad to noe vorodi ha deghat shavad}
----------------
+++++
+[Adame Moafaghiyat]: (Out of range)
+O:
+Vorodi Eshtebah!Dobare Talash Konid.
 ==============================================================================
 
-*****Kharej Shodan Az Bazi
+*****Kharej Shodan Az Bazi*
 I:
 0(entekhabe kharej shodan az bazi)
 [Moafaghiyat]
