@@ -115,10 +115,10 @@ void App::ShowMenu()
                cout << "------------------------------------------------ " << endl;
             }
             Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Bazar.Check_GUI(),Amo_Atar,NoteBook,Patient);
-            if(Bazar.Check_Ai())
-            {
-               Amo_Atar.Ai();
-            }
+            // if(Bazar.Check_Ai())
+            // {
+            //    Amo_Atar.Ai();
+            // }
             break;
          }
          case 2:
@@ -311,11 +311,11 @@ void App::LoadProcess()
 
 void App::Hacker()
 {
-   if (Bazar.Check_Security() == false)
-   {
-      double increament;
-      increament = 10 * 1000;
-      Amo_Atar.setMoney(Amo_Atar.getMoney() - increament);
-      cout << "Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!" << endl;
-   }
+   // if (Bazar.Check_Security() == false)
+   // {
+   //    double increament;
+   //    increament = 10 * 1000;
+   //    Amo_Atar.setMoney(Amo_Atar.getMoney() - increament);
+   //    cout << "Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!" << endl;
+   // }
 }

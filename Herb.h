@@ -14,11 +14,11 @@ protected:
 public:
     /* Mutators And Accessors For Data Members*/
     void set_Name(string);
-    string get_Name();
+    string get_Name() const;
     void set_Quantity(int);
-    int get_Quantity();
+    int get_Quantity() const;
     void set_Cost(double);
-    double get_Cost();
+    double get_Cost() const;
     /* Storaging All Herbs With their Properties in Herbs-vector */
     vector <Herb> herbs;
     /* Database Of All Herbs*/

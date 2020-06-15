@@ -25,10 +25,10 @@ void Market::set_Lab()
     Lab = false;
 }
 
-void Market::set_Ai()
-{
-    Ai = false;
-}
+// void Market::set_Ai()
+// {
+//     Ai = false;
+// }
 
 bool Market::Check_Security()
 {
@@ -102,17 +102,17 @@ bool Market::Check_Lab()
     }
 }
 
-bool Market::Check_Ai()
-{
-    if (Ai == true)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+// bool Market::Check_Ai()
+// {
+//     if (Ai == true)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
 
 Market::Market()
 {

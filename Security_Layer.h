@@ -45,7 +45,7 @@ public:
     {
         this->Money = money;
     }
-    double getMoney()
+    double getMoney() const
     {
         return this->Money;
     }
@@ -54,7 +54,7 @@ public:
     {
         this->Reputation_Level = level;
     }
-    int getReputation_Level()
+    int getReputation_Level() const
     {
         return this->Reputation_Level;
     }
@@ -63,7 +63,7 @@ public:
     {
         this->Reputation_amount = amount;
     }
-    int getReputation_amount()
+    int getReputation_amount() const
     {
         return this->Reputation_amount;
     }
@@ -88,7 +88,7 @@ public:
         repository_amount = {0};
     }
 
-    int get_repository_herbs_index(string herb_name)
+    int get_repository_herbs_index(string herb_name) const
     {
         for (int i = 0; i < 22; i++)
         {
@@ -111,28 +111,28 @@ public:
         repository_amount[index] = Amount;
     }
 
-    double get_repository_amount(string herb_name)
+    double get_repository_amount(string herb_name) const
     {
         int index = get_repository_herbs_index(herb_name);
         return repository_amount[index];
     }
 
-    double get_repository_amount(int index)
+    double get_repository_amount(int index) const
     {
         return repository_amount[index];
     }
 
-    int get_Level2_Rep()
+    int get_Level2_Rep() const
     {
         return Level2_Rep;            
     }
 
-    int get_Level3_Rep()
+    int get_Level3_Rep() const
     {
         return Level3_Rep;            
     }
 
-    int get_Level4_Rep()
+    int get_Level4_Rep() const
     {
         return Level4_Rep;            
     }
@@ -176,14 +176,14 @@ public:
         }
     }
     
-    void Ai()
-    {
-        for(int i=0;i<22;i++)
-        {
-            if(this->repository_amount[i]==1)
-            {
-                cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl<<endl<<endl;
-            }
-        }
-    }
+    // void Ai()
+    // {
+    //     for(int i=0;i<22;i++)
+    //     {
+    //         if(this->repository_amount[i]==1)
+    //         {
+    //             cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl<<endl<<endl;
+    //         }
+    //     }
+    // }
 };
