@@ -25,10 +25,10 @@ void Market::set_Lab()
     Lab = false;
 }
 
-// void Market::set_Ai()
-// {
-//     Ai = false;
-// }
+void Market::set_Ai()
+{
+    Ai = false;
+}
 
 bool Market::Check_Security()
 {
@@ -102,17 +102,17 @@ bool Market::Check_Lab()
     }
 }
 
-// bool Market::Check_Ai()
-// {
-//     if (Ai == true)
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
+bool Market::Check_Ai()
+{
+    if (Ai == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 
 Market::Market()
 {
@@ -198,7 +198,7 @@ void Market::Herbs()
     herbs[16].set_Quantity(1);
     herbs[16].set_Cost(25000);
 
-    herbs[17].set_Name("GolGavzabon");
+    herbs[17].set_Name("GolGavZaban");
     herbs[17].set_Quantity(5);
     herbs[17].set_Cost(8000);
 
@@ -213,210 +213,220 @@ void Market::Herbs()
 
 void Market::Buy_Herbs_Level1(Atar &amo_atar)
 {
-    // cout << "Kharide Kala (Level 1)" << endl;
     bool loop = true;
     while (loop == true)
     {
-        // cout << "Giyahe Khod Ra Entekhab Konid:" << endl;
-
-        // for (int i = 0; i < 13; i++)
-            // cout << "(" << i+1 << ")" << herbs[i].get_Name() << "  ×"<< herbs[i].get_Quantity() << "  Gheymat:" << herbs[i].get_Cost() << endl;
-
-        // cout << "press 0 to back to the Market Menu if you are not moshtari here!" << endl;
-        // cout << "Entekhab: " << endl;
         int choice;
         cin >> choice;
-        switch (choice)
+        if (choice <= 12 && choice > 0)
         {
-        case 1:
-            if (amo_atar.getMoney() >= 8000)
+            if (amo_atar.getMoney() >= herbs[choice-1].get_Cost())
             {
-                cout << "Kharidari Shod:  Narenj" << endl;
+                cout << "Kharidari Shod:  "  << herbs[choice-1].get_Name() << endl;
                 //increament of amounts in inventor
-                amo_atar.set_repository_amount("Narenj",amo_atar.get_repository_amount("Narenj")+1);
+                amo_atar.set_repository_amount(herbs[choice-1].get_Name(), amo_atar.get_repository_amount(herbs[choice-1].get_Name()) + herbs[choice-1].get_Quantity());
                 //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 8000);
+                amo_atar.setMoney(amo_atar.getMoney() - herbs[choice-1].get_Cost());
             }
             else
             {
                 cout << "Shoma Pole Kafi Nadarid" << endl;
             }
-            break;
-        case 2:
-            if (amo_atar.getMoney() >= 12500)
-            {
-                cout << "Kharidari Shod:  KharMaryam" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("KharMaryam",amo_atar.get_repository_amount("KharMaryam")+3);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 12500);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 3:
-            if (amo_atar.getMoney() >= 12500)
-            {
-                cout << "Kharidari Shod:  Shahtare" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Shahtare",amo_atar.get_repository_amount("Shahtare")+1);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 12500);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 4:
-            if (amo_atar.getMoney() >= 14700)
-            {
-                cout << "Kharidari Shod:  Ocaliptos" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Ocaliptos",amo_atar.get_repository_amount("Ocaliptos")+1);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 14700);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 5:
-            if (amo_atar.getMoney() >= 5000)
-            {
-                cout << "Kharidari Shod:  KhakShir" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("KhakShir",amo_atar.get_repository_amount("KhakShir")+1);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 5000);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 6:
-            if (amo_atar.getMoney() >= 8000)
-            {
-                cout << "Kharidari Shod:  Marze" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Marze",amo_atar.get_repository_amount("Marze")+5);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 8000);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 7:
-            if (amo_atar.getMoney() >= 10000)
-            {
-                cout << "Kharidari Shod:  Darchin" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Darchin",amo_atar.get_repository_amount("Darchin")+1);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 10000);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 8:
-            if (amo_atar.getMoney() >= 10000)
-            {
-                cout << "Kharidari Shod:  Avishan" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Avishan",amo_atar.get_repository_amount("Avishan")+5);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 10000);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 9:
-            if (amo_atar.getMoney() >= 20000)
-            {
-                cout << "Kharidari Shod:  Jodosar" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Jodosar",amo_atar.get_repository_amount("Jodosar")+1);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 20000);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 10:
-            if (amo_atar.getMoney() >= 8000)
-            {
-                cout << "Kharidari Shod:  Sir" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Sir",amo_atar.get_repository_amount("Sir")+1);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 8000);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 11:
-            if (amo_atar.getMoney() >= 15000)
-            {
-                cout << "Kharidari Shod:  Karchak" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Karchak",amo_atar.get_repository_amount("Karchak")+1);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 15000);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 12:
-            if (amo_atar.getMoney() >= 12000)
-            {
-                cout << "Kharidari Shod:  Gon" << endl;
-                //increament of amounts in inventor
-                amo_atar.set_repository_amount("Gon",amo_atar.get_repository_amount("Gon")+1);
-                //decreament of amo atar's money
-                amo_atar.setMoney(amo_atar.getMoney() - 12000);
-            }
-            else
-            {
-                cout << "Shoma Pole Kafi Nadarid" << endl;
-            }
-            break;
-        case 0:
-            loop = false;
-            break;
-        default:
-            cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
-            break;
         }
+        else if(choice == 0)
+        {
+            loop = false;
+        }
+        else
+        {
+            cout << "Vorodi Eshtebah! Dobare Talash Konid." << endl;
+        }
+        
+    //     switch (choice)
+    //     {
+    //     case 1:
+    //         if (amo_atar.getMoney() >= 8000)
+    //         {
+    //             cout << "Kharidari Shod:  Narenj" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Narenj",amo_atar.get_repository_amount("Narenj")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 8000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 2:
+    //         if (amo_atar.getMoney() >= 12500)
+    //         {
+    //             cout << "Kharidari Shod:  KharMaryam" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("KharMaryam",amo_atar.get_repository_amount("KharMaryam")+3);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 12500);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 3:
+    //         if (amo_atar.getMoney() >= 12500)
+    //         {
+    //             cout << "Kharidari Shod:  Shahtare" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Shahtare",amo_atar.get_repository_amount("Shahtare")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 12500);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 4:
+    //         if (amo_atar.getMoney() >= 14700)
+    //         {
+    //             cout << "Kharidari Shod:  Ocaliptos" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Ocaliptos",amo_atar.get_repository_amount("Ocaliptos")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 14700);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 5:
+    //         if (amo_atar.getMoney() >= 5000)
+    //         {
+    //             cout << "Kharidari Shod:  KhakShir" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("KhakShir",amo_atar.get_repository_amount("KhakShir")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 5000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 6:
+    //         if (amo_atar.getMoney() >= 8000)
+    //         {
+    //             cout << "Kharidari Shod:  Marze" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Marze",amo_atar.get_repository_amount("Marze")+5);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 8000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 7:
+    //         if (amo_atar.getMoney() >= 10000)
+    //         {
+    //             cout << "Kharidari Shod:  Darchin" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Darchin",amo_atar.get_repository_amount("Darchin")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 10000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 8:
+    //         if (amo_atar.getMoney() >= 10000)
+    //         {
+    //             cout << "Kharidari Shod:  Avishan" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Avishan",amo_atar.get_repository_amount("Avishan")+5);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 10000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 9:
+    //         if (amo_atar.getMoney() >= 20000)
+    //         {
+    //             cout << "Kharidari Shod:  Jodosar" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Jodosar",amo_atar.get_repository_amount("Jodosar")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 20000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 10:
+    //         if (amo_atar.getMoney() >= 8000)
+    //         {
+    //             cout << "Kharidari Shod:  Sir" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Sir",amo_atar.get_repository_amount("Sir")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 8000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 11:
+    //         if (amo_atar.getMoney() >= 15000)
+    //         {
+    //             cout << "Kharidari Shod:  Karchak" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Karchak",amo_atar.get_repository_amount("Karchak")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 15000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 12:
+    //         if (amo_atar.getMoney() >= 12000)
+    //         {
+    //             cout << "Kharidari Shod:  Gon" << endl;
+    //             //increament of amounts in inventor
+    //             amo_atar.set_repository_amount("Gon",amo_atar.get_repository_amount("Gon")+1);
+    //             //decreament of amo atar's money
+    //             amo_atar.setMoney(amo_atar.getMoney() - 12000);
+    //         }
+    //         else
+    //         {
+    //             cout << "Shoma Pole Kafi Nadarid" << endl;
+    //         }
+    //         break;
+    //     case 0:
+    //         loop = false;
+    //         break;
+    //     default:
+    //         cout << "Vorodi Eshtebah! Dobare Talash Konid." << endl;
+    //         break;
+    //     }
     }
 }
 
 void Market::Buy_Herbs_Level2(Atar &amo_atar)
 {
-    // cout << "Kharide Kala (Level 2)" << endl;
     bool loop2 = true;
     while (loop2 == true)
     {
-        // for (int i = 13; i < 20; i++)
-        //     cout << "(" << i+1 << ")" << herbs[i].get_Name() << "  × "<< herbs[i].get_Quantity() << "  Gheymat:" << herbs[i].get_Cost() << endl;
-        
-        // cout << "press 0 to back to the Market Menu if you are not moshtari here!" << endl;
-        // cout << "Entekhabe Shoma: " << endl;
         int choice;
         cin >> choice;
         switch (choice)
@@ -494,9 +504,9 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
         case 6:
             if (amo_atar.getMoney() >= 8000)
             {
-                cout << "Kharidari Shod:  GolGavzabon" << endl;
+                cout << "Kharidari Shod:  GolGavZaban" << endl;
                 //increament of amounts in inventor
-                amo_atar.set_repository_amount("GolGavzabon",amo_atar.get_repository_amount("GolGavzabon")+5);
+                amo_atar.set_repository_amount("GolGavZaban",amo_atar.get_repository_amount("GolGavZaban")+5);
                 //decreament of amo atar's money
                 amo_atar.setMoney(amo_atar.getMoney() - 8000);
             }
@@ -537,7 +547,7 @@ void Market::Buy_Herbs_Level2(Atar &amo_atar)
             loop2 = false;
             break;
         default:
-            cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
+            cout << "Vorodi Eshtebah! Dobare Talash Konid." << endl;
         }
     }
 }
@@ -586,28 +596,28 @@ void Market::Buy(Atar &amo_atar)
             }
             
             break;
+        // case 3:
+        //     if (Security == false)
+        //     {
+        //         if (amo_atar.getMoney() >= 150000)
+        //         {
+        //             //Initialize Security
+        //             Security = true;
+        //             //decreament of amo atar's money
+        //             amo_atar.setMoney(amo_atar.getMoney() - 150000);
+        //             cout << "Anjam Shod!" << endl;
+        //         }
+        //         else
+        //         {
+        //             cout << "Shoma Hanoz Be Pol Ya Sathe Kafi Naresidid" << endl;
+        //         }
+        //     }
+        //     else
+        //     {
+        //         cout << "Shoma In Option ro Ghablan Kharidid!" << endl;
+        //     }
+        //     break;
         case 3:
-            if (Security == false)
-            {
-                if (amo_atar.getMoney() >= 150000)
-                {
-                    //Initialize Security
-                    Security = true;
-                    //decreament of amo atar's money
-                    amo_atar.setMoney(amo_atar.getMoney() - 150000);
-                    cout << "Anjam Shod!" << endl;
-                }
-                else
-                {
-                    cout << "Shoma Hanoz Be Pol Ya Sathe Kafi Naresidid" << endl;
-                }
-            }
-            else
-            {
-                cout << "Shoma In Option ro Ghablan Kharidid!" << endl;
-            }
-            break;
-        case 4:
             if (GUI == false)
             {
                 if (amo_atar.getMoney() >= 200000)
@@ -644,7 +654,7 @@ void Market::Buy(Atar &amo_atar)
                 cout << "Shoma In Option ro Ghablan Kharidid!" << endl;
             }
             break;
-        case 5:
+        case 4:
             if (Increasing_Server_Capacity == false)
             {
                 if (amo_atar.getMoney() >= 200000)
@@ -665,7 +675,7 @@ void Market::Buy(Atar &amo_atar)
                 cout << "Shoma In Option ro Ghablan Kharidid!" << endl;
             }
             break;
-        case 6:
+        case 5:
             if (Lab == false)
             {
                 if (amo_atar.getMoney() >= 350000 && amo_atar.getReputation_Level() >= 3)
@@ -687,28 +697,29 @@ void Market::Buy(Atar &amo_atar)
                 cout << "Shoma In Option ro Ghablan Kharidid!" << endl;
             }
             break;
-        case 7:
-            if (Ai == false)
-            {
-                if (amo_atar.getMoney() >= 220000 && amo_atar.getReputation_Level() >= 1)
-                {
-                    //Unlock Lab
-                    Ai = true;
-                    //decreament of amo atar's money
-                    amo_atar.setMoney(amo_atar.getMoney() - 220000);
-                    cout << "Anjam Shod!" << endl;
-                }
-                else
-                {
-                    cout << "Shoma Hanoz Be Pol Ya Sathe Kafi Naresidid" << endl;
-                }
-            case 0:
+        // case 7:
+        //     if (Ai == false)
+        //     {
+        //         if (amo_atar.getMoney() >= 220000 && amo_atar.getReputation_Level() >= 1)
+        //         {
+        //             //Unlock Lab
+        //             Ai = true;
+        //             //decreament of amo atar's money
+        //             amo_atar.setMoney(amo_atar.getMoney() - 220000);
+        //             cout << "Anjam Shod!" << endl;
+        //         }
+        //         else
+        //         {
+        //             cout << "Shoma Hanoz Be Pol Ya Sathe Kafi Naresidid" << endl;
+        //         }
+           
+        //     }
+        case 0:
                 loop3 = false;
                 break;
 
-            default:
-                cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
-            }
+        default:
+                cout << "Vorodi Eshtebah! Dobare Talash Konid." << endl;
         }
     }
 }

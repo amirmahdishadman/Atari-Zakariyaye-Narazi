@@ -87,7 +87,7 @@ void Notebook::Initialize_NoteBook()
             loop = false;
             break;
         default:
-            cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
+            cout << "Vorodi Eshtebah! Dobare Talash Konid." << endl;
         }
     }
 }

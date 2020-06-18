@@ -9,7 +9,7 @@ void App::ShowMenu()
    int listnumber;
 
    //Welcome
-   if (Bazar.Check_Lab() == true)
+   if (Bazar.Check_GUI() == true)
    {
    cout << "============================== Game Initialized! ==============================" << endl;
    cout << "    _____                      _____   __                " << endl;
@@ -42,15 +42,15 @@ void App::ShowMenu()
       //Check whether Lab is Unlocked or not
       if (Bazar.Check_Lab() == true)
       {
-         cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
-           << "1-Morajee Moshtari" << endl
-           << "2-Internet" << endl
-           << "3-Moshahede Vaziyat" << endl
-           << "4-Bazar" << endl
-           << "5-NoteBook" << endl
-           << "6-Azmayeshgah" << endl
-           << "7-Game Loading" << endl
-           << "0-Kharej Shodan Az Bazi" << endl;
+         // cout << "Lotfan Az Item haye Zir Entekhab Konid: " << endl
+         //   << "1-Morajee Moshtari" << endl
+         //   << "2-Internet" << endl
+         //   << "3-Moshahede Vaziyat" << endl
+         //   << "4-Bazar" << endl
+         //   << "5-NoteBook" << endl
+         //   << "6-Azmayeshgah" << endl
+         //   << "7-Game Loading" << endl
+         //   << "0-Kharej Shodan Az Bazi" << endl;
          //GUI
          if (Bazar.Check_GUI() == true)
          {
@@ -115,10 +115,10 @@ void App::ShowMenu()
                cout << "------------------------------------------------ " << endl;
             }
             Patient.Patients_refer(Amo_Atar.getReputation_Level(),Bazar.Check_Increasing_Server_Capacity(),Bazar.Check_GUI(),Amo_Atar,NoteBook,Patient);
-            // if(Bazar.Check_Ai())
-            // {
-            //    Amo_Atar.Ai();
-            // }
+            if(Bazar.Check_Ai())
+            {
+               Amo_Atar.Ai();
+            }
             break;
          }
          case 2:
@@ -203,7 +203,7 @@ void App::ShowMenu()
             }
             else
             {
-               cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
+               cout << "Vorodi Eshtebah! Dobare Talash Konid." << endl;
             }
             break;
          }
@@ -230,12 +230,12 @@ void App::ShowMenu()
             
          default:
          {
-            cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
+            cout << "Vorodi Eshtebah! Dobare Talash Konid." << endl;
             break;
          }
          
       }
-      Hacker();
+      // Hacker();
 
       //Saving The Game
       SaveProcess();
@@ -311,11 +311,11 @@ void App::LoadProcess()
 
 void App::Hacker()
 {
-   // if (Bazar.Check_Security() == false)
-   // {
-   //    double increament;
-   //    increament = 10 * 1000;
-   //    Amo_Atar.setMoney(Amo_Atar.getMoney() - increament);
-   //    cout << "Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!" << endl;
-   // }
+   if (Bazar.Check_Security() == false)
+   {
+      double increament;
+      increament = 10 * 1000;
+      Amo_Atar.setMoney(Amo_Atar.getMoney() - increament);
+      cout << "Az Hesabe shoma Pol bardasht ShodeHarche Zod Tar Option Security ra Bekharid!" << endl;
+   }
 }

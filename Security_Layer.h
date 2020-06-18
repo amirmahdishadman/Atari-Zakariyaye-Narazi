@@ -45,7 +45,7 @@ public:
     {
         this->Money = money;
     }
-    double getMoney() const
+    double getMoney()
     {
         return this->Money;
     }
@@ -54,7 +54,7 @@ public:
     {
         this->Reputation_Level = level;
     }
-    int getReputation_Level() const
+    int getReputation_Level()
     {
         return this->Reputation_Level;
     }
@@ -63,7 +63,7 @@ public:
     {
         this->Reputation_amount = amount;
     }
-    int getReputation_amount() const
+    int getReputation_amount()
     {
         return this->Reputation_amount;
     }
@@ -76,19 +76,19 @@ public:
         Level4_Rep=50;
         setReputation_amount(0);
         setReputation_Level(1);
-        setMoney(300000);
+        setMoney(500000);
     }
     void initialize_vectors()
     {
         repository_herbs.reserve(22);
         repository_herbs = {"Narenj", "KharMaryam", "Shahtare", "KhakShir", "Marze", "Ocaliptos"
         , "Darchin", "Avishan", "Jodosar", "Sir", "Gon", "Karchak", "ShirinBayan", "BargAloevera", "Asal"
-        , "Jinsing", "GolGavzabon", "Zaferan", "Ostokhoddos", "Alcohol", "Naphtaline", "Kafoor"};
+        , "Jinsing", "GolGavZaban", "Zaferan", "Ostokhoddos", "Alcohol", "Naphtaline", "Kafoor"};
         repository_amount.reserve(22);
         repository_amount = {0};
     }
 
-    int get_repository_herbs_index(string herb_name) const
+    int get_repository_herbs_index(string herb_name)
     {
         for (int i = 0; i < 22; i++)
         {
@@ -111,28 +111,28 @@ public:
         repository_amount[index] = Amount;
     }
 
-    double get_repository_amount(string herb_name) const
+    double get_repository_amount(string herb_name)
     {
         int index = get_repository_herbs_index(herb_name);
         return repository_amount[index];
     }
 
-    double get_repository_amount(int index) const
+    double get_repository_amount(int index)
     {
         return repository_amount[index];
     }
 
-    int get_Level2_Rep() const
+    int get_Level2_Rep()
     {
         return Level2_Rep;            
     }
 
-    int get_Level3_Rep() const
+    int get_Level3_Rep()
     {
         return Level3_Rep;            
     }
 
-    int get_Level4_Rep() const
+    int get_Level4_Rep()
     {
         return Level4_Rep;            
     }
@@ -176,14 +176,14 @@ public:
         }
     }
     
-    // void Ai()
-    // {
-    //     for(int i=0;i<22;i++)
-    //     {
-    //         if(this->repository_amount[i]==1)
-    //         {
-    //             cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl<<endl<<endl;
-    //         }
-    //     }
-    // }
+    void Ai()
+    {
+        for(int i=0;i<22;i++)
+        {
+            if(this->repository_amount[i]==1)
+            {
+                cout<<"Mojodi Shoma Az Made Ya Darooye "<<this->repository_herbs[i]<<" "<<repository_amount[i]<<" Vahed Ast !"<<endl<<"Baraye Kharid Eghdam Konid."<<endl;
+            }
+        }
+    }
 };

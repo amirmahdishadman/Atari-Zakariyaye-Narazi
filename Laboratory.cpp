@@ -11,6 +11,7 @@ void Labratory::Make_Alcohol(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
     }
     cin.exceptions(ios_base::failbit);
     try
@@ -20,6 +21,8 @@ void Labratory::Make_Alcohol(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
+
     }
     cin.exceptions(ios_base::failbit);
     try
@@ -29,6 +32,8 @@ void Labratory::Make_Alcohol(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
+
     }
     Check_Alcohol_inputs(C, H, O, amo_atar);
 }
@@ -61,6 +66,8 @@ void Labratory::Make_Comphor(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
+
     }
     cin.exceptions(ios_base::failbit);
     try
@@ -70,6 +77,7 @@ void Labratory::Make_Comphor(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
     }
     cin.exceptions(ios_base::failbit);
     try
@@ -79,6 +87,7 @@ void Labratory::Make_Comphor(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
     }
     Check_Comphor_inputs(C, H, O, amo_atar);
 }
@@ -111,6 +120,7 @@ void Labratory::Make_Naphtaline(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
     }
     cin.exceptions(ios_base::failbit);
     try
@@ -120,6 +130,7 @@ void Labratory::Make_Naphtaline(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
     }
     cin.exceptions(ios_base::failbit);
     try
@@ -129,6 +140,8 @@ void Labratory::Make_Naphtaline(Atar &amo_atar)
     catch (const std::ios_base::failure &failure)
     {
         cout << "Boro Boro Biron Amo Atar k Alan Mirim Ro Hava!!!" << endl;
+        exit(0);
+
     }
     Check_Naphtaline_inputs(C, H, O, amo_atar);
 }
@@ -174,7 +187,7 @@ void Labratory::Initialize_Labratory(bool Lab, Atar &amo_atar)
                 loop = false;
                 break;
             default:
-                cout << "Vorodi Eshtebah!Dobare Talash Konid." << endl;
+                cout << "Vorodi Eshtebah! Dobare Talash Konid." << endl;
             }
         }
     }

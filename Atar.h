@@ -15,30 +15,32 @@ public:
     //SHow info about atar
     void Show_State();
     //return index of each herb
-    int get_repository_herbs_index(string) const;
+    int get_repository_herbs_index(string);
     //set repository amount by Herb Name
     void set_repository_amount(string, double);
     //set repository amount by index
     void set_repository_amount(double, int);
     //get repository amount by Herb Name
-    double get_repository_amount(string) const;
+    double get_repository_amount(string);
     //get repository amount by index
-    double get_repository_amount(int) const;
+    double get_repository_amount(int);
     //set Atar's money
     void setMoney(double);
     //return Atar's Money
-    double getMoney() const;
+    double getMoney();
     //set Atar's Level
     void setReputation_Level(int);
     //return Atar's Level
-    int getReputation_Level() const;
+    int getReputation_Level();
     //set Reputation relates on levels
     void setReputation_amount(int);
     //return Reputation relates on levels
-    int getReputation_amount()  const;
+    int getReputation_amount();
     //return Levelx_Rep
-    int get_Level2_Rep() const;
-    int get_Level3_Rep() const;
-    int get_Level4_Rep() const;
+    int get_Level2_Rep();
+    int get_Level3_Rep();
+    int get_Level4_Rep();
+    //AI system
+    void Ai();
 };
 #endif

@@ -111,7 +111,7 @@ ostream &operator<<(ostream &output,Patients &patients)
             }
             else
             {
-                cout<<"~> Lotfan Vorodi Dorost Vared Konid :) "<<endl;
+                cout<<"~> Lotfan Vorodi Dorost Vared Konid :)"<<endl;
                 //cout<<"Aya Mikhahid Az Daftar Yaddasht Estefade Konid ?"<<endl<<"1-Bale"<<endl<<"2-Kheir"<<endl;
             }
             
@@ -149,7 +149,7 @@ else
             }
             else
             {
-                cout<<"~> Lotfan Vorodi Dorost Vared Konid :) "<<endl;
+                cout<<"~> Lotfan Vorodi Dorost Vared Konid :)"<<endl;
                 //cout<<"~> Chand Daro Tajviz Mikonid ? (Max 3 and Min 1):"<<endl;
             }
 
@@ -436,7 +436,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
     p.Ill="Ekhtelalat Dastgah Tanafosi";
     p.Herb[0]="GolGavZaban";
     p.Herb[1]="Jinsing";
-    p.Herb[2]="Ocaliptoos";
+    p.Herb[2]="Ocaliptos";
    
     p.cost[0]=9300;
     p.cost[1]=31000;
@@ -449,7 +449,7 @@ void Patients::set_patients_vect()//level 3 monde --dar initializer
 
     p.Ill="Afsordegi Va Na Arami";
     p.Herb[0]="Zaferan";
-    p.Herb[1]="GolGavzabon";
+    p.Herb[1]="GolGavZaban";
     p.Herb[2]="Ostokhoddos";
    
     p.cost[0]=110000;
@@ -507,7 +507,7 @@ Patients Patients::get_patient(int level)//end
                 int d_number;
                 while(loop)
                 {
-                    cout<<"Lotfan Shomare Bimari Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
+                    cout<<"Lotfan Shomare Bimari Ya Made Mored Niyaz Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
                     cin>>d_number;
                     if(d_number>=1&&d_number<=4)
                     {
@@ -532,7 +532,14 @@ Patients Patients::get_patient(int level)//end
                     cout<<"Lotfan Shomare Sath Bimari Fard Ra Az 1 Ta 2 Vared Konid :"<<endl;
                     cin>>d_level;
 
-                    cout<<"Lotfan Shomare Bimari Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
+                    if(d_level==1)
+                    {
+                        cout<<"Lotfan Shomare Bimari Ya Made Mored Niyaz Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
+                    }
+                    else
+                    {
+                        cout<<"Lotfan Shomare Bimari Ya Made Mored Niyaz Fard Ra Az 1 Ta 3 Vared Konid :"<<endl;
+                    }
                     cin>>d_number;
                     
                     if((d_number>=1&&d_number<=4)&&(d_level>=1&&d_level<=2))
@@ -557,7 +564,14 @@ Patients Patients::get_patient(int level)//end
                     cout<<"Lotfan Shomare Sath Bimari Fard Ra Az 1 Ta 3 Vared Konid :"<<endl;
                     cin>>d_level;
 
-                    cout<<"Lotfan Shomare Bimari Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
+                    if(d_level==1)
+                    {
+                        cout<<"Lotfan Shomare Bimari Ya Made Mored Niyaz Fard Ra Az 1 Ta 4 Vared Konid :"<<endl;
+                    }
+                    else
+                    {
+                        cout<<"Lotfan Shomare Bimari Ya Made Mored Niyaz Fard Ra Az 1 Ta 3 Vared Konid :"<<endl;
+                    }
                     cin>>d_number;
                     
                     if((d_number>=1&&d_number<=4)&&(d_level>=1&&d_level<=3))
@@ -590,7 +604,7 @@ void Patients::set_number_of_patients(int level,bool server_is_byed)//end aval i
     {
           num=4; 
     }
-        cout<<"Lotfant Tedad Morajee Konandegan ra vared konid:(Bishtarin Tedad Mojaz "<<num<<" Ta Mibashad Va Kamtarin Tedad 1 Mibashad.)"<<endl;
+        cout<<"Lotfan Tedad Morajee Konandegan ra vared konid:(Bishtarin Tedad Mojaz "<<num<<" Ta Mibashad Va Kamtarin Tedad 1 Mibashad.)"<<endl;
         cin>>p_number;
         if(p_number<=num && p_number>=1)
         {
@@ -709,7 +723,7 @@ string Patients::Amount_system_check(double const_amount,double in_amount)//had 
     {
         return "kamforoshi";
     }
-    else if(in_amount==in_amount)
+    else if(in_amount==const_amount)
     {
         return "=";
     }
