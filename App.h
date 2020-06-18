@@ -29,8 +29,5 @@ public:
 
     //For Loading the Game
     void LoadProcess();
-
-    //Atar's Money will be decreased randomly unless Amo Atar Buy the Security Option
-    void Hacker();
 };
 #endif
